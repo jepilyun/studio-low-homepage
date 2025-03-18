@@ -8,7 +8,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
 
-
   <!-- Swiper -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -72,13 +71,13 @@
   <div id="top-banner-01" class="relative">
     <div
       class="h-screen w-full bg-cover bg-center bg-no-repeat"
-      style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/unsplash_art_18.jpg')",
+      style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/banner-01.jpg')",
     ></div>
-    <div class="banner-content absolute top-0 right-30 flex h-full items-center justify-center">
-      <div class="flex flex-col items-end justify-center text-3xl font-bold text-white">
-        <p class="bg-black/70 p-6 px-8">현직자가 직접 가르치는</p>
-        <p class="bg-black/70 p-6 px-8">웹 디자인 및 취업 포트폴리오</p>
-        <p class="bg-black/70 p-6 px-8">소수정예 클래스</p>
+    <div class="banner-content absolute top-0 left-0 w-full h-screen flex items-center justify-center md:justify-start md:pl-20">
+      <div id="top-banner-01-text-container" class="flex flex-col items-center md:items-start justify-center font-bold text-white text-2xl sm:text-3xl md:text-4xl">
+        <p id="top-banner-01-text-container-01" class="p-3 md:p-6"></p>
+        <p id="top-banner-01-text-container-02" class="p-3 md:p-6"></p>
+        <p id="top-banner-01-text-container-03" class="p-3 md:p-6"></p>
       </div>
     </div>
   </div>
@@ -86,14 +85,14 @@
   <div id="top-banner-02" class="relative">
     <div
       class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
-      style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/unsplash_class_01.jpg')"
+      style="background-image: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url('/public/banner-02.jpg')"
     ></div>
-    <div class="banner-content flex h-full items-center justify-center">
-      <div class="absolute top-0 left-30 flex h-full flex-col items-start justify-center text-2xl font-bold text-white">
-        <div class="bg-white/10 p-6 px-12" style="backdrop-filter: blur(10px)">
-          <p class="py-4">수강생 맞춤형 포트폴리오 분석으로</p>
-          <p class="py-4">각 기업별 최적화된 준비 작업을 통한</p>
-          <p class="py-4">주요 기업 합격률 향상</p>
+    <div class="banner-content absolute top-0 left-0 w-full h-screen flex items-center justify-center md:justify-end md:pr-20">
+      <div class="flex flex-col items-center md:items-end justify-center md:text-4xl font-bold text-white text-2xl sm:text-3xl md:text-3xl">
+        <div class="p-6 px-12 flex flex-col items-center md:items-end justify-center">
+          <div class="p-3 md:p-6 bg-black/50">수강생별 및 지원 기업별</div>
+          <div class="p-3 md:p-6 bg-black/50">맞춤형 포트폴리오 분석을 통해</div>
+          <div class="p-3 md:p-6 bg-black/50">주요 기업 합격률 향상</div>
         </div>
       </div>
     </div>
@@ -102,15 +101,15 @@
   <div id="top-banner-03" class="relative">
     <div
       class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
-      style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/unsplash_design_work_07.jpg')"
+      style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/banner-03.jpg')"
     ></div>
-    <div class="banner-content absolute top-0 left-30 flex h-full items-center justify-center">
-      <div class="flex h-full flex-col items-start justify-center text-2xl font-bold text-white">
-        <p class="py-4">Feed</p>
-        <p class="py-4">bluetiger</p>
-        <p class="py-4">living in your hearts</p>
-        <p class="py-4">and let them run</p>
-        <p class="py-4">the world</p>
+    <div class="banner-content absolute top-0 left-0 w-full h-screen flex items-center justify-center md:justify-start md:pl-20">
+      <div class="flex flex-col items-center md:items-start justify-center font-bold text-white text-2xl sm:text-3xl">
+        <p class="p-3 md:p-6">그래픽 디자인 포트폴리오 과정</p>
+        <p class="p-3 md:p-6">패션 디자인 포트폴리오 과정</p>
+        <p class="p-3 md:p-6">기초 디자인 파운데이션 과정</p>
+        <p class="p-3 md:p-6">대기업 현직자 면접 특강</p>
+        <p class="p-3 md:p-6">이력서 자소서 첨삭 컨설팅</p>
       </div>
     </div>
   </div>
@@ -142,7 +141,7 @@
   <div id="top-banner-06" class="relative">
     <div
       class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
-      style="background-image: url('/public/unsplash_graphic_02.jpg')"
+      style="background-image: url('/public/unsplash_graphic_01.jpg')"
     ></div>
     <div class="banner-content absolute top-0 flex h-full w-full items-center justify-center text-4xl font-bold text-white">
       <div class="absolute bottom-40 flex flex-col items-start justify-center text-xl font-bold text-white">

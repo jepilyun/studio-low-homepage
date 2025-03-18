@@ -1,46 +1,119 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("✅ DOMContentLoaded fired");
   gsap.registerPlugin(ScrollTrigger);
 
-  TopBannerNo1();
+  // ✅ 탑 배너 01 텍스트 타이핑 효과 실행
+  TopBanner01TextTyping();
+
+  TopBanners();
   reviewSlider();
 });
 
+/*
+ * 탑 배너 텍스트 타이핑 효과 함수
+ */
+const TopBanner01TextTyping = () => {
+  const adText = [ "한 명 한 명 확실하게,", "디자이너 커리어의 시작", "소수정예 프리미엄 아카데미" ];
 
-const TopBannerNo1 = () => {
-//01 : 이미지 애니메이션 주기
-  const ani1 = gsap.timeline();
-  ani1.to("#top-banner-01 .banner-content", {rotation: 720, scale: 0, borderRadius: 200})
-      .to("#top-banner-01 .banner-content", {rotation: 0, scale: 1, borderRadius: 20})
+  const addText1 = document.getElementById("top-banner-01-text-container-01");
+  const addText2 = document.getElementById("top-banner-01-text-container-02");
+  const addText3 = document.getElementById("top-banner-01-text-container-03");
+
+  // ✅ 첫 번째 문장 실행 후 두 번째 문장 실행
+  typeText(addText1, adText[0], 1000); // 0.5초 뒤 실행
+  typeText(addText2, adText[1], 3000); // 2초 뒤 실행
+  typeText(addText3, adText[2], 4500); // 3초 뒤 실행
+}
+
+
+const TopBanners = () => {
+  // Banner 01
+  const ani_01 = gsap.timeline();
+
+  ani_01
+    .to("#top-banner-01-text-container-01", { x: innerWidth, autoAlpha: 0 })
+    .to("#top-banner-01-text-container-02", { x: -innerWidth, autoAlpha: 0 })
+    .to("#top-banner-01-text-container-03", { x: innerWidth, autoAlpha: 0 })
 
   ScrollTrigger.create({
-    animation: ani1,
+    animation: ani_01,
     trigger: "#top-banner-01",
     start: "top top",
-    end: "+=2000",
+    end: "+=300",
     scrub: true,
-    pin: true, 
+    pin: false, 
     anticipatePin: 1,
-    markers: true
+    markers: false
   });
 
-      //02 : 이미지를 순차적으로 나오기 
-  const ani2 = gsap.timeline();
-  ani2.from("#top-banner-02 .banner-content", {autoAlpha:0, borderRadius: 200})
-      .from("#top-banner-02 .banner-content", {autoAlpha:0, borderRadius: 200})
-      .from("#top-banner-02 .banner-content", {autoAlpha:0, borderRadius: 200})
+  // Banner 02
+  const ani_02 = gsap.timeline();
+
+  ani_02.from("#top-banner-02 .banner-content", { autoAlpha: 0, scale: 20 })
 
   ScrollTrigger.create({
-    animation: ani2,
+    animation: ani_02,
     trigger: "#top-banner-02",
     start: "top top",
-    end: "+=2000",
+    end: "+=700",
     scrub: true,
     pin: true, 
     anticipatePin: 1,
     markers: false
   });
+
+  // Banner 03
+  const ani_03 = gsap.timeline();
+
+//   gsap.to("#top-banner-03 .banner-content", {
+//     duration: 2,
+//     x: 500,
+//     rotation: 360,
+//     borderRadius: 100,
+//     scrollTrigger: {
+//         trigger: box2
+//     }
+// });
+  // ani_03.from("#top-banner-03 .banner-content", { autoAlpha: 0, scale: 20 })
+
+  // ScrollTrigger.create({
+  //   animation: ani_02,
+  //   trigger: "#top-banner-03",
+  //   start: "top top",
+  //   end: "+=700",
+  //   scrub: true,
+  //   pin: true, 
+  //   anticipatePin: 1,
+  //   markers: false
+  // });
 }
+
+
+
+
+/**
+ * 텍스트 타이핑 효과 함수
+ * @param {HTMLElement} element 타이핑 효과를 적용할 HTML 요소
+ * @param {string[]} text 타이핑할 텍스트 배열
+ * @param {number} delay 타이핑 시작 지연 시간
+ * @param {number} speed 타이핑 속도
+ */
+const typeText = (element, text, delay, speed = 100) => {
+  let index = 0;
+
+  setTimeout(() => {
+    const interval = setInterval(() => {
+      element.innerHTML += text[index];
+      index++;
+      if (index === text.length) {
+        clearInterval(interval);
+        element.style.borderRight = "none"; // 커서 효과 제거
+      }
+    }, speed);
+  }, delay);
+}
+
+
+
 
 
 
