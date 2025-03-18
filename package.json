@@ -4,8 +4,8 @@
   "description": "순수 HTML, CSS, JavaScript와 Tailwind CSS를 사용한 웹 프로젝트입니다.",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./css/styles-src.css -o ./css/styles.css --watch",
-    "build:prod": "tailwindcss -i ./css/styles-src.css -o ./css/styles.css --minify"
+    "build": "tailwindcss -i ./src/styles-src.css -o ./public/styles.css --watch",
+    "build:prod": "tailwindcss -i ./src/styles-src.css -o ./public/styles.css --minify"
   },
   "keywords": [],
   "author": "",
