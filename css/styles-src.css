@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* For Logo Studio LOW */
+.nothing-you-could-do-regular {
+    font-family: "Nothing You Could Do", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Fonts */
+.noto-sans-kr-100 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.noto-sans-kr-400 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.noto-sans-kr-700 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.noto-sans-kr-900 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+@layer utilities {
+    .scrollbar-hidden {
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .scrollbar-hidden::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Edge */
+    }
+}
+
+/* 
+    Breakpoint prefix	Minimum width	CSS
+    sm	40rem (640px)	@media (width >= 40rem) { ... }
+    md	48rem (768px)	@media (width >= 48rem) { ... }
+    lg	64rem (1024px)	@media (width >= 64rem) { ... }
+    xl	80rem (1280px)	@media (width >= 80rem) { ... }
+    2xl	96rem (1536px)	@media (width >= 96rem) { ... } 
+*/
+
+
+.nav-transition {
+    @apply transition-all duration-500;
+}
+
+#top-nav-container {
+    @apply w-full bg-transparent border-none text-white backdrop-blur-none;
+    @apply px-10 py-8 lg:py-10 xl:py-12 2xl:py-16;
+}
+
+.top-nav-text-menu {
+    @apply text-xs hover:scale-110 hover:border-b-2 hover:transition-all hover:duration-300;
+    @apply xl:text-sm;
+}
+
+.top-nav-bar-default {
+    #top-nav-container {
+        @apply border-none px-10 text-white backdrop-blur-none;
+    }
+
+    #top-nav-logo-menus {
+        @apply md:gap-10 justify-center xl:justify-between;
+    }
+
+    #top-nav-logo {
+        @apply py-1 text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl;
+    }
+}
+
+.top-nav-bar-bg-blur {
+    @apply flex justify-center 2xl:mt-10 2xl:px-12;
+
+    #top-nav-container {
+        @apply max-w-[1536px] border-b border-white px-6 text-gray-800 backdrop-blur-md;
+        @apply lg:py-6 2xl:py-8;
+        @apply 2xl:border;
+        @apply 2xl:rounded-full;
+    }
+
+    #top-nav-logo-menus {
+        @apply lg:py-4 xl:py-6 justify-between;
+    }
+
+    #top-nav-logo {
+        @apply text-3xl xl:text-4xl;
+    }
+}
+
+
+
+
+#faq-accordion {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 아코디언 개별 항목 스타일 */
+.faq-accordion-item {
+    border-radius: 10px;
+    background-color: #f3f4f6;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+/* 버튼 스타일 */
+.faq-accordion-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f3f4f6;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.faq-accordion-button:hover {
+    background-color: #1f2937;
+    color: white;
+}
+
+.faq-accordion-button .icon {
+    font-size: 18px;
+    color: #9ca3af;
+    transition: transform 0.3s ease;
+}
+
+/* 체크박스를 활용한 아코디언 토글 */
+.faq-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: white;
+    padding: 0 16px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+/* 체크되었을 때(아코디언 열림) */
+input[type="checkbox"]:checked + .faq-accordion-button + .faq-accordion-content {
+    max-height: 100px;
+    padding: 16px;
+}
+
+/* 체크되었을 때 아이콘 회전 */
+input[type="checkbox"]:checked + .faq-accordion-button .icon {
+    transform: rotate(90deg);
+}
