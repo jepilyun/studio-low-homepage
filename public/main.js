@@ -1,12 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-  gsap.registerPlugin(ScrollTrigger);
-
-  // ✅ 탑 배너 01 텍스트 타이핑 효과 실행
-  TopBanner01TextTyping();
-
-  TopBanners();
-  reviewSlider();
-});
+let lastScrollY = window.scrollY;
 
 /*
  * 탑 배너 텍스트 타이핑 효과 함수
@@ -24,8 +16,7 @@ const TopBanner01TextTyping = () => {
   typeText(addText3, adText[2], 4500); // 3초 뒤 실행
 }
 
-
-const TopBanners = () => {
+const GSAPAnimations = () => {
   // Banner 01
   const ani_01 = gsap.timeline();
 
@@ -64,31 +55,91 @@ const TopBanners = () => {
   // Banner 03
   const ani_03 = gsap.timeline();
 
-//   gsap.to("#top-banner-03 .banner-content", {
-//     duration: 2,
-//     x: 500,
-//     rotation: 360,
-//     borderRadius: 100,
-//     scrollTrigger: {
-//         trigger: box2
-//     }
-// });
-  // ani_03.from("#top-banner-03 .banner-content", { autoAlpha: 0, scale: 20 })
+  ani_03.from("#top-banner-03 .banner-content", { autoAlpha: 0, scale: 0 })
 
-  // ScrollTrigger.create({
-  //   animation: ani_02,
-  //   trigger: "#top-banner-03",
-  //   start: "top top",
-  //   end: "+=700",
-  //   scrub: true,
-  //   pin: true, 
-  //   anticipatePin: 1,
-  //   markers: false
-  // });
+  ScrollTrigger.create({
+    animation: ani_03,
+    trigger: "#top-banner-03",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+    pin: true, 
+    anticipatePin: 1,
+    markers: false
+  });
+
+  // Banner 04
+  const ani_04 = gsap.timeline();
+
+  ani_04.from("#top-banner-04 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
+
+  ScrollTrigger.create({
+    animation: ani_04,
+    trigger: "#top-banner-04",
+    start: "top top",
+    toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+    markers: false
+  });
+
+
+  // Banner 05
+  const ani_05 = gsap.timeline();
+
+  ani_05.from("#top-banner-05 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
+
+  ScrollTrigger.create({
+    animation: ani_05,
+    trigger: "#top-banner-05",
+    start: "top top",
+    toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+    markers: false
+  });
+
+  // Banner 06
+  const ani_06 = gsap.timeline();
+
+  ani_06.from("#top-banner-06 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
+
+  ScrollTrigger.create({
+    animation: ani_06,
+    trigger: "#top-banner-06",
+    start: "top top",
+    toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+    markers: false
+  });
+
+  // Company Intro
+  const companyIntro = gsap.timeline();
+
+  companyIntro
+    .from("#company-intro-msg", { y: 200, duration: 1, opacity: 0, immediateRender: true })
+    .from("#company-intro-counts", { y: 200, duration: 1, opacity: 0, immediateRender: true, scale: 20 })
+
+  ScrollTrigger.create({
+    animation: companyIntro,
+    trigger: "#company-intro",
+    start: "top 70%",
+    toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+    markers: false,
+    onEnter: () => {
+      setTimeout(() => {
+        const companyIntroCounts = document.getElementById("company-intro-counts");
+
+        animateNumber(companyIntroCounts.children[0].lastElementChild, 0, 8913, 1200);
+        animateNumber(companyIntroCounts.children[1].lastElementChild, 0, 1253, 1200);
+        animateNumber(companyIntroCounts.children[2].lastElementChild, 0, 4350, 1200);
+        animateNumber(companyIntroCounts.children[3].lastElementChild, 0, 96, 1200);
+        companyIntroCounts.dataset.animation = '1';
+      }, 2000);
+    },
+    onLeave: () => {
+      const companyIntroCounts = document.getElementById("company-intro-counts");
+      companyIntroCounts.dataset.animation = '0';
+    }
+  });
+
+
 }
-
-
-
 
 /**
  * 텍스트 타이핑 효과 함수
@@ -112,17 +163,71 @@ const typeText = (element, text, delay, speed = 100) => {
   }, delay);
 }
 
+/**
+ * 숫자를 애니메이션으로 변경하는 함수
+ * @param targetElement 숫자를 변경할 요소
+ * @param start 시작 숫자 ex. 0
+ * @param end 끝 숫자 ex. 1000
+ * @param duration 애니메이션 지속 시간 ex. 1000
+ */
+const animateNumber = (targetElement, start, end, duration) => {
+  if (!targetElement) return; // 요소가 없으면 종료
 
+  let startTime = null;
 
+  function updateNumber(timestamp) {
+    if (!startTime) startTime = timestamp; // 첫 실행 시점 설정
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1); // 진행률 0~1로 제한
+    const easedProgress = 1 - Math.pow(1 - progress, 3); // 감속 효과 적용
 
+    const current = Math.round(start + (end - start) * easedProgress);
 
+    targetElement.textContent = current.toLocaleString(); // 숫자 표시
 
+    if (progress < 1) {
+      requestAnimationFrame(updateNumber); // 다음 프레임에서 업데이트
+    }
+  }
 
+  requestAnimationFrame(updateNumber);
+};
 
+/*
+ * 스크롤 이벤트 핸들러
+ * 탑 내비게이션 배경 색상 변경 처리
+ */
+const handleScroll = () => {
+  const topNavBar = document.getElementById("top-nav-bar");
 
+  const currentScrollY = window.scrollY;
+  const isScrollDown = currentScrollY > lastScrollY;
+  const isScrollUp = currentScrollY < lastScrollY;
 
+  lastScrollY = currentScrollY; // 현재 위치 업데이트
 
+  if (isScrollDown) {
+    const companyIntro = document.getElementById("company-intro");
 
+    if (companyIntro && companyIntro.getBoundingClientRect().top < window.innerHeight / 5) {
+      topNavBar.classList.add("top-nav-bar-bg-blur");
+      topNavBar.classList.remove("top-nav-bar-default");
+    }
+  }
+
+  if (isScrollUp) {
+    const topBanner06 = document.getElementById("top-banner-06");
+
+    if (topBanner06 && topBanner06.getBoundingClientRect().bottom > window.innerHeight / 5) {
+      topNavBar.classList.add("top-nav-bar-default");
+      topNavBar.classList.remove("top-nav-bar-bg-blur");
+    }
+  }
+}
+
+/*
+ * 리뷰 슬라이더 초기화 함수
+ */
 const reviewSlider = () => {
   const slider = document.getElementById("review-slider");
   const pagination = document.getElementById("review-pagination");
@@ -133,15 +238,13 @@ const reviewSlider = () => {
   }
 
   const slides = Array.from(slider.children); // 슬라이드 목록 가져오기
-  const totalSlides = slides.length;
-
   let currentIndex = 0; // 현재 슬라이드 위치 추적
   const dots = [];
 
   // 내비게이션 점 동적 생성
   slides.forEach((_, i) => {
     let dot = document.createElement("button");
-    dot.classList.add("h-3", "w-3", "rounded-full", "bg-gray-400", "transition-all", "duration-300");
+    dot.classList.add("dot-pagination-circle", "rounded-full", "bg-white", "transition-all", "duration-300");
 
     // 클릭 시 해당 슬라이드로 이동
     dot.addEventListener("click", function () {
@@ -162,11 +265,11 @@ const reviewSlider = () => {
   function updateDots(activeIndex) {
     dots.forEach((dot, i) => {
       if (i === activeIndex) {
-        dot.classList.remove("bg-gray-400");
-        dot.classList.add("bg-gray-800");
+        dot.classList.remove("bg-white");
+        dot.classList.add("dot-pagination-circle-active");
       } else {
-        dot.classList.remove("bg-gray-800");
-        dot.classList.add("bg-gray-400");
+        dot.classList.remove("dot-pagination-circle-active");
+        dot.classList.add("bg-white");
       }
     });
   }
@@ -185,5 +288,21 @@ const reviewSlider = () => {
 
   // 초기 활성화된 dot 설정
   updateDots(0);
-};
+}
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ✅ 탑 내비게이션 Class 추가 효과 실행
+  // 스크롤 이벤트 등록
+  window.addEventListener("scroll", handleScroll);
+
+
+  // ✅ 탑 배너 01 텍스트 타이핑 효과 실행
+  TopBanner01TextTyping();
+
+  GSAPAnimations();
+
+  reviewSlider();
+});

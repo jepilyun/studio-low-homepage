@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Noto+Sans+KR:wght@100..900&family=Racing+Sans+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -27,11 +27,18 @@ body {
     font-style: normal;
 }
 
+/* For Count */
+.racing-sans-one-regular {
+    font-family: "Racing Sans One", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* Fonts */
-.noto-sans-kr-100 {
+.noto-sans-kr-200 {
     font-family: "Noto Sans KR", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 100;
+    font-weight: 200;
     font-style: normal;
 }
 
@@ -123,12 +130,13 @@ body {
     }
 }
 
+.dot-pagination-circle {
+    width: 12px;
+    height: 12px;
+}
 
-
-
-#faq-accordion {
-    max-width: 600px;
-    margin: 0 auto;
+.dot-pagination-circle-active {
+   background-color: #FFD700;
 }
 
 /* 아코디언 개별 항목 스타일 */
