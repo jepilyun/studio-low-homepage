@@ -1,8 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("✅ DOMContentLoaded fired");
+  gsap.registerPlugin(ScrollTrigger);
 
+  TopBannerNo1();
   reviewSlider();
 });
+
+
+const TopBannerNo1 = () => {
+//01 : 이미지 애니메이션 주기
+  const ani1 = gsap.timeline();
+  ani1.to("#top-banner-01 .banner-content", {rotation: 720, scale: 0, borderRadius: 200})
+      .to("#top-banner-01 .banner-content", {rotation: 0, scale: 1, borderRadius: 20})
+
+  ScrollTrigger.create({
+    animation: ani1,
+    trigger: "#top-banner-01",
+    start: "top top",
+    end: "+=2000",
+    scrub: true,
+    pin: true, 
+    anticipatePin: 1,
+    markers: true
+  });
+
+      //02 : 이미지를 순차적으로 나오기 
+  const ani2 = gsap.timeline();
+  ani2.from("#top-banner-02 .banner-content", {autoAlpha:0, borderRadius: 200})
+      .from("#top-banner-02 .banner-content", {autoAlpha:0, borderRadius: 200})
+      .from("#top-banner-02 .banner-content", {autoAlpha:0, borderRadius: 200})
+
+  ScrollTrigger.create({
+    animation: ani2,
+    trigger: "#top-banner-02",
+    start: "top top",
+    end: "+=2000",
+    scrub: true,
+    pin: true, 
+    anticipatePin: 1,
+    markers: false
+  });
+}
+
+
+
+
+
+
+
 
 
 const reviewSlider = () => {

@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GASP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+
+
+  <!-- Swiper -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
   <script src="/js/main.js" defer></script>
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -62,95 +69,92 @@
     </div>
   </nav>
   
-  <!-- Top Banner -->
-  <section id="top-banner-slider" class="flex w-full flex-col">
-    <div class="relative sticky top-0 right-0 left-0 transition-all duration-500 ease-in-out">
-      <div
-        class="h-screen w-full bg-cover bg-center bg-no-repeat"
-        style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/unsplash_art_18.jpg')",
-      ></div>
-      <div class="absolute top-0 right-30 flex h-full items-center justify-center">
-        <div class="flex flex-col items-end justify-center text-3xl font-bold text-white">
-          <p class="bg-black/70 p-6 px-8">현직자가 직접 가르치는</p>
-          <p class="bg-black/70 p-6 px-8">웹 디자인 및 취업 포트폴리오</p>
-          <p class="bg-black/70 p-6 px-8">소수정예 클래스</p>
+  <div id="top-banner-01" class="relative">
+    <div
+      class="h-screen w-full bg-cover bg-center bg-no-repeat"
+      style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/unsplash_art_18.jpg')",
+    ></div>
+    <div class="banner-content absolute top-0 right-30 flex h-full items-center justify-center">
+      <div class="flex flex-col items-end justify-center text-3xl font-bold text-white">
+        <p class="bg-black/70 p-6 px-8">현직자가 직접 가르치는</p>
+        <p class="bg-black/70 p-6 px-8">웹 디자인 및 취업 포트폴리오</p>
+        <p class="bg-black/70 p-6 px-8">소수정예 클래스</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="top-banner-02" class="relative">
+    <div
+      class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
+      style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/unsplash_class_01.jpg')"
+    ></div>
+    <div class="banner-content flex h-full items-center justify-center">
+      <div class="absolute top-0 left-30 flex h-full flex-col items-start justify-center text-2xl font-bold text-white">
+        <div class="bg-white/10 p-6 px-12" style="backdrop-filter: blur(10px)">
+          <p class="py-4">수강생 맞춤형 포트폴리오 분석으로</p>
+          <p class="py-4">각 기업별 최적화된 준비 작업을 통한</p>
+          <p class="py-4">주요 기업 합격률 향상</p>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="relative sticky top-0 right-0 left-0 transition-all duration-500 ease-in-out">
-      <div
-        class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
-        style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/unsplash_class_01.jpg')"
-      ></div>
-      <div class="flex h-full items-center justify-center">
-        <div class="absolute top-0 left-30 flex h-full flex-col items-start justify-center text-2xl font-bold text-white">
-          <div class="bg-white/10 p-6 px-12" style="backdrop-filter: blur(10px)">
-            <p class="py-4">수강생 맞춤형 포트폴리오 분석으로</p>
-            <p class="py-4">각 기업별 최적화된 준비 작업을 통한</p>
-            <p class="py-4">주요 기업 합격률 향상</p>
-          </div>
-        </div>
+  <div id="top-banner-03" class="relative">
+    <div
+      class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
+      style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/unsplash_design_work_07.jpg')"
+    ></div>
+    <div class="banner-content absolute top-0 left-30 flex h-full items-center justify-center">
+      <div class="flex h-full flex-col items-start justify-center text-2xl font-bold text-white">
+        <p class="py-4">Feed</p>
+        <p class="py-4">bluetiger</p>
+        <p class="py-4">living in your hearts</p>
+        <p class="py-4">and let them run</p>
+        <p class="py-4">the world</p>
       </div>
     </div>
+  </div>
 
-    <div class="relative sticky top-0 right-0 left-0 transition-all duration-500 ease-in-out">
-      <div
-        class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
-        style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url('/public/unsplash_design_work_07.jpg')"
-      ></div>
-      <div class="absolute top-0 left-30 flex h-full items-center justify-center">
-        <div class="flex h-full flex-col items-start justify-center text-2xl font-bold text-white">
-          <p class="py-4">Feed</p>
-          <p class="py-4">bluetiger</p>
-          <p class="py-4">living in your hearts</p>
-          <p class="py-4">and let them run</p>
-          <p class="py-4">the world</p>
-        </div>
+  <div id="top-banner-04" class="relative">
+    <div
+      class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
+      style="background-image: url('/public/unsplash_art_03.jpg')"
+    ></div>
+    <div class="banner-content absolute top-0 flex h-full w-full items-center justify-center text-4xl font-bold text-white">
+      <div class="absolute bottom-20 flex flex-col items-start justify-center text-xl font-bold text-white">
+        <div class="py-4 tracking-widest">2025년 포트폴리오 21기 수강생 홍OO 님</div>
       </div>
     </div>
+  </div>
 
-    <div class="relative sticky top-0 right-0 left-0 transition-all duration-500 ease-in-out">
-      <div
-        class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
-        style="background-image: url('/public/unsplash_art_03.jpg')"
-      ></div>
-      <div class="absolute top-0 flex h-full w-full items-center justify-center text-4xl font-bold text-white">
-        <div class="absolute bottom-20 flex flex-col items-start justify-center text-xl font-bold text-white">
-          <div class="py-4 tracking-widest">2025년 포트폴리오 21기 수강생 홍OO 님</div>
-        </div>
+  <div id="top-banner-05" class="relative">
+    <div
+      class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
+      style="background-image: url('/public/unsplash_art_06.jpg')"
+    ></div>
+    <div class="banner-content absolute top-0 flex h-full w-full items-center justify-center text-4xl font-bold text-white">
+      <div class="absolute top-40 flex flex-col items-start justify-center text-xl font-bold text-white">
+        <p class="py-4 tracking-widest">2025년 그래픽디자인 강의 수강생 김O민 님</p>
       </div>
     </div>
+  </div>
 
-    <div class="relative sticky top-0 right-0 left-0 transition-all duration-500 ease-in-out">
-      <div
-        class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
-        style="background-image: url('/public/unsplash_art_06.jpg')"
-      ></div>
-      <div class="absolute top-0 flex h-full w-full items-center justify-center text-4xl font-bold text-white">
-        <div class="absolute top-40 flex flex-col items-start justify-center text-xl font-bold text-white">
+  <div id="top-banner-06" class="relative">
+    <div
+      class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
+      style="background-image: url('/public/unsplash_graphic_02.jpg')"
+    ></div>
+    <div class="banner-content absolute top-0 flex h-full w-full items-center justify-center text-4xl font-bold text-white">
+      <div class="absolute bottom-40 flex flex-col items-start justify-center text-xl font-bold text-white">
+        <div
+          class="rounded-full bg-white/10 p-2 px-16"
+          style="backdrop-filter: blur(10px)"
+        >
           <p class="py-4 tracking-widest">2025년 그래픽디자인 강의 수강생 김O민 님</p>
         </div>
       </div>
     </div>
-
-    <div class="relative sticky top-0 right-0 left-0 transition-all duration-500 ease-in-out">
-      <div
-        class="h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out"
-        style="background-image: url('/public/unsplash_graphic_02.jpg')"
-      ></div>
-      <div class="absolute top-0 flex h-full w-full items-center justify-center text-4xl font-bold text-white">
-        <div class="absolute bottom-40 flex flex-col items-start justify-center text-xl font-bold text-white">
-          <div
-            class="rounded-full bg-white/10 p-2 px-16"
-            style="backdrop-filter: blur(10px)"
-          >
-            <p class="py-4 tracking-widest">2025년 그래픽디자인 강의 수강생 김O민 님</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- Company Introduction -->
   <section id="company-intro" class="z-20 bg-white py-40 overflow-hidden">
