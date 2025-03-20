@@ -320,17 +320,19 @@ const handleScroll = () => {
     const companyIntro = document.getElementById("company-intro");
 
     if (companyIntro && companyIntro.getBoundingClientRect().top < window.innerHeight / 5) {
-      topNavBar.classList.add("top-nav-bar-bg-blur");
-      topNavBar.classList.remove("top-nav-bar-default");
+      topNavBar.classList.add("fg-black");
+      topNavBar.classList.add("bg-blur");
+      topNavBar.classList.remove("fg-white");
     }
   }
 
   if (isScrollUp) {
-    const topBanner06 = document.getElementById("top-banner-06");
+    const topBanner07 = document.getElementById("top-banner-07");
 
-    if (topBanner06 && topBanner06.getBoundingClientRect().bottom > window.innerHeight / 5) {
-      topNavBar.classList.add("top-nav-bar-default");
-      topNavBar.classList.remove("top-nav-bar-bg-blur");
+    if (topBanner07 && topBanner07.getBoundingClientRect().bottom > window.innerHeight / 5) {
+      topNavBar.classList.add("fg-white");
+      topNavBar.classList.remove("fg-black");
+      topNavBar.classList.remove("bg-blur");
     }
   }
 }

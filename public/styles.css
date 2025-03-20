@@ -1237,12 +1237,16 @@ video {
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-y: auto;
+  /* 세로 스크롤 가능하게 조정 */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Noto Sans KR", sans-serif;
+  overflow-y: auto;
+  /* 세로 스크롤 가능하게 조정 */
   scrollbar-width: none;
   /* Firefox */
   -ms-overflow-style: none;
@@ -1446,6 +1450,12 @@ body::-webkit-scrollbar {
   }
 }
 
+#top-nav-bar.bg-blur {
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
 #top-nav-container-mobile {
   display: block;
 }
@@ -1592,7 +1602,7 @@ body::-webkit-scrollbar {
   position: sticky;
   top: 0;
   left: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   scrollbar-width: none;
   /* Firefox */
   -ms-overflow-style: none;
@@ -1955,6 +1965,137 @@ body::-webkit-scrollbar {
 .top-banner-05-text-w.studio-low-text {
   color: var(--cyan);
   opacity: 1;
+}
+
+.top-banner-image-bg-container {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in-out;
+}
+
+#top-banner-06 {
+  height: 100vh;
+  width: 100vw;
+  /* background-color: var(--cyan); */
+}
+
+#top-banner-06-content-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+#top-banner-06-content-wide {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #top-banner-06-content-mobile {
+    display: none;
+  }
+
+  #top-banner-06-content-wide {
+    display: flex;
+    align-items: end;
+  }
+}
+
+#top-banner-06-text-container-mobile {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 2rem 0;
+  color: var(--white);
+}
+
+#top-banner-06-text-container-wide {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 4rem 0;
+  color: var(--white);
+}
+
+.top-banner-06-text-m {
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.top-banner-06-text-w {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+#top-banner-07 {
+  height: 100vh;
+  width: 100vw;
+  /* background-color: var(--cyan); */
+}
+
+#top-banner-07-content-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+#top-banner-07-content-wide {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #top-banner-07-content-mobile {
+    display: none;
+  }
+
+  #top-banner-07-content-wide {
+    display: flex;
+    align-items: end;
+  }
+}
+
+#top-banner-07-text-container-mobile {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 2rem 0;
+  color: var(--white);
+}
+
+#top-banner-07-text-container-wide {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 4rem 0;
+  color: var(--white);
+}
+
+.top-banner-07-text-m {
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.top-banner-07-text-w {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+#company-intro {
+  padding: 5rem 1rem;
+  color: var(--primary-black);
+  background-color: var(--white);
 }
 
 .section-title-mg {
