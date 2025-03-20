@@ -51,17 +51,26 @@ const clickExpandedMenu = () => {
  * 탑 배너 텍스트 타이핑 효과 함수
  */
 const TopBanner01TextTyping = () => {
-  const adText = [ "한 명 한 명 확실하게,", "디자이너 커리어의 시작", "소수정예 프리미엄 아카데미", "스튜디오 로우" ];
+  const adTextMobile = [ "한 명 한 명", "확실하게,", "디자이너", "커리어의 시작", "소수정예", "프리미엄", "아카데미", "스튜디오 로우" ];
+  const adTextWide = [ "한 명 한 명 확실하게,", "디자이너 커리어의 시작", "소수정예 프리미엄 아카데미", "스튜디오 로우" ];
 
-  const addText1 = document.getElementById("top-banner-01-text-01");
-  const addText2 = document.getElementById("top-banner-01-text-02");
-  const addText3 = document.getElementById("top-banner-01-text-03");
-  const addText4 = document.getElementById("top-banner-01-text-04");
+  const addText1 = document.getElementById("top-banner-01-text-01-m");
+  const addText2 = document.getElementById("top-banner-01-text-02-m");
+  const addText3 = document.getElementById("top-banner-01-text-03-m");
+  const addText4 = document.getElementById("top-banner-01-text-04-m");
+  const addText5 = document.getElementById("top-banner-01-text-05-m");
+  const addText6 = document.getElementById("top-banner-01-text-06-m");
+  const addText7 = document.getElementById("top-banner-01-text-07-m");
+  const addText8 = document.getElementById("top-banner-01-text-08-m");
   // ✅ 첫 번째 문장 실행 후 두 번째 문장 실행
-  typeText(addText1, adText[0], 1000); // 0.5초 뒤 실행
-  typeText(addText2, adText[1], 3000); // 2초 뒤 실행
-  typeText(addText3, adText[2], 4500); // 3초 뒤 실행
-  typeText(addText4, adText[3], 6000); // 4초 뒤 실행
+  typeText(addText1, adTextMobile[0], 1000); // 0.5초 뒤 실행
+  typeText(addText2, adTextMobile[1], 2000); // 2초 뒤 실행
+  typeText(addText3, adTextMobile[2], 3000); // 3초 뒤 실행
+  typeText(addText4, adTextMobile[3], 4000); // 4초 뒤 실행
+  typeText(addText5, adTextMobile[4], 5000); // 5초 뒤 실행
+  typeText(addText6, adTextMobile[5], 6000); // 6초 뒤 실행
+  typeText(addText7, adTextMobile[6], 7000); // 7초 뒤 실행
+  typeText(addText8, adTextMobile[7], 8000); // 8초 뒤 실행
 }
 
 
