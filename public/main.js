@@ -1,3 +1,67 @@
+const topNavMobileBtnToggle = () => {
+  const topNavMobileMenuBtn = document.getElementById("top-nav-logo-m-menu-btn");
+  const topNavMobileCloseBtn = document.getElementById("top-nav-logo-m-close-btn");
+
+  const topNavContainerMobileFolded = document.getElementById("top-nav-conatainer-mobile-folded");
+  const topNavContainerMobileExpanded = document.getElementById("top-nav-container-mobile-expanded");
+
+  // 메뉴 버튼 클릭 시 메뉴 확장
+  topNavMobileMenuBtn.addEventListener("click", () => {
+    topNavContainerMobileFolded.style.display = "none";
+    topNavContainerMobileExpanded.style.display = "flex";
+  });
+
+  // 닫기 버튼 클릭 시 메뉴 접기
+  topNavMobileCloseBtn.addEventListener("click", () => {
+    topNavContainerMobileFolded.style.display = "flex";
+    topNavContainerMobileExpanded.style.display = "none";
+  });
+};
+
+// 클릭 시 해당 메뉴 페이지로 이동하고 메뉴 접기
+const clickExpandedMenu = () => {
+  const expandedMenuItems = document.querySelectorAll(".expanded-menu-item");
+  const expandedMenuItemsOutlink = document.querySelectorAll(".expanded-menu-item-outlink");
+  const topNavContainerMobileFolded = document.getElementById("top-nav-conatainer-mobile-folded");
+  const topNavContainerMobileExpanded = document.getElementById("top-nav-container-mobile-expanded");
+
+  expandedMenuItems.forEach(item => {
+    item.addEventListener("click", () => {
+      topNavContainerMobileFolded.style.display = "flex";
+      topNavContainerMobileExpanded.style.display = "none";
+      
+      const targetId = item.getAttribute("href"); // 예: "#section"
+      const targetElement = document.querySelector(targetId); // 해당 ID의 요소 찾기
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  expandedMenuItemsOutlink.forEach(item => {
+    item.addEventListener("click", () => {
+      topNavContainerMobileFolded.style.display = "flex";
+      topNavContainerMobileExpanded.style.display = "none"; 
+    });
+  });
+}
+
+// const clickExpandedMenu = () => {
+//   const expandedMenuItemTextArray = document.querySelectorAll("expanded-menu-item-text");
+//   const topNavContainerMobileFolded = document.getElementById("top-nav-conatainer-mobile-folded");
+//   const topNavContainerMobileExpanded = document.getElementById("top-nav-container-mobile-expanded");
+// console.log(expandedMenuItemTextArray);
+//   expandedMenuItemTextArray.forEach(item => {
+//     item.addEventListener("click", () => {
+//       topNavContainerMobileFolded.style.display = "flex";
+//       topNavContainerMobileExpanded.style.display = "none";
+//     });
+//   });
+// }
+
+
+
 let lastScrollY = window.scrollY;
 
 /*
@@ -292,6 +356,11 @@ const reviewSlider = () => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+  // ✅ 탑 내비게이션 모바일 버튼 이벤트 실행
+  topNavMobileBtnToggle();
+  clickExpandedMenu(); // 메뉴 클릭스 펼쳐진 메뉴 닫히도록
+
+
   gsap.registerPlugin(ScrollTrigger);
 
   // ✅ 탑 내비게이션 Class 추가 효과 실행

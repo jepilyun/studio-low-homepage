@@ -1,12 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Noto+Sans+KR:wght@100..900&family=Racing+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Limelight&family=Luckiest+Guy&family=Noto+Sans+KR:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #FFFFFF;
+    --foreground: #2B2B2B;
+    --white: #FFFFFF;
+    --black: #000000;
+    --primary-black: #2B2B2B; 
+    --secondary-black: #B3B3B3;
+    --tertiary-black: #D4D4D4;
+    --dark: #022257;
+    --red: #E9124C;
+    --orange: #FA7A70;
+    --yellow: #FBBD0C;
+    --cyan: #04C4D9;
 }
 
 html {
@@ -20,48 +30,6 @@ body {
     font-family: "Noto Sans KR", sans-serif;
 }
 
-/* For Logo Studio LOW */
-.nothing-you-could-do-regular {
-    font-family: "Nothing You Could Do", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* For Count */
-.racing-sans-one-regular {
-    font-family: "Racing Sans One", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* Fonts */
-.noto-sans-kr-200 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-}
-
-.noto-sans-kr-400 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.noto-sans-kr-700 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.noto-sans-kr-900 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-}
 
 @layer utilities {
     .scrollbar-hidden {
@@ -73,6 +41,342 @@ body {
     }
 }
 
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.bg-primary-black {
+    background-color: var(--primary-black);
+}
+
+.bg-secondary-black {
+    background-color: var(--secondary-black);
+}
+
+.bg-tertiary-black {
+    background-color: var(--tertiary-black);
+}
+
+.bg-dark {
+    background-color: var(--dark);
+}
+
+.bg-red {
+    background-color: var(--red);
+}
+
+.bg-orange {
+    background-color: var(--orange);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.bg-cyan {
+    background-color: var(--cyan);
+}
+
+.fg-white {
+    color: var(--white);
+}
+
+.fg-black {
+    color: var(--black);
+}
+
+.fg-primary-black {
+    color: var(--primary-black);
+}
+
+.fg-secondary-black {
+    color: var(--secondary-black);
+}
+
+.fg-tertiary-black {
+    color: var(--tertiary-black);
+}
+
+.fg-dark {
+    color: var(--dark);
+}
+
+.fg-red {
+    color: var(--red);
+}
+
+.fg-orange {
+    color: var(--orange);
+}
+
+.fg-yellow {
+    color: var(--yellow);
+}
+
+.fg-cyan {
+    color: var(--cyan);
+}
+
+/* Default Font - Korean */
+.noto-sans-kr-100 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.noto-sans-kr-200 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.noto-sans-kr-300 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.noto-sans-kr-400 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.noto-sans-kr-500 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.noto-sans-kr-600 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.noto-sans-kr-700 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.noto-sans-kr-800 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.noto-sans-kr-900 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* LOGO TEST  */
+.luckiest-guy-regular {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.carter-one-regular {
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.limelight-regular {
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.transition-300-ease {
+    transition: all 0.3s ease;
+}
+
+.top-nav-logo {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    margin-bottom: -0.5rem;
+}
+
+@media (min-width: 1024px) {
+    .top-nav-logo {
+        font-size: 2.5rem;
+    }
+}
+
+#top-nav-container-mobile {
+    display: block;
+}
+
+#top-nav-container-wide {
+    margin: 0 auto;
+    padding: 3rem 4rem;
+    display: none;
+    width: 100vw;
+    max-width: 1536px;
+    background: transparent;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border: none;
+    backdrop-filter: none;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+    #top-nav-container-wide {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    #top-nav-container-mobile {
+        display: none;
+    }
+
+    #top-nav-container-wide {
+        display: flex;
+    }
+}
+
+#top-nav-container-wide-menus {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+}
+
+@media (min-width: 1024px) {
+    #top-nav-container-wide-menus {
+        font-size: 1rem;
+        gap: 2rem;
+    }
+}
+
+.wide-menu-item {
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.wide-menu-item:hover {
+    scale: 1.1;
+}
+
+.wide-menu-icon-svg-container {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.wide-menu-icon-svg-container:hover {
+    scale: 1.2;
+}
+
+#top-nav-conatainer-mobile-folded {
+    display: flex;
+}
+
+#top-nav-container-mobile-expanded {
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    color: var(--primary-black);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(30px);
+}
+
+#top-nav-logo-m-menu-btn .material-icons,
+#top-nav-logo-m-close-btn .material-icons {
+    font-size: 32px;
+}
+
+#top-nav-mobile-expand-menus {
+    padding: 60px 0;
+    width: 100vw;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.expanded-menu-item {
+    flex-grow: 1;
+    font-size: 1.3rem;
+}
+
+.expanded-menu-icons {
+    padding: 0 7rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.expanded-menu-icon-svg-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.expanded-menu-icon-svg-container:hover {
+    scale: 1.2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.section-title-mg {
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+    .section-title-mg {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+}
+
+
 /* 
     Breakpoint prefix	Minimum width	CSS
     sm	40rem (640px)	@media (width >= 40rem) { ... }
@@ -82,7 +386,7 @@ body {
     2xl	96rem (1536px)	@media (width >= 96rem) { ... } 
 */
 
-
+/* 
 .nav-transition {
     @apply transition-all duration-500;
 }
@@ -128,7 +432,7 @@ body {
     #top-nav-logo {
         @apply text-3xl xl:text-4xl;
     }
-}
+} */
 
 .dot-pagination-circle {
     width: 12px;
@@ -196,4 +500,22 @@ input[type="checkbox"]:checked + .faq-accordion-button + .faq-accordion-content 
 /* 체크되었을 때 아이콘 회전 */
 input[type="checkbox"]:checked + .faq-accordion-button .icon {
     transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+/* Footer */
+.footer-inner-border {
+    opacity: 0.4;
+    border-top: 1px solid var(--white);
+}
+
+@media (min-width: 768px) {
+    .footer-inner-border {
+        border: none;
+    }
 }
