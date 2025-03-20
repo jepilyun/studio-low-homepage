@@ -1627,7 +1627,7 @@ body::-webkit-scrollbar {
   }
 
   #top-banner-01-content-wide {
-    display: block;
+    display: flex;
   }
 }
 
@@ -1645,6 +1645,8 @@ body::-webkit-scrollbar {
   flex-direction: column;
   align-items: start;
   justify-content: center;
+  padding: 0 0 4rem 1.5rem;
+  color: var(--white);
 }
 
 .top-banner-01-text-m {
@@ -1670,6 +1672,12 @@ body::-webkit-scrollbar {
     padding: 0.5rem 1rem;
     font-size: 2rem;
   }
+}
+
+#top-banner-02 {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--cyan);
 }
 
 .section-title-mg {
