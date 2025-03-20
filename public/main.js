@@ -1,3 +1,28 @@
+/**
+ * 텍스트 타이핑 효과 함수
+ * @param {HTMLElement} element 타이핑 효과를 적용할 HTML 요소
+ * @param {string[]} text 타이핑할 텍스트 배열
+ * @param {number} delay 타이핑 시작 지연 시간
+ * @param {number} speed 타이핑 속도
+ */
+const typeText = (element, text, delay, speed = 100) => {
+  let index = 0;
+
+  setTimeout(() => {
+    const interval = setInterval(() => {
+      element.innerHTML += text[index];
+      index++;
+      if (index === text.length) {
+        clearInterval(interval);
+        element.style.borderRight = "none"; // 커서 효과 제거
+      }
+    }, speed);
+  }, delay);
+}
+
+/**
+ * 탑 내비게이션 모바일 버튼 토글 함수
+ */
 const topNavMobileBtnToggle = () => {
   const topNavMobileMenuBtn = document.getElementById("top-nav-logo-m-menu-btn");
   const topNavMobileCloseBtn = document.getElementById("top-nav-logo-m-close-btn");
@@ -82,103 +107,136 @@ const TopBanner01TextTyping = () => {
   typeText(addTextW2, adTextWide[1], 2000);
   typeText(addTextW3, adTextWide[2], 3500);
   typeText(addTextW4, adTextWide[3], 5500);
-  
 }
 
+/*
+ * GSAP 애니메이션 함수
+ */
+const GSAPAnimations = () => {
+
+  // BG Change
+  gsap.utils.toArray(".bg-color-change").forEach((item) => {
+    let color = item.getAttribute("data-bgcolor");
+    
+    ScrollTrigger.create({
+        trigger: item,
+        start: "top 50%",
+        end: "bottom 50%",
+        markers: false,
+
+        onEnter: () => gsap.to("body", {
+            backgroundColor: color,
+            duration: 1.4,
+        }),
+        onEnterBack: () => gsap.to("body", {
+            backgroundColor: color,
+            duration: 1.4,
+        }),
+    });
+    });
+
+  // Top Banner 02
+  const banner02_ani = gsap.timeline();
+
+  banner02_ani
+    .from("#top-banner-02-content-mobile", { x: 120, duration: 0.5, autoAlpha: 0 })
+    .from("#top-banner-02-content-wide", { x: 120, duration: 0.5, autoAlpha: 0 })
+
+  ScrollTrigger.create({
+    animation: banner02_ani,
+    trigger: "#top-banner-02",
+    start: "top 30%", 
+    toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+    markers: false
+  });
+
+  // Top Banner 03
+  const banner03_ani = gsap.timeline();
+
+  banner03_ani
+    .to("#top-banner-03-content-mobile", { x: 20, y: -40, duration: 0.5 })
+    .to("#top-banner-03-content-wide", { x: 20, y: -40, duration: 0.5 })
+
+  ScrollTrigger.create({
+    animation: banner03_ani,
+    trigger: "#top-banner-03",
+    start: "top 20%", 
+    toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+    markers: false
+  });
+
+  
+  // // Banner 02
+  // const ani_02 = gsap.timeline();
+
+  // ani_02.from("#top-banner-02 .banner-content", { autoAlpha: 0, scale: 20 })
+
+  // ScrollTrigger.create({
+  //   animation: ani_02,
+  //   trigger: "#top-banner-02",
+  //   start: "top top",
+  //   end: "+=700",
+  //   scrub: true,
+  //   pin: true, 
+  //   anticipatePin: 1,
+  //   markers: false
+  // });
+
+  // // Banner 03
+  // const ani_03 = gsap.timeline();
+
+  // ani_03.from("#top-banner-03 .banner-content", { autoAlpha: 0, scale: 0 })
+
+  // ScrollTrigger.create({
+  //   animation: ani_03,
+  //   trigger: "#top-banner-03",
+  //   start: "top top",
+  //   end: "bottom top",
+  //   scrub: true,
+  //   pin: true, 
+  //   anticipatePin: 1,
+  //   markers: false
+  // });
+
+  // // Banner 04
+  // const ani_04 = gsap.timeline();
+
+  // ani_04.from("#top-banner-04 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
+
+  // ScrollTrigger.create({
+  //   animation: ani_04,
+  //   trigger: "#top-banner-04",
+  //   start: "top top",
+  //   toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+  //   markers: false
+  // });
 
 
-let lastScrollY = window.scrollY;
-// const GSAPAnimations = () => {
-//   // Banner 01
-//   const ani_01 = gsap.timeline();
+  // // Banner 05
+  // const ani_05 = gsap.timeline();
 
-//   ani_01
-//     .to("#top-banner-01-text-01", { x: innerWidth, autoAlpha: 0 })
-//     .to("#top-banner-01-text-02", { x: -innerWidth, autoAlpha: 0 })
-//     .to("#top-banner-01-text-03", { x: innerWidth, autoAlpha: 0 })
+  // ani_05.from("#top-banner-05 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
 
-//   ScrollTrigger.create({
-//     animation: ani_01,
-//     trigger: "#top-banner-01",
-//     start: "top top",
-//     end: "+=300",
-//     scrub: true,
-//     pin: false, 
-//     anticipatePin: 1,
-//     markers: false
-//   });
+  // ScrollTrigger.create({
+  //   animation: ani_05,
+  //   trigger: "#top-banner-05",
+  //   start: "top top",
+  //   toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+  //   markers: false
+  // });
 
-//   // Banner 02
-//   const ani_02 = gsap.timeline();
+  // // Banner 06
+  // const ani_06 = gsap.timeline();
 
-//   ani_02.from("#top-banner-02 .banner-content", { autoAlpha: 0, scale: 20 })
+  // ani_06.from("#top-banner-06 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
 
-//   ScrollTrigger.create({
-//     animation: ani_02,
-//     trigger: "#top-banner-02",
-//     start: "top top",
-//     end: "+=700",
-//     scrub: true,
-//     pin: true, 
-//     anticipatePin: 1,
-//     markers: false
-//   });
-
-//   // Banner 03
-//   const ani_03 = gsap.timeline();
-
-//   ani_03.from("#top-banner-03 .banner-content", { autoAlpha: 0, scale: 0 })
-
-//   ScrollTrigger.create({
-//     animation: ani_03,
-//     trigger: "#top-banner-03",
-//     start: "top top",
-//     end: "bottom top",
-//     scrub: true,
-//     pin: true, 
-//     anticipatePin: 1,
-//     markers: false
-//   });
-
-//   // Banner 04
-//   const ani_04 = gsap.timeline();
-
-//   ani_04.from("#top-banner-04 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
-
-//   ScrollTrigger.create({
-//     animation: ani_04,
-//     trigger: "#top-banner-04",
-//     start: "top top",
-//     toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
-//     markers: false
-//   });
-
-
-//   // Banner 05
-//   const ani_05 = gsap.timeline();
-
-//   ani_05.from("#top-banner-05 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
-
-//   ScrollTrigger.create({
-//     animation: ani_05,
-//     trigger: "#top-banner-05",
-//     start: "top top",
-//     toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
-//     markers: false
-//   });
-
-//   // Banner 06
-//   const ani_06 = gsap.timeline();
-
-//   ani_06.from("#top-banner-06 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
-
-//   ScrollTrigger.create({
-//     animation: ani_06,
-//     trigger: "#top-banner-06",
-//     start: "top top",
-//     toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
-//     markers: false
-//   });
+  // ScrollTrigger.create({
+  //   animation: ani_06,
+  //   trigger: "#top-banner-06",
+  //   start: "top top",
+  //   toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+  //   markers: false
+  // });
 
   // // Company Intro
   // const companyIntro = gsap.timeline();
@@ -211,29 +269,9 @@ let lastScrollY = window.scrollY;
   // });
 
 
-// }
-
-/**
- * 텍스트 타이핑 효과 함수
- * @param {HTMLElement} element 타이핑 효과를 적용할 HTML 요소
- * @param {string[]} text 타이핑할 텍스트 배열
- * @param {number} delay 타이핑 시작 지연 시간
- * @param {number} speed 타이핑 속도
- */
-const typeText = (element, text, delay, speed = 100) => {
-  let index = 0;
-
-  setTimeout(() => {
-    const interval = setInterval(() => {
-      element.innerHTML += text[index];
-      index++;
-      if (index === text.length) {
-        clearInterval(interval);
-        element.style.borderRight = "none"; // 커서 효과 제거
-      }
-    }, speed);
-  }, delay);
 }
+
+let lastScrollY = window.scrollY;
 
 /**
  * 숫자를 애니메이션으로 변경하는 함수
@@ -368,18 +406,16 @@ document.addEventListener("DOMContentLoaded", function () {
   topNavMobileBtnToggle();
   clickExpandedMenu(); // 메뉴 클릭스 펼쳐진 메뉴 닫히도록
 
-
-  gsap.registerPlugin(ScrollTrigger);
-
   // ✅ 탑 내비게이션 Class 추가 효과 실행
   // 스크롤 이벤트 등록
   window.addEventListener("scroll", handleScroll);
 
-
   // ✅ 탑 배너 01 텍스트 타이핑 효과 실행
   TopBanner01TextTyping();
 
-  // GSAPAnimations();
+  gsap.registerPlugin(ScrollTrigger);
+
+  GSAPAnimations();
 
   reviewSlider();
 });
