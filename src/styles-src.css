@@ -28,18 +28,14 @@ body {
     background: var(--background);
     color: var(--foreground);
     font-family: "Noto Sans KR", sans-serif;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 및 Edge */
 }
 
-
-@layer utilities {
-    .scrollbar-hidden {
-        scrollbar-width: none; /* Firefox */
-    }
-
-    .scrollbar-hidden::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Edge */
-    }
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
 }
+
 
 .bg-white {
     background-color: var(--white);
@@ -354,6 +350,27 @@ body {
 }
 
 
+
+.main-top-banner {
+    position: relative;
+    overflow: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 및 Edge */
+}
+
+.main-top-banner-sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 및 Edge */
+}
+
+
+.main-top-banner::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
 
 .banner-content {
     position: absolute;

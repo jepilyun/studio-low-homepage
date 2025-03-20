@@ -1218,16 +1218,6 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.scrollbar-hidden {
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari, Edge */
-}
-
 :root {
   --background: #FFFFFF;
   --foreground: #2B2B2B;
@@ -1252,6 +1242,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Noto Sans KR", sans-serif;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 및 Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
 }
 
 .bg-white {
@@ -1568,6 +1567,31 @@ body {
 
 .expanded-menu-icon-svg-container:hover {
   scale: 1.2;
+}
+
+.main-top-banner {
+  position: relative;
+  overflow: hidden;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 및 Edge */
+}
+
+.main-top-banner-sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 및 Edge */
+}
+
+.main-top-banner::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
 }
 
 .banner-content {
