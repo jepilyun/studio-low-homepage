@@ -1612,7 +1612,7 @@ body {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  padding: 0 0 1.5rem 1.5rem;
+  padding: 0 0 4rem 1.5rem;
   color: var(--white);
 }
 
@@ -1634,7 +1634,6 @@ body {
 }
 
 .top-banner-01-text-core {
-  font-size: 3rem;
   color: var(--dark);
 }
 
