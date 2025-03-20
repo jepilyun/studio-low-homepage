@@ -1570,6 +1570,51 @@ body {
   scale: 1.2;
 }
 
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#top-banner-01 {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--red);
+}
+
+#top-banner-01-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding-left: 24px;
+  color: var(--white);
+}
+
+.top-banner-01-text {
+  padding: 1.4rem 1rem;
+  font-size: 2rem;
+}
+
+#top-banner-01-text-04 {
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  #top-banner-01-text-container {
+    padding-left: 3rem;
+  }
+
+  .top-banner-01-text {
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+  }
+}
+
 .section-title-mg {
   margin-top: 64px;
   margin-bottom: 64px;
