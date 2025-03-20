@@ -1612,7 +1612,7 @@ body {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  padding: 0 0 2rem 2rem;
+  padding: 0 0 1.5rem 1.5rem;
   color: var(--white);
 }
 
@@ -1625,7 +1625,7 @@ body {
 
 .top-banner-01-text-m {
   padding: 0 1rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .top-banner-01-text-w {
@@ -1633,8 +1633,9 @@ body {
   font-size: 2rem;
 }
 
-#top-banner-01-text-04 {
+.top-banner-01-text-core {
   font-size: 3rem;
+  color: var(--dark);
 }
 
 @media (min-width: 768px) {

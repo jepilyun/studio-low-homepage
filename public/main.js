@@ -63,14 +63,14 @@ const TopBanner01TextTyping = () => {
   const addText7 = document.getElementById("top-banner-01-text-07-m");
   const addText8 = document.getElementById("top-banner-01-text-08-m");
   // ✅ 첫 번째 문장 실행 후 두 번째 문장 실행
-  typeText(addText1, adTextMobile[0], 1000); // 0.5초 뒤 실행
-  typeText(addText2, adTextMobile[1], 2000); // 2초 뒤 실행
-  typeText(addText3, adTextMobile[2], 3000); // 3초 뒤 실행
-  typeText(addText4, adTextMobile[3], 4000); // 4초 뒤 실행
-  typeText(addText5, adTextMobile[4], 5000); // 5초 뒤 실행
-  typeText(addText6, adTextMobile[5], 6000); // 6초 뒤 실행
-  typeText(addText7, adTextMobile[6], 7000); // 7초 뒤 실행
-  typeText(addText8, adTextMobile[7], 8000); // 8초 뒤 실행
+  typeText(addText1, adTextMobile[0], 500); // 0.5초 뒤 실행
+  typeText(addText2, adTextMobile[1], 1400); // 2초 뒤 실행
+  typeText(addText3, adTextMobile[2], 2000); // 3초 뒤 실행
+  typeText(addText4, adTextMobile[3], 2600); // 4초 뒤 실행
+  typeText(addText5, adTextMobile[4], 3600); // 5초 뒤 실행
+  typeText(addText6, adTextMobile[5], 4200); // 6초 뒤 실행
+  typeText(addText7, adTextMobile[6], 4800); // 7초 뒤 실행
+  typeText(addText8, adTextMobile[7], 5400); // 8초 뒤 실행
 }
 
 
