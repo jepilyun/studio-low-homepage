@@ -21,6 +21,36 @@ const typeText = (element, text, delay, speed = 100) => {
 }
 
 /**
+ * 숫자를 애니메이션으로 변경하는 함수
+ * @param targetElement 숫자를 변경할 요소
+ * @param start 시작 숫자 ex. 0
+ * @param end 끝 숫자 ex. 1000
+ * @param duration 애니메이션 지속 시간 ex. 1000
+ */
+const animateNumber = (targetElement, start, end, duration) => {
+  if (!targetElement) return; // 요소가 없으면 종료
+
+  let startTime = null;
+
+  function updateNumber(timestamp) {
+    if (!startTime) startTime = timestamp; // 첫 실행 시점 설정
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1); // 진행률 0~1로 제한
+    const easedProgress = 1 - Math.pow(1 - progress, 3); // 감속 효과 적용
+
+    const current = Math.round(start + (end - start) * easedProgress);
+
+    targetElement.textContent = current.toLocaleString(); // 숫자 표시
+
+    if (progress < 1) {
+      requestAnimationFrame(updateNumber); // 다음 프레임에서 업데이트
+    }
+  }
+
+  requestAnimationFrame(updateNumber);
+};
+
+/**
  * 탑 내비게이션 모바일 버튼 토글 함수
  */
 const topNavMobileBtnToggle = () => {
@@ -133,175 +163,133 @@ const GSAPAnimations = () => {
             duration: 1.4,
         }),
     });
-    });
+  });
 
   // Top Banner 02
-  const banner02_ani = gsap.timeline();
+  const banner02Effect = gsap.timeline({ paused: true });
 
-  banner02_ani
-    .from("#top-banner-02-content-mobile", { x: 120, duration: 0.5, autoAlpha: 0 })
-    .from("#top-banner-02-content-wide", { x: 120, duration: 0.5, autoAlpha: 0 })
+  banner02Effect
+    .fromTo("#top-banner-02-content-mobile", 
+      { x: 120, autoAlpha: 0 }, 
+      { x: 0, autoAlpha: 1, duration: 0.5 }
+    )
+    .fromTo("#top-banner-02-content-wide", 
+      { x: 120, autoAlpha: 0 }, 
+      { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
+    );
 
   ScrollTrigger.create({
-    animation: banner02_ani,
     trigger: "#top-banner-02",
-    start: "top 30%", 
-    toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+    start: "top 30%",
+    end: "bottom 50%",
+    onEnter: () => banner02Effect.play(),
+    onLeave: () => banner02Effect.reverse(),
+    onEnterBack: () => banner02Effect.play(),
+    onLeaveBack: () => banner02Effect.reverse(),
     markers: false
   });
 
   // Top Banner 03
-  const banner03_ani = gsap.timeline();
+  const banner03Effect = gsap.timeline({ paused: true });
 
-  banner03_ani
-    .to("#top-banner-03-content-mobile", { x: 20, y: -40, duration: 0.5 })
-    .to("#top-banner-03-content-wide", { x: 20, y: -40, duration: 0.5 })
+  banner03Effect
+    .fromTo("#top-banner-03-content-mobile", 
+      { x: -120, autoAlpha: 0 }, 
+      { x: 0, autoAlpha: 1, duration: 0.5 }
+    )
+    .fromTo("#top-banner-03-content-wide", 
+      { x: -120, autoAlpha: 0 }, 
+      { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
+    );
 
   ScrollTrigger.create({
-    animation: banner03_ani,
     trigger: "#top-banner-03",
-    start: "top 20%", 
-    toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
+    start: "top 30%",
+    end: "bottom 50%",
+    onEnter: () => banner03Effect.play(),
+    onLeave: () => banner03Effect.reverse(),
+    onEnterBack: () => banner03Effect.play(),
+    onLeaveBack: () => banner03Effect.reverse(),
     markers: false
   });
 
+  // Top Banner 04
+  const banner04Effect = gsap.timeline({ paused: true });
+
+  banner04Effect
+    .fromTo("#top-banner-04-content-mobile", 
+      { x: 120, autoAlpha: 0 }, 
+      { x: 0, autoAlpha: 1, duration: 0.5 }
+    )
+    .fromTo("#top-banner-04-content-wide", 
+      { x: 120, autoAlpha: 0 }, 
+      { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
+    );
+
+  ScrollTrigger.create({
+    trigger: "#top-banner-04",
+    start: "top 30%",
+    end: "bottom 50%",
+    onEnter: () => banner04Effect.play(),
+    onLeave: () => banner04Effect.reverse(),
+    onEnterBack: () => banner04Effect.play(),
+    onLeaveBack: () => banner04Effect.reverse(),
+    markers: false
+  });
   
-  // // Banner 02
-  // const ani_02 = gsap.timeline();
+  // Top Banner 05
+  const banner05Effect = gsap.timeline({ paused: true });
 
-  // ani_02.from("#top-banner-02 .banner-content", { autoAlpha: 0, scale: 20 })
+  banner05Effect
+    .fromTo("#top-banner-05-content-mobile", 
+      { x: -120, autoAlpha: 0 }, 
+      { x: 0, autoAlpha: 1, duration: 0.5 }
+    )
+    .fromTo("#top-banner-05-content-wide", 
+      { x: -120, autoAlpha: 0 }, 
+      { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
+    );
 
-  // ScrollTrigger.create({
-  //   animation: ani_02,
-  //   trigger: "#top-banner-02",
-  //   start: "top top",
-  //   end: "+=700",
-  //   scrub: true,
-  //   pin: true, 
-  //   anticipatePin: 1,
-  //   markers: false
-  // });
+  ScrollTrigger.create({
+    trigger: "#top-banner-05",
+    start: "top 30%",
+    end: "bottom 50%",
+    onEnter: () => banner05Effect.play(),
+    onLeave: () => banner05Effect.reverse(),
+    onEnterBack: () => banner05Effect.play(),
+    onLeaveBack: () => banner05Effect.reverse(),
+    markers: false
+  });
 
-  // // Banner 03
-  // const ani_03 = gsap.timeline();
+  // Company Intro
+  const companyIntro = gsap.timeline();
 
-  // ani_03.from("#top-banner-03 .banner-content", { autoAlpha: 0, scale: 0 })
+  companyIntro
+    .from("#company-intro-msg", { y: 200, duration: 1, opacity: 0, immediateRender: true })
+    .from("#company-intro-counts", { y: 200, duration: 1, opacity: 0, immediateRender: true, scale: 0 })
 
-  // ScrollTrigger.create({
-  //   animation: ani_03,
-  //   trigger: "#top-banner-03",
-  //   start: "top top",
-  //   end: "bottom top",
-  //   scrub: true,
-  //   pin: true, 
-  //   anticipatePin: 1,
-  //   markers: false
-  // });
+  ScrollTrigger.create({
+    animation: companyIntro,
+    trigger: "#company-intro-msg",
+    start: "top 70%",
+    toggleActions: "play none play reverse", 
+    markers: false,
+    onEnter: () => {
+      setTimeout(() => {
+        const companyIntroCounts = document.getElementById("company-intro-counts");
 
-  // // Banner 04
-  // const ani_04 = gsap.timeline();
-
-  // ani_04.from("#top-banner-04 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
-
-  // ScrollTrigger.create({
-  //   animation: ani_04,
-  //   trigger: "#top-banner-04",
-  //   start: "top top",
-  //   toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
-  //   markers: false
-  // });
-
-
-  // // Banner 05
-  // const ani_05 = gsap.timeline();
-
-  // ani_05.from("#top-banner-05 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
-
-  // ScrollTrigger.create({
-  //   animation: ani_05,
-  //   trigger: "#top-banner-05",
-  //   start: "top top",
-  //   toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
-  //   markers: false
-  // });
-
-  // // Banner 06
-  // const ani_06 = gsap.timeline();
-
-  // ani_06.from("#top-banner-06 .banner-content", { y: 200, duration: 1, opacity: 0, immediateRender: true })
-
-  // ScrollTrigger.create({
-  //   animation: ani_06,
-  //   trigger: "#top-banner-06",
-  //   start: "top top",
-  //   toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
-  //   markers: false
-  // });
-
-  // // Company Intro
-  // const companyIntro = gsap.timeline();
-
-  // companyIntro
-  //   .from("#company-intro-msg", { y: 200, duration: 1, opacity: 0, immediateRender: true })
-  //   .from("#company-intro-counts", { y: 200, duration: 1, opacity: 0, immediateRender: true, scale: 20 })
-
-  // ScrollTrigger.create({
-  //   animation: companyIntro,
-  //   trigger: "#company-intro",
-  //   start: "top 70%",
-  //   toggleActions: "play reverse play reverse", // 애니메이션을 한 번만 실행
-  //   markers: false,
-  //   onEnter: () => {
-  //     setTimeout(() => {
-  //       const companyIntroCounts = document.getElementById("company-intro-counts");
-
-  //       animateNumber(companyIntroCounts.children[0].lastElementChild, 0, 8913, 1200);
-  //       animateNumber(companyIntroCounts.children[1].lastElementChild, 0, 1253, 1200);
-  //       animateNumber(companyIntroCounts.children[2].lastElementChild, 0, 4350, 1200);
-  //       animateNumber(companyIntroCounts.children[3].lastElementChild, 0, 96, 1200);
-  //       companyIntroCounts.dataset.animation = '1';
-  //     }, 2000);
-  //   },
-  //   onLeave: () => {
-  //     const companyIntroCounts = document.getElementById("company-intro-counts");
-  //     companyIntroCounts.dataset.animation = '0';
-  //   }
-  // });
+        animateNumber(companyIntroCounts.children[0].lastElementChild, 0, 8913, 1200);
+        animateNumber(companyIntroCounts.children[1].lastElementChild, 0, 1253, 1200);
+        animateNumber(companyIntroCounts.children[2].lastElementChild, 0, 4350, 1200);
+        animateNumber(companyIntroCounts.children[3].lastElementChild, 0, 96, 1200);
+      }, 2000);
+    },
+  });
 
 
 }
 
 let lastScrollY = window.scrollY;
-
-/**
- * 숫자를 애니메이션으로 변경하는 함수
- * @param targetElement 숫자를 변경할 요소
- * @param start 시작 숫자 ex. 0
- * @param end 끝 숫자 ex. 1000
- * @param duration 애니메이션 지속 시간 ex. 1000
- */
-const animateNumber = (targetElement, start, end, duration) => {
-  if (!targetElement) return; // 요소가 없으면 종료
-
-  let startTime = null;
-
-  function updateNumber(timestamp) {
-    if (!startTime) startTime = timestamp; // 첫 실행 시점 설정
-    const elapsed = timestamp - startTime;
-    const progress = Math.min(elapsed / duration, 1); // 진행률 0~1로 제한
-    const easedProgress = 1 - Math.pow(1 - progress, 3); // 감속 효과 적용
-
-    const current = Math.round(start + (end - start) * easedProgress);
-
-    targetElement.textContent = current.toLocaleString(); // 숫자 표시
-
-    if (progress < 1) {
-      requestAnimationFrame(updateNumber); // 다음 프레임에서 업데이트
-    }
-  }
-
-  requestAnimationFrame(updateNumber);
-};
 
 /*
  * 스크롤 이벤트 핸들러
