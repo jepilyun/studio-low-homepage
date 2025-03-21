@@ -22,7 +22,6 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body {
@@ -430,6 +429,13 @@ body::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
 }
 
+
+.content-sticky {
+    position: sticky;
+    top: 0;
+}
+
+
 .banner-content {
     position: absolute;
     top: 0;
@@ -801,7 +807,6 @@ body::-webkit-scrollbar {
 .top-banner-05-text-w.studio-low-text {
     opacity: 1;
 }
-
 
 
 .top-banner-image-bg-container {
