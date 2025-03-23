@@ -1042,12 +1042,14 @@ body::-webkit-scrollbar {
     width: 100vw;
     color: var(--primary-black);
     background-color: var(--red);
+    overflow-x: hidden;
 }
 
 #success-story-cards .card-container {
     padding: 0 1rem;
     display: flex;
     gap: 2rem;
+    overflow-x: scroll;
 }
 
 #success-story-cards .card {
