@@ -54,11 +54,11 @@ const animateNumber = (targetElement, start, end, duration) => {
  * 탑 내비게이션 모바일 버튼 토글 함수
  */
 const topNavMobileBtnToggle = () => {
-  const topNavMobileMenuBtn = document.getElementById("top-nav-logo-m-menu-btn");
-  const topNavMobileCloseBtn = document.getElementById("top-nav-logo-m-close-btn");
+  const topNavMobileMenuBtn = document.getElementById("top-nav-mobile-btn-menu");
+  const topNavMobileCloseBtn = document.getElementById("top-nav-mobile-btn-close");
 
-  const topNavContainerMobileFolded = document.getElementById("top-nav-conatainer-mobile-folded");
-  const topNavContainerMobileExpanded = document.getElementById("top-nav-container-mobile-expanded");
+  const topNavContainerMobileFolded = document.getElementById("top-nav-mobile-folded");
+  const topNavContainerMobileExpanded = document.getElementById("top-nav-mobile-expanded");
 
   // 메뉴 버튼 클릭 시 메뉴 확장
   topNavMobileMenuBtn.addEventListener("click", () => {
@@ -77,8 +77,8 @@ const topNavMobileBtnToggle = () => {
 const clickExpandedMenu = () => {
   const expandedMenuItems = document.querySelectorAll(".expanded-menu-item");
   const expandedMenuItemsOutlink = document.querySelectorAll(".expanded-menu-item-outlink");
-  const topNavContainerMobileFolded = document.getElementById("top-nav-conatainer-mobile-folded");
-  const topNavContainerMobileExpanded = document.getElementById("top-nav-container-mobile-expanded");
+  const topNavContainerMobileFolded = document.getElementById("top-nav-mobile-folded");
+  const topNavContainerMobileExpanded = document.getElementById("top-nav-mobile-expanded");
 
   expandedMenuItems.forEach(item => {
     item.addEventListener("click", () => {
