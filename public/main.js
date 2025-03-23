@@ -108,14 +108,14 @@ const clickExpandedMenu = () => {
 const TopBanner01TextTyping = () => {
   const adTextMobile = [ "한 명 한 명", "확 실 하 게,", "디 자 이 너", "커 리 어 의 시 작", "소 수 정 예", "프 리 미 엄", "아 카 데 미", "스 튜 디 오 로 우" ];
 
-  const addText1 = document.getElementById("top-banner-01-text-01-m");
-  const addText2 = document.getElementById("top-banner-01-text-02-m");
-  const addText3 = document.getElementById("top-banner-01-text-03-m");
-  const addText4 = document.getElementById("top-banner-01-text-04-m");
-  const addText5 = document.getElementById("top-banner-01-text-05-m");
-  const addText6 = document.getElementById("top-banner-01-text-06-m");
-  const addText7 = document.getElementById("top-banner-01-text-07-m");
-  const addText8 = document.getElementById("top-banner-01-text-08-m");
+  const addText1 = document.querySelector("#top-banner-01-mobile .line-01");
+  const addText2 = document.querySelector("#top-banner-01-mobile .line-02");
+  const addText3 = document.querySelector("#top-banner-01-mobile .line-03");
+  const addText4 = document.querySelector("#top-banner-01-mobile .line-04");
+  const addText5 = document.querySelector("#top-banner-01-mobile .line-05");
+  const addText6 = document.querySelector("#top-banner-01-mobile .line-06");
+  const addText7 = document.querySelector("#top-banner-01-mobile .line-07");
+  const addText8 = document.querySelector("#top-banner-01-mobile .line-08");
   // ✅ 첫 번째 문장 실행 후 두 번째 문장 실행
   typeText(addText1, adTextMobile[0], 500); // 0.5초 뒤 실행
   typeText(addText2, adTextMobile[1], 1400); // 2초 뒤 실행
@@ -128,10 +128,10 @@ const TopBanner01TextTyping = () => {
 
   const adTextWide = [ "한 명 한 명 확실하게,", "디자이너 커리어의 시작", "소수정예 프리미엄 아카데미", "스튜디오 로우" ];
 
-  const addTextW1 = document.getElementById("top-banner-01-text-01-w");
-  const addTextW2 = document.getElementById("top-banner-01-text-02-w");
-  const addTextW3 = document.getElementById("top-banner-01-text-03-w");
-  const addTextW4 = document.getElementById("top-banner-01-text-04-w");
+  const addTextW1 = document.querySelector("#top-banner-01-wide .line-01");
+  const addTextW2 = document.querySelector("#top-banner-01-wide .line-02");
+  const addTextW3 = document.querySelector("#top-banner-01-wide .line-03");
+  const addTextW4 = document.querySelector("#top-banner-01-wide .line-04");
 
   typeText(addTextW1, adTextWide[0], 500);
   typeText(addTextW2, adTextWide[1], 2000);
@@ -169,11 +169,11 @@ const GSAPAnimations = () => {
   const banner02Effect = gsap.timeline({ paused: true });
 
   banner02Effect
-    .fromTo("#top-banner-02-content-mobile", 
+    .fromTo("#top-banner-02-mobile", 
       { x: 120, autoAlpha: 0 }, 
       { x: 0, autoAlpha: 1, duration: 0.5 }
     )
-    .fromTo("#top-banner-02-content-wide", 
+    .fromTo("#top-banner-02-wide", 
       { x: 120, autoAlpha: 0 }, 
       { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
     );
@@ -193,18 +193,18 @@ const GSAPAnimations = () => {
   const banner03Effect = gsap.timeline({ paused: true });
 
   banner03Effect
-    .fromTo("#top-banner-03-content-mobile", 
+    .fromTo("#top-banner-03-mobile", 
       { x: -120, autoAlpha: 0 }, 
       { x: 0, autoAlpha: 1, duration: 0.5 }
     )
-    .fromTo("#top-banner-03-content-wide", 
+    .fromTo("#top-banner-03-wide", 
       { x: -120, autoAlpha: 0 }, 
       { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
     );
 
   ScrollTrigger.create({
     trigger: "#top-banner-03",
-    start: "top 30%",
+    start: "top 50%",
     end: "bottom 50%",
     onEnter: () => banner03Effect.play(),
     onLeave: () => banner03Effect.reverse(),
@@ -217,11 +217,11 @@ const GSAPAnimations = () => {
   const banner04Effect = gsap.timeline({ paused: true });
 
   banner04Effect
-    .fromTo("#top-banner-04-content-mobile", 
+    .fromTo("#top-banner-04-mobile", 
       { x: 120, autoAlpha: 0 }, 
       { x: 0, autoAlpha: 1, duration: 0.5 }
     )
-    .fromTo("#top-banner-04-content-wide", 
+    .fromTo("#top-banner-04-wide", 
       { x: 120, autoAlpha: 0 }, 
       { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
     );
@@ -241,11 +241,11 @@ const GSAPAnimations = () => {
   const banner05Effect = gsap.timeline({ paused: true });
 
   banner05Effect
-    .fromTo("#top-banner-05-content-mobile", 
+    .fromTo("#top-banner-05-mobile", 
       { x: -120, autoAlpha: 0 }, 
       { x: 0, autoAlpha: 1, duration: 0.5 }
     )
-    .fromTo("#top-banner-05-content-wide", 
+    .fromTo("#top-banner-05-wide", 
       { x: -120, autoAlpha: 0 }, 
       { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
     );
