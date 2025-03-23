@@ -169,12 +169,22 @@ const GSAPAnimations = () => {
   gsap.utils.toArray(".card-bg-color-change").forEach((item) => {
     const color = item.getAttribute("data-bgcolor");
     if (!color) return;
-  
-    item.addEventListener("mouseenter", () => {
-      gsap.to("#success-story-cards", {
+
+
+    ScrollTrigger.create({
+      trigger: item,
+      scroller: "#success-story-cards .card-container",
+      start: "top top",
+      // end: "bottom 50%",
+      horizontal: true,
+      onEnter: () => gsap.to("#success-story-cards", {
         backgroundColor: color,
-        duration: 1.2,
-      });
+        duration: 1.4,
+      }),
+      onEnterBack: () => gsap.to("#success-story-cards", {
+        backgroundColor: color,
+        duration: 1.4,
+      }),
     });
   });
 
