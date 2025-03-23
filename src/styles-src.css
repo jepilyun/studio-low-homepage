@@ -675,7 +675,7 @@ body::-webkit-scrollbar {
 
 
 #top-banner-04-mobile {
-    padding: 0 1.5rem 4rem 0;
+    padding: 0 2rem 4rem 0;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -740,7 +740,7 @@ body::-webkit-scrollbar {
 
 
 #top-banner-05-mobile {
-    padding: 0 0 4rem 1.5rem;
+    padding: 0 0 4rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: start;

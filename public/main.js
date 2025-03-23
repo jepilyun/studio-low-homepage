@@ -175,7 +175,6 @@ const GSAPAnimations = () => {
       trigger: item,
       scroller: "#success-story-cards .card-container",
       start: "top top",
-      // end: "bottom 50%",
       horizontal: true,
       onEnter: () => gsap.to("#success-story-cards", {
         backgroundColor: color,
