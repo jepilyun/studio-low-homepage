@@ -75,8 +75,8 @@ const topNavMobileBtnToggle = () => {
 
 // 클릭 시 해당 메뉴 페이지로 이동하고 메뉴 접기
 const clickExpandedMenu = () => {
-  const expandedMenuItems = document.querySelectorAll(".expanded-menu-item");
-  const expandedMenuItemsOutlink = document.querySelectorAll(".expanded-menu-item-outlink");
+  const expandedMenuItems = document.querySelectorAll("#top-nav-mobile-expanded-menus .menu-item");
+  const expandedMenuItemsOutlink = document.querySelectorAll("#top-nav-mobile-expanded-menus .menu-item-outlink");
   const topNavContainerMobileFolded = document.getElementById("top-nav-mobile-folded");
   const topNavContainerMobileExpanded = document.getElementById("top-nav-mobile-expanded");
 
