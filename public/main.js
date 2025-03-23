@@ -156,12 +156,25 @@ const GSAPAnimations = () => {
 
         onEnter: () => gsap.to("body", {
             backgroundColor: color,
-            duration: 1.4,
+            duration: 1.5,
         }),
         onEnterBack: () => gsap.to("body", {
             backgroundColor: color,
-            duration: 1.4,
+            duration: 1.5,
         }),
+    });
+  });
+
+  // Card Review Slider BG Change
+  gsap.utils.toArray(".card-bg-color-change").forEach((item) => {
+    const color = item.getAttribute("data-bgcolor");
+    if (!color) return;
+  
+    item.addEventListener("mouseenter", () => {
+      gsap.to("#success-story-cards", {
+        backgroundColor: color,
+        duration: 1.2,
+      });
     });
   });
 
@@ -291,6 +304,24 @@ const GSAPAnimations = () => {
 
 let lastScrollY = window.scrollY;
 
+
+const topNavBarSetClassAfterLoading = () => {
+  const topNavBar = document.getElementById("top-nav-bar");
+  const companyIntro = document.getElementById("company-intro");
+
+  if (companyIntro && companyIntro.getBoundingClientRect().top < window.innerHeight / 5) {
+    topNavBar.classList.add("fg-black");
+    topNavBar.classList.add("bg-blur");
+    topNavBar.classList.remove("fg-white");
+  }
+
+  if (companyIntro && companyIntro.getBoundingClientRect().top > window.innerHeight / 2) {
+    topNavBar.classList.add("fg-white");
+    topNavBar.classList.remove("fg-black");
+    topNavBar.classList.remove("bg-blur");
+  }
+}
+
 /*
  * 스크롤 이벤트 핸들러
  * 탑 내비게이션 배경 색상 변경 처리
@@ -315,9 +346,9 @@ const handleScroll = () => {
   }
 
   if (isScrollUp) {
-    const topBanner07 = document.getElementById("top-banner-07");
+    const companyIntro = document.getElementById("company-intro");
 
-    if (topBanner07 && topBanner07.getBoundingClientRect().bottom > window.innerHeight / 5) {
+    if (companyIntro && companyIntro.getBoundingClientRect().top > window.innerHeight / 2) {
       topNavBar.classList.add("fg-white");
       topNavBar.classList.remove("fg-black");
       topNavBar.classList.remove("bg-blur");
@@ -396,6 +427,7 @@ document.addEventListener("DOMContentLoaded", function () {
   topNavMobileBtnToggle();
   clickExpandedMenu(); // 메뉴 클릭스 펼쳐진 메뉴 닫히도록
 
+  topNavBarSetClassAfterLoading();
   // ✅ 탑 내비게이션 Class 추가 효과 실행
   // 스크롤 이벤트 등록
   window.addEventListener("scroll", handleScroll);
