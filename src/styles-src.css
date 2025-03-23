@@ -1049,6 +1049,7 @@ body::-webkit-scrollbar {
     padding: 0 1rem;
     display: flex;
     gap: 2rem;
+    overflow-y: hidden;
     overflow-x: scroll;
 }
 
@@ -1060,7 +1061,7 @@ body::-webkit-scrollbar {
 }
 
 #success-story-cards .card:hover {
-    scale: 1.05;
+    scale: 1.02;
     transition: all 0.5s ease;
 }
 
