@@ -1055,7 +1055,7 @@ body::-webkit-scrollbar {
 
 #success-story-cards .card {
     width: 300px;
-    height: 360px;
+    height: 400px;
     padding: 2rem;
     background-color: var(--white);
 }
@@ -1102,16 +1102,17 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    height: 194px;
+    height: 232px;
     overflow: hidden;
 }
 
 #success-story-cards .card-content-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 #success-story-cards .card-content-text {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
 
