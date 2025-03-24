@@ -679,7 +679,7 @@ body::-webkit-scrollbar {
 #top-banner-03-mobile-content {
     margin: 3rem 3rem;
     display: block;
-    width: 100%;
+    /* width: 100%; */
     color: var(--white);
 }
 
@@ -687,7 +687,7 @@ body::-webkit-scrollbar {
     margin: 4rem 4rem;
     width: 100vw;
     display: block;
-    width: 100%;
+    /* width: 100%; */
     color: var(--white);
 }
 
