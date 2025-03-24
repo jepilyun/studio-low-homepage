@@ -55,6 +55,9 @@ body::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
 }
 
+.max-width-1440px {
+    max-width: 1440px;
+}
 
 .bg-white {
     background-color: var(--white);
@@ -273,15 +276,6 @@ body::-webkit-scrollbar {
     font-style: italic;
 }
 
-
-.transition-300-ease {
-    transition: all 0.3s ease;
-}
-
-
-.max-width-1440px {
-    max-width: 1440px;
-}
 
 
 .top-nav-logo {
@@ -663,6 +657,7 @@ body::-webkit-scrollbar {
 }
 
 #top-banner-03-wide-content {
+    margin: 0 auto;
     display: block;
     width: 100%;
     color: var(--white);
@@ -708,6 +703,7 @@ body::-webkit-scrollbar {
 }
 
 #top-banner-04-wide-content {
+    margin: 0 auto;
     width: 100vw;
     display: flex;
     flex-direction: column;
