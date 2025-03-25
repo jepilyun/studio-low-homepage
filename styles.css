@@ -410,7 +410,7 @@ body::-webkit-scrollbar {
 }
 
 #top-nav-mobile-expanded-menus {
-    padding: 4rem 0;
+    padding: 2rem 0;
     width: 100%;
     flex-grow: 1;
     display: flex;
@@ -420,7 +420,7 @@ body::-webkit-scrollbar {
 }
 
 #top-nav-mobile-expanded-menus .menu-item {
-    margin: 2rem 0;
+    margin: 1.6rem 0;
     flex-grow: 1;
     font-size: 1.3rem;
 }
@@ -1206,6 +1206,22 @@ body::-webkit-scrollbar {
 
 
 
+
+
+
+
+
+#faq {
+    padding: 4rem 0;
+    color: var(--primary-black);
+    background-color: var(--white);
+}
+
+#faq .container {
+    margin: 0 auto;
+}
+
+
 /* 아코디언 개별 항목 스타일 */
 .faq-accordion-item {
     border-radius: 10px;
@@ -1267,6 +1283,16 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 
 
+
+#partnership {
+    padding: 4rem 0;
+    color: var(--white);
+    background-color: var(--red);
+}
+
+#partnership .container {
+    margin: 0 auto;
+}
 
 
 #human-resource {
