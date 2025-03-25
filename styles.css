@@ -1557,10 +1557,16 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 #location .location-info-item {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 1rem;
     font-size: 1rem;
 }
+
+#location .location-info-item .material-icons {
+    padding-top: 0.2rem;
+    font-size: 1.1rem;
+}
+
 
 @media (min-width: 768px) {
     #location .location-info {
@@ -1570,6 +1576,11 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 @media (min-width: 1280px) {
     #location .location-info-item {
+        font-size: 1.5rem;
+    }
+
+    #location .location-info-item .material-icons {
+        padding-top: 0.4rem;
         font-size: 1.5rem;
     }
 }
