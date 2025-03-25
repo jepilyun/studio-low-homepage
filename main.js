@@ -308,20 +308,6 @@ const GSAPAnimations = () => {
     },
   });
 
-  // Success Story Scroll
-  const successStoryScroll = gsap.timeline();
-
-  successStoryScroll
-    .to("#success-story-cards .card", { x: -200, duration: 1 }) // 우측 이동
-    .to("#success-story-cards .card", { x: 0, duration: 1 });  // 다시 원위치
-
-  ScrollTrigger.create({
-    animation: successStoryScroll,
-    trigger: "#success-story-cards",
-    start: "top 30%", // 화면에 보이면 시작
-    toggleActions: "play none none none", // 스크롤 반대로 갈 때 다시 되돌아오기
-  });
-
 }
 
 let lastScrollY = window.scrollY;

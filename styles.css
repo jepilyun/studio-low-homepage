@@ -1141,9 +1141,15 @@ body::-webkit-scrollbar {
 #success-story-cards .card-container {
     padding: 0 2rem;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     overflow-y: hidden;
     overflow-x: scroll;
+}
+
+@media (min-width: 768px) {
+    #success-story-cards .card-container {
+        gap: 2rem;
+    }
 }
 
 #success-story-cards .card {
