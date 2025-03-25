@@ -1320,10 +1320,13 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     height: 100%;
-    animation: box-rotate 120s linear infinite;
+    /* animation: box-rotate 120s linear infinite; */
     overflow: hidden;
 }
 
+#user-review-summary .badge-item-bg-box-rotate-animation {
+    animation: box-rotate 120s linear infinite;
+}
 
 @keyframes box-rotate {
     0% {

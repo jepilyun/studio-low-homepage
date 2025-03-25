@@ -308,6 +308,38 @@ const GSAPAnimations = () => {
     },
   });
 
+  // User Review Summary
+  ScrollTrigger.create({
+    trigger: "#user-review-summary",
+    start: "top bottom",
+    end: "bottom 30%",
+    markers: false,
+    onEnter: () => {
+      document.querySelectorAll("#user-review-summary .badge-item-bg-box")
+        .forEach(item => {
+          item.classList.add("badge-item-bg-box-rotate-animation");
+        });
+    },
+    onEnterBack: () => {
+      document.querySelectorAll("#user-review-summary .badge-item-bg-box")
+        .forEach(item => {
+          item.classList.add("badge-item-bg-box-rotate-animation");
+        });
+    },
+    onLeave: () => {
+      document.querySelectorAll("#user-review-summary .badge-item-bg-box")
+        .forEach(item => {
+          item.classList.remove("badge-item-bg-box-rotate-animation");
+        });
+    },
+    onLeaveBack: () => {
+      document.querySelectorAll("#user-review-summary .badge-item-bg-box")
+        .forEach(item => {
+          item.classList.remove("badge-item-bg-box-rotate-animation");
+        });
+    },
+  });
+  
 }
 
 let lastScrollY = window.scrollY;
