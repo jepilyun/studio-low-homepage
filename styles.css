@@ -1294,6 +1294,18 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     margin: 0 auto;
 }
 
+#partnership .contents {
+    padding: 1.6rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    #partnership .contents {
+        padding: 1.6rem 4rem;
+        font-size: 1.2rem;
+    }
+}
+
 
 #human-resource {
     padding: 4rem 0;
