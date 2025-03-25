@@ -1128,8 +1128,10 @@ body::-webkit-scrollbar {
 
 #success-story-cards .card-header-avatar {
     width: 5rem;
+    min-width: 5rem;
     height: 5rem;
     border-radius: 50%;
+    aspect-ratio: 1/1;
     overflow: hidden;
 }
 
