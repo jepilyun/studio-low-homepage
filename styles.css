@@ -1307,6 +1307,13 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 }
 
 
+#partnership .guide-text {
+    line-height: 1.8;
+}
+
+
+
+
 #human-resource {
     padding: 4rem 0;
     color: var(--kakao);
