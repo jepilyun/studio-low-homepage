@@ -319,7 +319,7 @@ const GSAPAnimations = () => {
     animation: successStoryScroll,
     trigger: "#success-story-cards",
     start: "top 30%", // 화면에 보이면 시작
-    toggleActions: "play none none none", // 스크롤 반대로 갈 때 다시 되돌아오기
+    toggleActions: "play none play none", // 스크롤 반대로 갈 때 다시 되돌아오기
   });
 
 }
