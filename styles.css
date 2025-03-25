@@ -1272,8 +1272,8 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 }
 
 #human-resource .contents {
-    padding: 2rem;
-    font-size: 1.4rem;
+    padding: 1rem;
+    font-size: 1.2rem;
 }
 
 #human-resource .guide-text {
