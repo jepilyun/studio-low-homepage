@@ -312,7 +312,7 @@ const GSAPAnimations = () => {
   const successStoryScroll = gsap.timeline();
 
   successStoryScroll
-    .to("#success-story-cards .card", { x: -600, duration: 1 }) // 우측 이동
+    .to("#success-story-cards .card", { x: -600, duration: 3 }) // 우측 이동
     .to("#success-story-cards .card", { x: 0, duration: 1 });  // 다시 원위치
 
   ScrollTrigger.create({
