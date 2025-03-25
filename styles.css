@@ -1102,8 +1102,8 @@ body::-webkit-scrollbar {
 }
 
 #success-story-cards .card {
-    width: 288px;
-    height: 400px;
+    width: 256px;
+    height: 450px;
     padding: 2.2rem;
     background-color: var(--white);
 }
@@ -1116,14 +1116,14 @@ body::-webkit-scrollbar {
 #success-story-cards .card-layout {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.8rem;
 }
 
 #success-story-cards .card-header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    min-height: 120px;
+    min-height: 110px;
 }
 
 #success-story-cards .card-header-avatar {
@@ -1152,6 +1152,32 @@ body::-webkit-scrollbar {
 #success-story-cards .card-header-info-job {
     font-size: 1rem;
 }
+
+#success-story-cards .card-header-info-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+    gap: 0.8rem;
+}
+
+#success-story-cards .card-header-info-profile-name {
+    font-size: 1.2rem;
+}
+
+#success-story-cards .card-header-info-profile-name .profile-name-suffix {
+    font-size: 1rem;
+}
+
+#success-story-cards .card-header-info-profile-info {
+    padding-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    color: var(--dark);
+}
+
 
 #success-story-cards .card-content {
     display: flex;
