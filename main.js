@@ -318,7 +318,7 @@ const GSAPAnimations = () => {
   ScrollTrigger.create({
     animation: successStoryScroll,
     trigger: "#success-story-cards",
-    start: "top 20%", // 화면에 보이면 시작
+    start: "top 30%", // 화면에 보이면 시작
     toggleActions: "play none none none", // 스크롤 반대로 갈 때 다시 되돌아오기
   });
 
