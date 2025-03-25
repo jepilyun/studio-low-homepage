@@ -1287,7 +1287,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 #partnership {
     padding: 4rem 0;
     color: var(--white);
-    background-color: var(--red);
+    background-color: var(--cyan);
 }
 
 #partnership .container {
