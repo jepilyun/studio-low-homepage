@@ -1336,8 +1336,47 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 
 #partnership .guide-text {
+    margin: 1rem 0;
     line-height: 1.8;
 }
+
+
+#partnership .partnership-list {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+#partnership .partnership-list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#partnership .partnership-list-item .material-icons {
+    font-size: 1rem;
+}
+
+#partnership .partnership-mail {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+#partnership .partnership-mail-title {
+    
+}
+
+#partnership .partnership-mail-address {
+    
+}
+
+
+
+
+
+
 
 
 
