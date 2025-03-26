@@ -5,6 +5,7 @@
     --background: #FFFFFF;
     --foreground: #2B2B2B;
     --white: #FFFFFF;
+    --white-gray: #F3F4F6;
     --black: #000000;
     --primary-black: #2B2B2B; 
     --secondary-black: #B3B3B3;
@@ -1274,10 +1275,82 @@ body::-webkit-scrollbar {
 
 
 
-#success-kakao-shots {
-
+#student-reviews {
+    padding: 4rem 0;
+    color: var(--primary-black);
+    background-color: var(--white);
 }
-/* bg-color-change mx-auto max-w-[1440px] py-24 text-gray-800 bg-white */
+
+#student-reviews .container {
+    margin: 0 auto;
+}
+
+#student-reviews .review-item-container {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    row-gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    #student-reviews .review-item-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #student-reviews .review-item-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+#student-reviews .review-item {
+    color: var(--foreground);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#student-reviews .review-item-text-container {
+    padding: 1.6rem;
+    background-color: var(--white-gray);
+}
+
+#student-reviews .review-item:hover {
+    color: var(--white);
+    background-color: var(--foreground);
+}
+
+#student-reviews .review-item:hover .review-item-text-container {
+    background-color: var(--foreground);
+}
+
+#student-reviews .review-item-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    min-height: 280px;
+    max-height: 280px;
+    overflow: hidden;
+}
+
+#student-reviews .review-item-title-date-container {
+    padding: 0.4rem 1.4rem 2rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+#student-reviews .review-item-title {
+    line-height: 1.8;
+}
+
+#student-reviews .review-item-date {
+    text-align: right;
+}
+
+
+
 
 
 
@@ -1528,7 +1601,7 @@ body::-webkit-scrollbar {
 
 /* 아코디언 개별 항목 스타일 */
 .faq-accordion-item {
-    background-color: #f3f4f6;
+    background-color: var(--white-gray);
     margin-bottom: 1rem;
     overflow: hidden;
 }
@@ -1540,7 +1613,7 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     align-items: center;
     color: var(--foreground);
-    background-color: #f3f4f6;
+    background-color: var(--white-gray);
     font-size: 1rem;
     text-align: left;
     border: none;
@@ -1565,7 +1638,7 @@ body::-webkit-scrollbar {
     font-size: 1rem;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
-    background-color: #f3f4f6;
+    background-color: var(--white-gray);
 }
 
 input[type="checkbox"] {
