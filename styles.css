@@ -1326,6 +1326,10 @@ body::-webkit-scrollbar {
     background-color: var(--foreground);
 }
 
+#student-reviews .review-item:hover .review-item-title-date-container {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 #student-reviews .review-item-text {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -1349,6 +1353,35 @@ body::-webkit-scrollbar {
     text-align: right;
 }
 
+#student-reviews .review-more {
+    padding: 3rem;
+    display: flex;
+    justify-content: end;
+}
+
+@media (min-width: 768px) {
+    #student-reviews .review-more {
+        padding-top: 4rem;
+        justify-content: center;
+    }
+}
+
+#student-reviews .review-more:hover {
+    color: var(--red);
+}
+
+#student-reviews .review-more .load-more-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+
+
+
+
 
 
 
@@ -1358,6 +1391,7 @@ body::-webkit-scrollbar {
 
 #user-review-summary {
     width: 100vw;
+    margin: 4rem 0;
 }
 
 #user-review-summary .container {
@@ -1570,7 +1604,6 @@ body::-webkit-scrollbar {
         justify-content: center;
     }
 }
-
 
 #notice .notice-more:hover {
     color: var(--red);
