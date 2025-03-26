@@ -1165,6 +1165,11 @@ body::-webkit-scrollbar {
     transition: all 0.5s ease;
 }
 
+#success-story-cards .card:hover .card-header-avatar img {
+    transition: transform 0.3s;
+    transform: rotateY(360deg);
+}
+
 #success-story-cards .card-layout {
     display: flex;
     flex-direction: column;
@@ -1185,12 +1190,14 @@ body::-webkit-scrollbar {
     border-radius: 50%;
     aspect-ratio: 1/1;
     overflow: hidden;
+    perspective: 1000px; /* 3D 효과를 위한 속성 */
 }
 
 #success-story-cards .card-header-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform-style: preserve-3d; /* 3D 효과를 위한 속성 */
 }
 
 #success-story-cards .card-header-info {
