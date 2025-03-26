@@ -1446,25 +1446,27 @@ body::-webkit-scrollbar {
     margin: 0 auto;
 }
 
+#faq-accordion {
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
 /* 아코디언 개별 항목 스타일 */
 .faq-accordion-item {
-    border-radius: 10px;
     background-color: #f3f4f6;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     overflow: hidden;
 }
 
 /* 버튼 스타일 */
 .faq-accordion-button {
+    padding: 1.6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    color: var(--foreground);
     background-color: #f3f4f6;
-    padding: 16px;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 1rem;
     text-align: left;
     border: none;
     cursor: pointer;
@@ -1472,33 +1474,39 @@ body::-webkit-scrollbar {
 }
 
 .faq-accordion-button:hover {
-    background-color: #1f2937;
-    color: white;
+    background-color: var(--foreground);
+    color: var(--white);
 }
 
 .faq-accordion-button .icon {
-    font-size: 18px;
-    color: #9ca3af;
+    font-size: 1.2rem;
     transition: transform 0.3s ease;
 }
 
 /* 체크박스를 활용한 아코디언 토글 */
 .faq-accordion-content {
+    padding: 0 1.6rem;
     max-height: 0;
+    font-size: 1rem;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
-    background-color: white;
-    padding: 0 16px;
+    background-color: #f3f4f6;
 }
 
 input[type="checkbox"] {
     display: none;
 }
 
+/* 체크되었을 때 */
+input[type="checkbox"]:checked + .faq-accordion-button {
+    background-color: var(--foreground);
+    color: var(--white);
+}
+
 /* 체크되었을 때(아코디언 열림) */
 input[type="checkbox"]:checked + .faq-accordion-button + .faq-accordion-content {
     max-height: 100px;
-    padding: 16px;
+    padding: 1.6rem;
 }
 
 /* 체크되었을 때 아이콘 회전 */
@@ -1696,11 +1704,11 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     height: 100%;
     scale: 1;
     object-fit: cover;
+    transition: all 0.5s ease;
 }
 
 #location .map-container img:hover {
     scale: 1.2;
-    transition: all 0.5s ease;
 }
 
 
@@ -1732,7 +1740,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 @media (min-width: 1280px) {
     #location .location-info-item {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     #location .location-info-item .material-icons {
