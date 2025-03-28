@@ -1740,7 +1740,27 @@ body::-webkit-scrollbar {
     }
 }
 
+#class-intro .class-timetable {
+    margin: 2rem auto;
+    padding: 0 2rem;
+    color: var(--primary-black);
+}
 
+#class-intro .class-timetable-container {
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white-gray);
+}
+
+#class-intro .class-timetable-title {
+    font-size: 1.4rem;
+}
+
+#class-intro .class-timetable-container .material-icons {
+    font-size: 1.8rem;
+}
 
 
 
