@@ -16,6 +16,10 @@
     --yellow: #FBBD0C;
     --cyan: #04C4D9;
     --kakao: #3A1D1D;
+    --badge-star-1: #FF204E;
+    --badge-star-2: #4CCD99;
+    --badge-star-3: #FFE400;
+    --badge-star-4: #0079FF;
 }
 
 * {
@@ -126,6 +130,23 @@ body::-webkit-scrollbar {
 .bg-cyan {
     background-color: var(--cyan);
 }
+
+.bg-badge-star-1 {
+    background-color: var(--badge-star-1);
+}
+
+.bg-badge-star-2 {
+    background-color: var(--badge-star-2);
+}
+
+.bg-badge-star-3 {
+    background-color: var(--badge-star-3);
+}
+
+.bg-badge-star-4 {
+    background-color: var(--badge-star-4);
+}
+
 
 .fg-white {
     color: var(--white);
@@ -1751,7 +1772,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 #partnership {
     padding: 4rem 0;
     color: var(--white);
-    background-color: var(--cyan);
+    background-color: var(--orange);
 }
 
 #partnership .container {
