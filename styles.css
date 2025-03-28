@@ -135,6 +135,10 @@ body::-webkit-scrollbar {
     background-color: var(--cyan);
 }
 
+.bg-kakao {
+    background-color: var(--kakao);
+}
+
 .bg-class-bg-1 {
     background-color: var(--class-bg-1);
 }
@@ -1741,9 +1745,14 @@ body::-webkit-scrollbar {
 }
 
 #class-intro .class-timetable {
-    margin: 2rem auto;
-    padding: 0 2rem;
     color: var(--primary-black);
+}
+
+@media (min-width: 768px) {
+    #class-intro .class-timetable {
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
 }
 
 #class-intro .class-timetable-container {
@@ -1754,6 +1763,11 @@ body::-webkit-scrollbar {
     background-color: var(--white-gray);
 }
 
+#class-intro .class-timetable-container:hover {
+    background-color: var(--foreground);
+    color: var(--white);
+}
+
 #class-intro .class-timetable-title {
     font-size: 1.4rem;
 }
@@ -1761,6 +1775,50 @@ body::-webkit-scrollbar {
 #class-intro .class-timetable-container .material-icons {
     font-size: 1.8rem;
 }
+
+#class-intro .kakao-button-container {
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#class-intro .kakao-button {
+    padding: 1.4rem 2.4rem;
+    height: 2rem;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#class-intro .kakao-button .kakao-icon-container {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+#class-intro .kakao-button .btn-text {
+    color: var(--white);
+}
+
+#class-intro .kakao-button:hover {
+    background-color: var(--yellow);
+    color: var(--white);
+}
+
+#class-intro .kakao-button:hover .kakao-icon-container {
+    color: var(--kakao);
+}
+
+#class-intro .kakao-button:hover .btn-text {
+    color: var(--kakao);
+}
+
+
+
+
+
+
 
 
 
