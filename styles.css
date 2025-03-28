@@ -1760,13 +1760,13 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 #partnership .contents {
     padding: 1.6rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 @media (min-width: 768px) {
     #partnership .contents {
         padding: 1.6rem 4rem;
-        font-size: 1.2rem;
+        /* font-size: 1.2rem; */
     }
 }
 
@@ -1800,20 +1800,6 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     gap: 1rem;
 }
 
-#partnership .partnership-mail-title {
-    
-}
-
-#partnership .partnership-mail-address {
-    
-}
-
-
-
-
-
-
-
 
 
 
@@ -1829,7 +1815,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 #human-resource .contents {
     padding: 1.6rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 @media (min-width: 768px) {
