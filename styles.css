@@ -470,7 +470,8 @@ body::-webkit-scrollbar {
 }
 
 #top-banner-01-wide-content {
-    margin: 4rem;
+    margin: 4rem auto;
+    padding: 0 2rem;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -521,7 +522,8 @@ body::-webkit-scrollbar {
 }
 
 #top-banner-02-wide-content {
-    margin: 4rem;
+    margin: 4rem auto;
+    padding: 0 2rem;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -561,6 +563,16 @@ body::-webkit-scrollbar {
     display: block;
 }
 
+#top-banner-03-wide-content {
+    margin: 4rem auto;
+    padding: 0 2rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
 #top-banner-03-mobile-content .normal {
     font-size: 1.6rem;
 }
@@ -595,7 +607,15 @@ body::-webkit-scrollbar {
     align-items: end;
 }
 
-#top-banner-04-wide-content { justify-content: end; }
+#top-banner-04-wide-content {
+    margin: 4rem auto;
+    padding: 0 2rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
 
 #top-banner-04-mobile-content .normal {
     padding: 0.4rem 0;
@@ -647,8 +667,13 @@ body::-webkit-scrollbar {
 }
 
 #top-banner-05-wide-content {
-    margin: 4rem;
-    /* width: 100vw; */
+    margin: 4rem auto;
+    padding: 0 2rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 }
 
 #top-banner-05-mobile-content .normal {
@@ -680,6 +705,7 @@ body::-webkit-scrollbar {
 }
 
 #top-banner-06-wide {
+    width: 100vw;
     padding-bottom: 4rem;
     display: none;
     flex-direction: row;
@@ -720,6 +746,7 @@ body::-webkit-scrollbar {
 /* ========== Banner 07 ========== */
 #top-banner-07-mobile,
 #top-banner-07-wide {
+    width: 100vw;
     position: absolute;
     bottom: 0;
     left: 0;
