@@ -1278,6 +1278,22 @@ body::-webkit-scrollbar {
     line-height: 1.8;
 }
 
+#success-story-cards .more-to-see-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#success-story-cards .more-to-see-container .material-icons {
+    font-size: 4rem;
+}
+
+#success-story-cards .more-to-see-container .more-to-see-text {
+    font-size: 2rem;
+}
 
 
 
@@ -1608,6 +1624,7 @@ body::-webkit-scrollbar {
 }
 
 
+
 #class-intro {
     padding: 4rem 0;
     color: var(--primary-black);
@@ -1616,7 +1633,30 @@ body::-webkit-scrollbar {
 
 #class-intro .container {
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
 }
+
+@media (min-width: 768px) {
+    #class-intro .container {
+        padding: 0 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #class-intro .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+#class-intro .class-item {
+    padding: 1rem;
+    aspect-ratio: 1/1;
+    font-size: 1.2rem;
+}
+
 
 
 
