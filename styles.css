@@ -1,7 +1,8 @@
 /* =============================
     Global Styles (CSS Reset + Variables)
 ============================= */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Limelight&family=Luckiest+Guy&family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Luckiest+Guy&family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 :root {
     /* System Colors */
@@ -1196,6 +1197,8 @@ Section Title Style
 }
 
 #student-reviews .badge-item-value {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
     font-size: 6rem;
 }
 
@@ -1321,6 +1324,7 @@ Section Title Style
 }
 
 #student-reviews .review-item-date {
+    font-family: 'Lato', sans-serif;
     text-align: right;
 }
 
@@ -1605,6 +1609,7 @@ Section Title Style
 }
 
 #notice .notice-item-date {
+    font-family: 'Lato', sans-serif;
     text-align: right;
     font-size: 1rem;
 }
