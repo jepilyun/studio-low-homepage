@@ -1259,6 +1259,8 @@ body::-webkit-scrollbar {
 
 
 
+
+
 .section-title {
     padding: 6rem 0;
     text-align: center; 
@@ -1287,6 +1289,165 @@ body::-webkit-scrollbar {
     color: var(--primary-black);
     background-color: var(--white);
 }
+
+
+#student-reviews .summary-container {
+    margin: 0 auto;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    #student-reviews .summary-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #student-reviews .summary-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+#student-reviews .badge-container {
+    position: relative;
+    padding: 4rem;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+#student-reviews .badge-item-bg-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#student-reviews .badge-item-bg-box-rotate-animation {
+    animation: box-rotate 120s linear infinite;
+}
+
+#student-reviews .badge-container:hover .badge-item-bg-box-rotate-animation  {
+    animation: box-rotate 10s linear infinite;
+}
+
+#student-reviews .badge-container:active .badge-item-bg-box-rotate-animation  {
+    animation: box-rotate 1s linear infinite;
+}
+
+
+@keyframes box-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+#student-reviews .box {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    left: 20%;
+    top: 20%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(0deg); /* 기본 rotate는 개별 box에서 덮어씌움 */
+}
+
+#student-reviews .box-1 {
+    transform: rotate(15deg);
+}
+
+#student-reviews .box-2 {
+    transform: rotate(30deg);
+}
+
+#student-reviews .box-3 {
+    transform: rotate(45deg);
+}
+
+#student-reviews .box-4 {
+    transform: rotate(60deg);
+}
+
+#student-reviews .box-5 {
+    transform: rotate(75deg);
+}
+
+#student-reviews .box-6 {
+    transform: rotate(90deg);
+}
+
+
+#student-reviews .badge-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#student-reviews .badge-item-title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#student-reviews .badge-item-value {
+    font-size: 6rem;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    #student-reviews .badge-item-title {
+        font-size: 1rem;
+    }
+
+    #student-reviews .badge-item-value {
+        font-size: 4rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    #student-reviews .badge-item-title {
+        font-size: 1.2rem;
+    }
+
+    #student-reviews .badge-item-value {
+        font-size: 5rem;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    #student-reviews .badge-item-title {
+        font-size: 0.8rem;
+    }
+
+    #student-reviews .badge-item-value {
+        font-size: 3.2rem;
+    }
+}
+
+
+@media (min-width: 1280px) {
+    #student-reviews .badge-item-title {
+        font-size: 1rem;
+    }
+
+    #student-reviews .badge-item-value {
+        font-size: 4rem;
+    }
+}
+
 
 #student-reviews .container {
     margin: 0 auto;
@@ -1320,6 +1481,7 @@ body::-webkit-scrollbar {
 }
 
 #student-reviews .review-item-text-container {
+    position: relative;
     padding: 1.6rem;
     background-color: var(--white-gray);
 }
@@ -1331,6 +1493,20 @@ body::-webkit-scrollbar {
 
 #student-reviews .review-item:hover .review-item-text-container {
     background-color: var(--foreground);
+}
+
+#student-reviews .emoji-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 7rem;
+    height: 7rem;
+}
+
+#student-reviews .emoji-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #student-reviews .review-item:hover .review-item-title-date-container {
@@ -1387,175 +1563,6 @@ body::-webkit-scrollbar {
 
 
 
-
-
-
-
-
-
-
-
-
-
-#user-review-summary {
-    width: 100vw;
-    margin: 4rem 0;
-}
-
-#user-review-summary .container {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
-}
-
-@media (min-width: 640px) {
-    #user-review-summary .container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    #user-review-summary .container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-
-#user-review-summary .badge-container {
-    position: relative;
-    padding: 4rem;
-    aspect-ratio: 1/1;
-    overflow: hidden;
-}
-
-#user-review-summary .badge-item-bg-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-#user-review-summary .badge-item-bg-box-rotate-animation {
-    animation: box-rotate 120s linear infinite;
-}
-
-#user-review-summary .badge-container:hover .badge-item-bg-box-rotate-animation  {
-    animation: box-rotate 10s linear infinite;
-}
-
-#user-review-summary .badge-container:active .badge-item-bg-box-rotate-animation  {
-    animation: box-rotate 1s linear infinite;
-}
-
-
-@keyframes box-rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-
-#user-review-summary .box {
-    position: absolute;
-    width: 60%;
-    height: 60%;
-    left: 20%;
-    top: 20%;
-    transform-origin: center;
-    transform: translate(-50%, -50%) rotate(0deg); /* 기본 rotate는 개별 box에서 덮어씌움 */
-}
-
-#user-review-summary .box-1 {
-    transform: rotate(15deg);
-}
-
-#user-review-summary .box-2 {
-    transform: rotate(30deg);
-}
-
-#user-review-summary .box-3 {
-    transform: rotate(45deg);
-}
-
-#user-review-summary .box-4 {
-    transform: rotate(60deg);
-}
-
-#user-review-summary .box-5 {
-    transform: rotate(75deg);
-}
-
-#user-review-summary .box-6 {
-    transform: rotate(90deg);
-}
-
-
-#user-review-summary .badge-item {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-#user-review-summary .badge-item-title {
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-#user-review-summary .badge-item-value {
-    font-size: 6rem;
-    text-align: center;
-}
-
-@media (min-width: 640px) {
-    #user-review-summary .badge-item-title {
-        font-size: 1rem;
-    }
-
-    #user-review-summary .badge-item-value {
-        font-size: 4rem;
-    }
-}
-
-
-@media (min-width: 768px) {
-    #user-review-summary .badge-item-title {
-        font-size: 1.2rem;
-    }
-
-    #user-review-summary .badge-item-value {
-        font-size: 5rem;
-    }
-}
-
-
-@media (min-width: 1024px) {
-    #user-review-summary .badge-item-title {
-        font-size: 0.8rem;
-    }
-
-    #user-review-summary .badge-item-value {
-        font-size: 3.2rem;
-    }
-}
-
-
-@media (min-width: 1280px) {
-    #user-review-summary .badge-item-title {
-        font-size: 1rem;
-    }
-
-    #user-review-summary .badge-item-value {
-        font-size: 4rem;
-    }
-}
 
 
 
