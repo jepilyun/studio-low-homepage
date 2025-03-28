@@ -1600,27 +1600,25 @@ body::-webkit-scrollbar {
     text-align: right;
 }
 
-#student-reviews .review-more {
-    padding: 3rem;
+
+#student-reviews .review-item-more-to-see {
+    height: 100%;
+}
+
+#student-reviews .more-to-see-container {
+    height: 100%;
     display: flex;
-    justify-content: end;
-}
-
-@media (min-width: 768px) {
-    #student-reviews .review-more {
-        padding-top: 4rem;
-        justify-content: center;
-    }
-}
-
-#student-reviews .review-more:hover {
-    color: var(--red);
-}
-
-#student-reviews .review-more .load-more-button {
-    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+}
+
+#student-reviews .more-to-see-container .material-icons {
+    font-size: 4rem;
+}
+
+#student-reviews .more-to-see-container .more-to-see-text {
+    font-size: 2rem;
 }
 
 
