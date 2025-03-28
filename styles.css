@@ -1750,13 +1750,13 @@ body::-webkit-scrollbar {
 
 @media (min-width: 768px) {
     #class-intro .class-timetable {
-        margin: 2rem auto;
+        margin: 1rem auto;
         padding: 0 2rem;
     }
 }
 
 #class-intro .class-timetable-container {
-    padding: 4rem;
+    padding: 4rem 2.8rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1777,7 +1777,7 @@ body::-webkit-scrollbar {
 }
 
 #class-intro .kakao-button-container {
-    margin: 3rem auto;
+    margin: 4rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
