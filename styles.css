@@ -1608,6 +1608,15 @@ body::-webkit-scrollbar {
 }
 
 
+#class-intro {
+    padding: 4rem 0;
+    color: var(--primary-black);
+    background-color: var(--white);
+}
+
+#class-intro .container {
+    margin: 0 auto;
+}
 
 
 
