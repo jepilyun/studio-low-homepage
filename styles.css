@@ -1612,7 +1612,7 @@ body::-webkit-scrollbar {
 }
 
 #notice .notice-item {
-    padding: 1.6rem;
+    padding: 1.2rem;
     border-bottom: 1px solid var(--foreground);
     display: flex;
     flex-direction: column;
@@ -1624,6 +1624,7 @@ body::-webkit-scrollbar {
 @media (min-width: 768px) {
     #notice .notice-item {
         flex-direction: row;
+        align-items: center;
     }
 }
 
@@ -1633,7 +1634,7 @@ body::-webkit-scrollbar {
 }
 
 #notice .notice-item-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 #notice .notice-item-date {
@@ -1696,7 +1697,7 @@ body::-webkit-scrollbar {
     align-items: center;
     color: var(--foreground);
     background-color: var(--white-gray);
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: left;
     border: none;
     cursor: pointer;
@@ -1717,7 +1718,7 @@ body::-webkit-scrollbar {
 .faq-accordion-content {
     padding: 0 1.6rem;
     max-height: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
     background-color: var(--white-gray);
