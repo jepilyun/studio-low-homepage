@@ -1292,9 +1292,7 @@ body::-webkit-scrollbar {
 
 
 #student-reviews .summary-container {
-    margin: 0 auto;
-    margin-top: 4rem;
-    margin-bottom: 8rem;
+    margin: 4rem auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
@@ -1449,7 +1447,7 @@ body::-webkit-scrollbar {
 }
 
 
-#student-reviews .container {
+#student-reviews .reviews-container {
     padding: 4rem 0;
     width: 100vw;
     color: var(--primary-black);
@@ -1484,21 +1482,10 @@ body::-webkit-scrollbar {
     }
 }
 
-
-
 #student-reviews .review-item-text-container {
     position: relative;
     padding: 1.6rem;
     background-color: var(--white-gray);
-}
-
-#student-reviews .review-item:hover {
-    color: var(--white);
-    background-color: var(--foreground);
-}
-
-#student-reviews .review-item:hover .review-item-text-container {
-    background-color: var(--foreground);
 }
 
 #student-reviews .emoji-container {
@@ -1515,9 +1502,42 @@ body::-webkit-scrollbar {
     object-fit: cover;
 }
 
+
+#student-reviews .review-item:hover {
+    color: var(--white);
+    background-color: var(--foreground);
+}
+
+#student-reviews .review-item:hover .review-item-text-container {
+    background-color: var(--foreground);
+}
+
+#student-reviews .review-item:hover .emoji-container {
+    animation: emoji-move 1.5s ease-in-out;
+}
+
+@keyframes emoji-move {
+    0% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-20px) scale(1.2);
+    }
+    20% {
+        transform: translateY(0) scale(1);
+    }
+    30% {
+        transform: translateY(-15px) scale(1.2);
+    }
+    40% {
+        transform: translateY(0) scale(1);
+    }
+}
+
 #student-reviews .review-item:hover .review-item-title-date-container {
     color: rgba(255, 255, 255, 0.6);
 }
+
 
 #student-reviews .review-item-text {
     font-size: 1.2rem;
