@@ -471,7 +471,7 @@ body::-webkit-scrollbar {
 
 #top-banner-01-wide-content {
     margin: 4rem auto;
-    padding: 0 2rem;
+    padding: 0 4rem;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -523,7 +523,7 @@ body::-webkit-scrollbar {
 
 #top-banner-02-wide-content {
     margin: 4rem auto;
-    padding: 0 2rem;
+    padding: 0 4rem;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -565,7 +565,7 @@ body::-webkit-scrollbar {
 
 #top-banner-03-wide-content {
     margin: 4rem auto;
-    padding: 0 2rem;
+    padding: 0 4rem;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -609,7 +609,7 @@ body::-webkit-scrollbar {
 
 #top-banner-04-wide-content {
     margin: 4rem auto;
-    padding: 0 2rem;
+    padding: 0 4rem;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -668,7 +668,7 @@ body::-webkit-scrollbar {
 
 #top-banner-05-wide-content {
     margin: 4rem auto;
-    padding: 0 2rem;
+    padding: 0 4rem;
     width: 100vw;
     display: flex;
     flex-direction: column;
