@@ -1,13 +1,18 @@
+/* =============================
+    Global Styles (CSS Reset + Variables)
+============================= */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Limelight&family=Luckiest+Guy&family=Noto+Sans+KR:wght@100..900&display=swap');
 
-
 :root {
+    /* System Colors */
     --background: #FFFFFF;
     --foreground: #2B2B2B;
     --white: #FFFFFF;
     --white-gray: #F3F4F6;
     --black: #000000;
-    --primary-black: #2B2B2B; 
+
+    /* Themed Colors */
+    --primary-black: #2B2B2B;
     --secondary-black: #B3B3B3;
     --tertiary-black: #D4D4D4;
     --dark: #022257;
@@ -16,6 +21,8 @@
     --yellow: #FBBD0C;
     --cyan: #04C4D9;
     --kakao: #3A1D1D;
+
+    /* Custom Backgrounds */
     --class-bg-1: #F6F0F0;
     --class-bg-2: #EEF1DA;
     --class-bg-3: #E9F0F0;
@@ -26,9 +33,11 @@
     --class-bg-8: #F5EEE6;
 }
 
+/* Reset + Normalize */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 ul, ol {
@@ -37,250 +46,107 @@ ul, ol {
 
 a {
     color: inherit;
-    text-decoration: none
+    text-decoration: none;
 }
 
-a:hover {
-    color: inherit;
-}
-
+a:hover,
 a:visited {
     color: inherit;
 }
 
 button {
-    border: 0;
-    color: inherit;
+    border: none;
     background-color: transparent;
+    color: inherit;
 }
 
-html {
+html, body {
     margin: 0;
     padding: 0;
+    width: 100vw;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    line-height:inherit;
-    width: 100vw;
-    overflow-x: hidden;
     background: var(--background);
     color: var(--foreground);
     font-family: "Noto Sans KR", sans-serif;
     scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 및 Edge */
+    -ms-overflow-style: none; /* IE & Edge */
 }
 
-/* 메뉴 확장 시 스크롤 방지 */
-/* html, body {
-    overflow: hidden;
-    height: 100%;
-    position: fixed;
-    width: 100%;
-} */
-
 body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+  display: none; /* Chrome, Safari */
 }
 
 .scrollbar-hidden {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 및 Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    display: none;
 }
 
-.bg-white {
-    background-color: var(--white);
-}
+/* =============================
+    Background Color Utilities
+============================= */
+.bg-white { background-color: var(--white); }
+.bg-black { background-color: var(--black); }
+.bg-primary-black { background-color: var(--primary-black); }
+.bg-secondary-black { background-color: var(--secondary-black); }
+.bg-tertiary-black { background-color: var(--tertiary-black); }
+.bg-dark { background-color: var(--dark); }
+.bg-red { background-color: var(--red); }
+.bg-orange { background-color: var(--orange); }
+.bg-yellow { background-color: var(--yellow); }
+.bg-cyan { background-color: var(--cyan); }
+.bg-kakao { background-color: var(--kakao); }
+.bg-class-bg-1 { background-color: var(--class-bg-1); }
+.bg-class-bg-2 { background-color: var(--class-bg-2); }
+.bg-class-bg-3 { background-color: var(--class-bg-3); }
+.bg-class-bg-4 { background-color: var(--class-bg-4); }
+.bg-class-bg-5 { background-color: var(--class-bg-5); }
+.bg-class-bg-6 { background-color: var(--class-bg-6); }
+.bg-class-bg-7 { background-color: var(--class-bg-7); }
+.bg-class-bg-8 { background-color: var(--class-bg-8); }
 
-.bg-black {
-    background-color: var(--black);
-}
+/* =============================
+    Foreground (Text Color) Utilities
+============================= */
+.fg-white { color: var(--white); }
+.fg-black { color: var(--black); }
+.fg-primary-black { color: var(--primary-black); }
+.fg-secondary-black { color: var(--secondary-black); }
+.fg-tertiary-black { color: var(--tertiary-black); }
+.fg-dark { color: var(--dark); }
+.fg-red { color: var(--red); }
+.fg-orange { color: var(--orange); }
+.fg-yellow { color: var(--yellow); }
+.fg-cyan { color: var(--cyan); }
+.fg-kakao { color: var(--kakao); }
 
-.bg-primary-black {
-    background-color: var(--primary-black);
-}
-
-.bg-secondary-black {
-    background-color: var(--secondary-black);
-}
-
-.bg-tertiary-black {
-    background-color: var(--tertiary-black);
-}
-
-.bg-dark {
-    background-color: var(--dark);
-}
-
-.bg-red {
-    background-color: var(--red);
-}
-
-.bg-orange {
-    background-color: var(--orange);
-}
-
-.bg-yellow {
-    background-color: var(--yellow);
-}
-
-.bg-cyan {
-    background-color: var(--cyan);
-}
-
-.bg-kakao {
-    background-color: var(--kakao);
-}
-
-.bg-class-bg-1 {
-    background-color: var(--class-bg-1);
-}
-
-.bg-class-bg-2 {
-    background-color: var(--class-bg-2);
-}
-
-.bg-class-bg-3 {
-    background-color: var(--class-bg-3);
-}
-
-.bg-class-bg-4 {
-    background-color: var(--class-bg-4);
-}
-
-.bg-class-bg-5 {
-    background-color: var(--class-bg-5);
-}
-
-.bg-class-bg-6 {
-    background-color: var(--class-bg-6);
-}
-
-.bg-class-bg-7 {
-    background-color: var(--class-bg-7);
-}
-
-.bg-class-bg-8 {
-    background-color: var(--class-bg-8);
-}
-
-
-.fg-white {
-    color: var(--white);
-}
-
-.fg-black {
-    color: var(--black);
-}
-
-.fg-primary-black {
-    color: var(--primary-black);
-}
-
-.fg-secondary-black {
-    color: var(--secondary-black);
-}
-
-.fg-tertiary-black {
-    color: var(--tertiary-black);
-}
-
-.fg-dark {
-    color: var(--dark);
-}
-
-.fg-red {
-    color: var(--red);
-}
-
-.fg-orange {
-    color: var(--orange);
-}
-
-.fg-yellow {
-    color: var(--yellow);
-}
-
-.fg-cyan {
-    color: var(--cyan);
-}
-
-.fg-kakao {
-    color: var(--kakao);
-}
-
-/* Default Font - Korean */
-.noto-sans-kr-100 {
+/* =============================
+    Font Weights & Families
+============================= */
+[class^="noto-sans-kr-"] {
     font-family: "Noto Sans KR", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 100;
     font-style: normal;
 }
 
-.noto-sans-kr-200 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-}
+.noto-sans-kr-100 { font-weight: 100; }
+.noto-sans-kr-200 { font-weight: 200; }
+.noto-sans-kr-300 { font-weight: 300; }
+.noto-sans-kr-400 { font-weight: 400; }
+.noto-sans-kr-500 { font-weight: 500; }
+.noto-sans-kr-600 { font-weight: 600; }
+.noto-sans-kr-700 { font-weight: 700; }
+.noto-sans-kr-800 { font-weight: 800; }
+.noto-sans-kr-900 { font-weight: 900; }
 
-.noto-sans-kr-300 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-}
-
-.noto-sans-kr-400 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.noto-sans-kr-500 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-}
-
-.noto-sans-kr-600 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-}
-
-.noto-sans-kr-700 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.noto-sans-kr-800 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-}
-
-.noto-sans-kr-900 {
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-}
-
-/* LOGO TEST  */
+/* Decorative Fonts */
 .luckiest-guy-regular {
     font-family: "Luckiest Guy", cursive;
     font-weight: 400;
@@ -293,80 +159,35 @@ body::-webkit-scrollbar {
     font-style: normal;
 }
 
-.lato-thin {
+[class^="lato-"] {
     font-family: "Lato", sans-serif;
-    font-weight: 100;
     font-style: normal;
 }
 
-.lato-light {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
+.lato-thin { font-weight: 100; }
+.lato-light { font-weight: 300; }
+.lato-regular { font-weight: 400; }
+.lato-bold { font-weight: 700; }
+.lato-black { font-weight: 900; }
 
-.lato-regular {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
+.lato-thin-italic { font-weight: 100; font-style: italic; }
+.lato-light-italic { font-weight: 300; font-style: italic; }
+.lato-regular-italic { font-weight: 400; font-style: italic; }
+.lato-bold-italic { font-weight: 700; font-style: italic; }
+.lato-black-italic { font-weight: 900; font-style: italic; }
 
-.lato-bold {
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.lato-black {
-    font-family: "Lato", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-}
-
-.lato-thin-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 100;
-    font-style: italic;
-}
-
-.lato-light-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: italic;
-}
-
-.lato-regular-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.lato-bold-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-}
-
-.lato-black-italic {
-    font-family: "Lato", sans-serif;
-    font-weight: 900;
-    font-style: italic;
-}
-
-
-
+/* =============================
+    Logo Animation Example
+============================= */
 .top-nav-logo {
     font-family: "Luckiest Guy", cursive;
-    font-weight: 400;
-    font-style: normal;
     font-size: 2rem;
+    font-weight: 400;
     margin-bottom: -0.5rem;
 }
 
 @media (min-width: 1024px) {
-    .top-nav-logo {
-        font-size: 2.5rem;
-    }
+    .top-nav-logo { font-size: 2.5rem; }
 }
 
 .top-nav-logo:hover {
@@ -374,42 +195,24 @@ body::-webkit-scrollbar {
 }
 
 @keyframes top-nav-logo-hover {
-    0% {
-        transform: scale(1);
-    }
-    10% {
-        transform: scale(1.3);
-    }
-    20% {
-        transform: scale(1);
-    }
-    30% {
-        transform: scale(1.2);
-    }
-    40% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    60% {
-        transform: scale(1);
-    }
-    70% {
-        transform: scale(1.05);
-    }
-    80% {
-        transform: scale(1);
-    }
-    90% {
-        transform: scale(1.02);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0%, 100% { transform: scale(1); }
+    10% { transform: scale(1.3); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.2); }
+    40% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    90% { transform: scale(1.02); }
 }
 
 
+/* =============================
+    Navigation Styles
+============================= */
+
+/* Top Navigation Bar */
 #top-nav-bar {
     position: fixed;
     top: 0;
@@ -427,13 +230,14 @@ body::-webkit-scrollbar {
     backdrop-filter: blur(10px);
 }
 
+/* Mobile Nav Default */
 #top-nav-mobile {
     display: block;
     width: 100vw;
 }
 
+/* Wide Nav (Tablet and Up) */
 #top-nav-wide {
-    /* margin: 0 auto; */
     padding: 3rem 4rem;
     display: none;
     width: 100vw;
@@ -450,22 +254,15 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 768px) {
-    #top-nav-mobile {
-        display: none;
-    }
-
-    #top-nav-wide {
-        display: flex;
-    }
+    #top-nav-mobile { display: none; }
+    #top-nav-wide { display: flex; }
 }
 
 @media (min-width: 1024px) {
-    #top-nav-wide {
-        flex-direction: row;
-    }
+    #top-nav-wide { flex-direction: row; }
 }
 
-
+/* Mobile Nav Folded Header */
 #top-nav-mobile-folded {
     padding: 2rem 2.5rem;
     display: flex;
@@ -473,6 +270,7 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
+/* Mobile Nav Expanded */
 #top-nav-mobile-expanded {
     display: none;
     width: 100vw;
@@ -500,6 +298,7 @@ body::-webkit-scrollbar {
     font-size: 2rem;
 }
 
+/* Mobile Menu Items */
 #top-nav-mobile-expanded-menus {
     padding: 2rem 0;
     width: 100%;
@@ -543,7 +342,7 @@ body::-webkit-scrollbar {
     scale: 1.2;
 }
 
-
+/* Wide Menu Items */
 #top-nav-wide-menus {
     font-size: 1rem;
     display: flex;
@@ -555,7 +354,6 @@ body::-webkit-scrollbar {
 
 @media (min-width: 1024px) {
     #top-nav-wide-menus {
-        font-size: 1rem;
         gap: 2rem;
     }
 }
@@ -584,106 +382,100 @@ body::-webkit-scrollbar {
 
 
 
-.max-width-1440px {
-    max-width: 1440px;
-}
+/* =============================
+    Utility Classes
+============================= */
 
-.max-width-1280px {
-    max-width: 1280px;
-}
+/* Max Width Utilities */
+.max-width-1440px { max-width: 1440px; }
+.max-width-1280px { max-width: 1280px; }
+.max-width-1024px { max-width: 1024px; }
 
-.max-width-1024px {
-    max-width: 1024px;
-}
+/* Full Screen Utilities */
+.full-screen-width { width: 100vw; }
+.full-screen-height { height: 100vh; }
 
-.full-screen-width {
-    width: 100vw;
-}
-
-.full-screen-height {
-    height: 100vh;
-}
-
+/* Banner Wrapper */
 .main-top-banner {
     position: relative;
     overflow: hidden;
     scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 및 Edge */
+    -ms-overflow-style: none; /* IE and Edge */
 }
 
 .main-top-banner::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
 }
 
-
+/* Sticky Content */
 .content-sticky {
     position: sticky;
     top: 0;
 }
 
-.opacity-dot-2 {
-    opacity: 0.2;
+/* Opacity Utilities */
+.opacity-dot-2 { opacity: 0.2; }
+.opacity-dot-4 { opacity: 0.4; }
+.opacity-dot-6 { opacity: 0.6; }
+.opacity-dot-8 { opacity: 0.8; }
+.opacity-one  { opacity: 1; }
+
+
+
+/* =============================
+    Top Banners (Responsive Sections)
+============================= */
+
+/* Common Fullscreen Background */
+.full-banner-img-bg {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
 }
 
-.opacity-dot-4 {
-    opacity: 0.4;
-}
-
-.opacity-dot-6 {
-    opacity: 0.6;
-}
-
-.opacity-dot-8 {
-    opacity: 0.8;
-}
-
-.opacity-one {
-    opacity: 1;
-}
-
-
-
+/* ========== Banner 01 ========== */
 #top-banner-01-mobile {
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: start; /* 가로 정렬 */
-    justify-content: end; /* 세로 정렬 */
+    align-items: start;
+    justify-content: end;
 }
 
 #top-banner-01-wide {
     padding: 0;
     display: none;
-    align-items: end; /* 가로 정렬 */
+    align-items: end;
 }
 
 @media (min-width: 768px) {
-    #top-banner-01-mobile {
-        display: none;
-    }
+    #top-banner-01-mobile { display: none; }
+    #top-banner-01-wide { display: flex; }
+}
 
-    #top-banner-01-wide {
-        display: flex;
-    }
+#top-banner-01-mobile-content,
+#top-banner-01-wide-content {
+    color: var(--white);
 }
 
 #top-banner-01-mobile-content {
-    margin: 3rem 3rem;
+    margin: 3rem;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    color: var(--white);
 }
 
 #top-banner-01-wide-content {
-    margin: 4rem 4rem;
+    margin: 4rem;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    color: var(--white);
 }
 
 #top-banner-01-mobile-content .normal {
@@ -695,63 +487,8 @@ body::-webkit-scrollbar {
     font-size: 4rem;
 }
 
-
-
-
+/* ========== Banner 02 ========== */
 #top-banner-02-mobile {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: start; /* 가로 정렬 */
-    justify-content: end; /* 세로 정렬 */
-}
-
-#top-banner-02-wide {
-    padding: 0;
-    display: none;
-    align-items: end; /* 가로 정렬 */
-}
-
-@media (min-width: 768px) {
-    #top-banner-02-mobile {
-        display: none;
-    }
-
-    #top-banner-02-wide {
-        display: flex;
-    }
-}
-
-#top-banner-02-mobile-content {
-    margin: 3rem 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    color: var(--white);
-}
-
-#top-banner-02-wide-content {
-    margin: 4rem 4rem;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: center;
-    color: var(--white);
-}
-
-#top-banner-02-mobile-content .normal {
-    font-size: 3rem;
-}
-
-#top-banner-02-wide-content .normal{
-    font-size: 4rem;
-}
-
-
-
-#top-banner-03-mobile {
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -759,35 +496,69 @@ body::-webkit-scrollbar {
     justify-content: end;
 }
 
-#top-banner-03-wide {
+#top-banner-02-wide {
     padding: 0;
     display: none;
-    align-items: start;
+    align-items: end;
 }
 
 @media (min-width: 768px) {
-    #top-banner-03-mobile {
-        display: none;
-    }
-
-    #top-banner-03-wide {
-        display: flex;
-    }
+    #top-banner-02-mobile { display: none; }
+    #top-banner-02-wide { display: flex; }
 }
 
-#top-banner-03-mobile-content {
-    margin: 3rem 3rem;
-    display: block;
-    /* width: 100%; */
+#top-banner-02-mobile-content,
+#top-banner-02-wide-content {
     color: var(--white);
 }
 
-#top-banner-03-wide-content {
-    margin: 4rem 4rem;
+#top-banner-02-mobile-content {
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+#top-banner-02-wide-content {
+    margin: 4rem;
     width: 100vw;
-    display: block;
-    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+
+#top-banner-02-mobile-content .normal {
+    font-size: 3rem;
+}
+
+#top-banner-02-wide-content .normal {
+    font-size: 4rem;
+}
+
+/* ========== Banner 03 ========== */
+#top-banner-03-mobile,
+#top-banner-03-wide {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+}
+
+#top-banner-03-wide { display: none; }
+
+@media (min-width: 768px) {
+    #top-banner-03-mobile { display: none; }
+    #top-banner-03-wide { display: flex; }
+}
+
+#top-banner-03-mobile-content,
+#top-banner-03-wide-content {
     color: var(--white);
+    margin: 3rem 4rem;
+    display: block;
 }
 
 #top-banner-03-mobile-content .normal {
@@ -798,54 +569,42 @@ body::-webkit-scrollbar {
     font-size: 2.4rem;
 }
 
-
-
-#top-banner-04-mobile {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: end;
-}
-
+/* ========== Banner 04 ========== */
+#top-banner-04-mobile,
 #top-banner-04-wide {
     padding: 0;
-    display: none;
-    align-items: end;
-}
-
-@media (min-width: 768px) {
-    #top-banner-04-mobile {
-        display: none;
-    }
-
-    #top-banner-04-wide {
-        display: flex;
-    }
-}
-
-#top-banner-04-mobile-content {
-    margin: 3rem 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: center;
-    color: var(--white);
-}
-
-#top-banner-04-wide-content {
-    margin: 4rem 4rem;
-    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: end;
     justify-content: end;
-    color: var(--white);
 }
+
+#top-banner-04-wide { display: none; }
+
+@media (min-width: 768px) {
+    #top-banner-04-mobile { display: none; }
+    #top-banner-04-wide { display: flex; }
+}
+
+#top-banner-04-mobile-content,
+#top-banner-04-wide-content {
+    color: var(--white);
+    margin: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+#top-banner-04-wide-content { justify-content: end; }
 
 #top-banner-04-mobile-content .normal {
     padding: 0.4rem 0;
     font-size: 1.8rem;
+}
+
+#top-banner-04-wide-content .normal {
+    padding: 0.5rem 0;
+    font-size: 3rem;
 }
 
 .kakao-link-text {
@@ -854,18 +613,12 @@ body::-webkit-scrollbar {
 }
 
 .kakao-link-text:hover {
-    color: var(--kakao);
     opacity: 0.8;
 }
 
-#top-banner-04-wide-content .normal {
-    padding: 0.5rem 0;
-    font-size: 3rem;
-}
-
-
-
-#top-banner-05-mobile {
+/* ========== Banner 05 ========== */
+#top-banner-05-mobile,
+#top-banner-05-wide {
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -873,47 +626,33 @@ body::-webkit-scrollbar {
     justify-content: end;
 }
 
-#top-banner-05-wide {
-    padding: 0;
-    display: none;
-    align-items: end;
-}
+#top-banner-05-wide { display: none; }
 
 @media (min-width: 768px) {
-    #top-banner-05-mobile {
-        display: none;
-    }
+    #top-banner-05-mobile { display: none; }
+    #top-banner-05-wide { display: flex; }
+}
 
-    #top-banner-05-wide {
-        display: flex;
-    }
+#top-banner-05-mobile-content,
+#top-banner-05-wide-content {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 }
 
 #top-banner-05-mobile-content {
-    margin: 3rem 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    color: var(--white);
+    margin: 3rem;
 }
 
 #top-banner-05-wide-content {
-    margin: 4rem 4rem;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    color: var(--white);
+    margin: 4rem;
+    /* width: 100vw; */
 }
 
 #top-banner-05-mobile-content .normal {
     font-size: 2.4rem;
-}
-
-#top-banner-05-mobile-content .location-text {
-    color: var(--dark);
 }
 
 #top-banner-05-wide-content .normal {
@@ -924,67 +663,50 @@ body::-webkit-scrollbar {
     color: var(--dark);
 }
 
-
-
-.full-banner-img-bg {
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: all 0.5s ease-in-out;
-}
-
-
-
-#top-banner-06-mobile {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-bottom: 6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-}
-
+/* ========== Banner 06 ========== */
+#top-banner-06-mobile,
 #top-banner-06-wide {
     position: absolute;
     bottom: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#top-banner-06-mobile {
+    padding-bottom: 6rem;
+    flex-direction: column;
+}
+
+#top-banner-06-wide {
     padding-bottom: 4rem;
     display: none;
+    flex-direction: row;
     align-items: end;
-    justify-content: center;
 }
 
 @media (min-width: 768px) {
-    #top-banner-06-mobile {
-        display: none;
-    }
+    #top-banner-06-mobile { display: none; }
+    #top-banner-06-wide { display: flex; }
+}
 
-    #top-banner-06-wide {
-        display: flex;
-    }
+#top-banner-06-mobile-content,
+#top-banner-06-wide-content {
+    width: 100vw;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #top-banner-06-mobile-content {
-    display: flex;
-    width: 100vw;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
 }
 
 #top-banner-06-wide-content {
     margin: 0 auto;
-    display: flex;
-    width: 100vw;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
 }
 
 #top-banner-06-mobile-content .normal {
@@ -995,57 +717,50 @@ body::-webkit-scrollbar {
     font-size: 2rem;
 }
 
-
-
-#top-banner-07-mobile {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-bottom: 6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-}
-
+/* ========== Banner 07 ========== */
+#top-banner-07-mobile,
 #top-banner-07-wide {
     position: absolute;
     bottom: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#top-banner-07-mobile {
+    padding-bottom: 6rem;
+    flex-direction: column;
+}
+
+#top-banner-07-wide {
     padding-bottom: 4rem;
     display: none;
+    flex-direction: row;
     align-items: end;
-    justify-content: center;
 }
 
 @media (min-width: 768px) {
-    #top-banner-07-mobile {
-        display: none;
-    }
+    #top-banner-07-mobile { display: none; }
+    #top-banner-07-wide { display: flex; }
+}
 
-    #top-banner-07-wide {
-        display: flex;
-    }
+#top-banner-07-mobile-content,
+#top-banner-07-wide-content {
+    width: 100vw;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #top-banner-07-mobile-content {
-    display: flex;
-    width: 100vw;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
 }
 
 #top-banner-07-wide-content {
     margin: 0 auto;
-    width: 100vw;
-    display: flex;
-    width: 100vw;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
 }
 
 #top-banner-07-mobile-content .normal {
@@ -1062,7 +777,7 @@ body::-webkit-scrollbar {
     background-color: var(--white);
 }
 
-
+/* Main content container with responsive padding */
 .content-container {
     margin: 0 auto;
     padding: 0 0.2rem;
@@ -1081,7 +796,11 @@ body::-webkit-scrollbar {
     }
 }
 
+/* =============================
+    Company Intro Section
+============================= */
 
+/* Company Intro Section */
 #company-intro {
     padding: 5rem 1rem;
     color: var(--primary-black);
@@ -1104,6 +823,7 @@ body::-webkit-scrollbar {
     }
 }
 
+/* Intro text wrapper */
 #company-intro .intro-text-container {
     margin: 1rem 0;
     display: flex;
@@ -1119,6 +839,7 @@ body::-webkit-scrollbar {
     }
 }
 
+/* Core message highlight */
 .company-intro-core-msg {
     margin: 3rem 0;
     font-size: 1.4rem;
@@ -1137,6 +858,7 @@ body::-webkit-scrollbar {
     }
 }
 
+/* Responsive counter layout */
 .company-intro-counts-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -1155,7 +877,7 @@ body::-webkit-scrollbar {
     }
 }
 
-
+/* Individual count item styling */
 .company-intro-counts-item {
     display: flex;
     flex-direction: column;
@@ -1176,6 +898,10 @@ body::-webkit-scrollbar {
 
 
 
+/* =============================
+    Success Story Cards Section
+============================= */
+
 #success-story-cards {
     padding: 4rem 0;
     width: 100vw;
@@ -1184,12 +910,13 @@ body::-webkit-scrollbar {
     overflow-x: hidden;
 }
 
+/* Card Container */
 #success-story-cards .card-container {
     padding: 0 2rem;
     display: flex;
     gap: 1rem;
-    overflow-y: hidden;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 @media (min-width: 768px) {
@@ -1198,16 +925,17 @@ body::-webkit-scrollbar {
     }
 }
 
+/* Individual Card */
 #success-story-cards .card {
-    width: 256px;
-    height: 450px;
-    padding: 2.2rem;
+    width: 320px;
+    height: 488px;
+    padding: 1.4rem 2rem;
     background-color: var(--white);
+    transition: all 0.5s ease;
 }
 
 #success-story-cards .card:hover {
     scale: 1.02;
-    transition: all 0.5s ease;
 }
 
 #success-story-cards .card:hover .card-header-avatar img {
@@ -1215,12 +943,14 @@ body::-webkit-scrollbar {
     transform: rotateY(360deg);
 }
 
+/* Card Layout */
 #success-story-cards .card-layout {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1.4rem;
 }
 
+/* Card Header */
 #success-story-cards .card-header {
     display: flex;
     align-items: center;
@@ -1235,14 +965,14 @@ body::-webkit-scrollbar {
     border-radius: 50%;
     aspect-ratio: 1/1;
     overflow: hidden;
-    perspective: 1000px; /* 3D 효과를 위한 속성 */
+    perspective: 1000px; /* 3D effect */
 }
 
 #success-story-cards .card-header-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform-style: preserve-3d; /* 3D 효과를 위한 속성 */
+    transform-style: preserve-3d;
 }
 
 #success-story-cards .card-header-info {
@@ -1284,7 +1014,7 @@ body::-webkit-scrollbar {
     color: var(--dark);
 }
 
-
+/* Card Content */
 #success-story-cards .card-content {
     display: flex;
     flex-direction: column;
@@ -1302,6 +1032,7 @@ body::-webkit-scrollbar {
     line-height: 1.8;
 }
 
+/* More to See Button */
 #success-story-cards .more-to-see-container {
     height: 100%;
     display: flex;
@@ -1320,11 +1051,12 @@ body::-webkit-scrollbar {
 }
 
 
-
-
+/* =============================
+Section Title Style
+============================= */
 .section-title {
     padding: 6rem 0;
-    text-align: center; 
+    text-align: center;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -1333,25 +1065,22 @@ body::-webkit-scrollbar {
     .section-title {
         font-size: 3rem;
     }
-}
-
-
-@media (min-width: 768px) {
     .section-title-mg {
         margin-top: 80px;
         margin-bottom: 80px;
     }
 }
 
-
-
+/* =============================
+    Student Reviews Section
+============================= */
 #student-reviews {
     padding: 4rem 0;
     color: var(--primary-black);
     background-color: var(--white);
 }
 
-
+/* Summary Badges */
 #student-reviews .summary-container {
     margin: 4rem auto;
     display: grid;
@@ -1371,7 +1100,7 @@ body::-webkit-scrollbar {
     }
 }
 
-
+/* Badge Animation */
 #student-reviews .badge-container {
     position: relative;
     padding: 4rem;
@@ -1392,24 +1121,20 @@ body::-webkit-scrollbar {
     animation: box-rotate 120s linear infinite;
 }
 
-#student-reviews .badge-container:hover .badge-item-bg-box-rotate-animation  {
+/* Hover Animation */
+#student-reviews .badge-container:hover .badge-item-bg-box-rotate-animation {
     animation: box-rotate 10s linear infinite;
 }
 
-#student-reviews .badge-container:active .badge-item-bg-box-rotate-animation  {
+/* Click Animation */
+#student-reviews .badge-container:active .badge-item-bg-box-rotate-animation {
     animation: box-rotate 1s linear infinite;
 }
 
-
 @keyframes box-rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
-
 
 #student-reviews .box {
     position: absolute;
@@ -1418,109 +1143,68 @@ body::-webkit-scrollbar {
     left: 20%;
     top: 20%;
     transform-origin: center;
-    transform: translate(-50%, -50%) rotate(0deg); /* 기본 rotate는 개별 box에서 덮어씌움 */
+    transform: translate(-50%, -50%) rotate(0deg);
 }
 
-#student-reviews .box-1 {
-    transform: rotate(15deg);
-}
+#student-reviews .box-1 { transform: rotate(15deg); }
+#student-reviews .box-2 { transform: rotate(30deg); }
+#student-reviews .box-3 { transform: rotate(45deg); }
+#student-reviews .box-4 { transform: rotate(60deg); }
+#student-reviews .box-5 { transform: rotate(75deg); }
+#student-reviews .box-6 { transform: rotate(90deg); }
 
-#student-reviews .box-2 {
-    transform: rotate(30deg);
-}
-
-#student-reviews .box-3 {
-    transform: rotate(45deg);
-}
-
-#student-reviews .box-4 {
-    transform: rotate(60deg);
-}
-
-#student-reviews .box-5 {
-    transform: rotate(75deg);
-}
-
-#student-reviews .box-6 {
-    transform: rotate(90deg);
-}
-
-
+/* Badge Text */
 #student-reviews .badge-item {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    text-align: center;
 }
 
 #student-reviews .badge-item-title {
     font-size: 1.2rem;
-    text-align: center;
 }
 
 #student-reviews .badge-item-value {
     font-size: 6rem;
-    text-align: center;
 }
 
 @media (min-width: 640px) {
-    #student-reviews .badge-item-title {
-        font-size: 1rem;
-    }
-
-    #student-reviews .badge-item-value {
-        font-size: 4rem;
-    }
+    #student-reviews .badge-item-title { font-size: 1rem; }
+    #student-reviews .badge-item-value { font-size: 4rem; }
 }
-
 
 @media (min-width: 768px) {
-    #student-reviews .badge-item-title {
-        font-size: 1.2rem;
-    }
-
-    #student-reviews .badge-item-value {
-        font-size: 5rem;
-    }
+    #student-reviews .badge-item-title { font-size: 1.2rem; }
+    #student-reviews .badge-item-value { font-size: 5rem; }
 }
-
 
 @media (min-width: 1024px) {
-    #student-reviews .badge-item-title {
-        font-size: 0.8rem;
-    }
-
-    #student-reviews .badge-item-value {
-        font-size: 3.2rem;
-    }
+    #student-reviews .badge-item-title { font-size: 0.8rem; }
+    #student-reviews .badge-item-value { font-size: 3.2rem; }
 }
-
 
 @media (min-width: 1280px) {
-    #student-reviews .badge-item-title {
-        font-size: 1rem;
-    }
-
-    #student-reviews .badge-item-value {
-        font-size: 4rem;
-    }
+    #student-reviews .badge-item-title { font-size: 1rem; }
+    #student-reviews .badge-item-value { font-size: 4rem; }
 }
 
-
+/* Review Cards */
 #student-reviews .reviews-container {
     padding: 4rem 0;
     width: 100vw;
-    color: var(--primary-black);
     overflow-x: hidden;
+    color: var(--primary-black);
 }
 
 #student-reviews .review-item-container {
     padding: 0 2rem;
     display: flex;
     gap: 1rem;
-    overflow-y: hidden;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 @media (min-width: 768px) {
@@ -1530,11 +1214,11 @@ body::-webkit-scrollbar {
 }
 
 #student-reviews .review-item {
-    color: var(--foreground);
     min-width: 80vw;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    color: var(--foreground);
 }
 
 @media (min-width: 768px) {
@@ -1563,7 +1247,6 @@ body::-webkit-scrollbar {
     object-fit: cover;
 }
 
-
 #student-reviews .review-item:hover {
     color: var(--white);
     background-color: var(--foreground);
@@ -1577,28 +1260,17 @@ body::-webkit-scrollbar {
     animation: emoji-move 1.5s ease-in-out;
 }
 
-@keyframes emoji-move {
-    0% {
-        transform: translateY(0);
-    }
-    10% {
-        transform: translateY(-20px) scale(1.2);
-    }
-    20% {
-        transform: translateY(0) scale(1);
-    }
-    30% {
-        transform: translateY(-15px) scale(1.2);
-    }
-    40% {
-        transform: translateY(0) scale(1);
-    }
-}
-
 #student-reviews .review-item:hover .review-item-title-date-container {
     color: rgba(255, 255, 255, 0.6);
 }
 
+@keyframes emoji-move {
+    0%   { transform: translateY(0); }
+    10%  { transform: translateY(-20px) scale(1.2); }
+    20%  { transform: translateY(0) scale(1); }
+    30%  { transform: translateY(-15px) scale(1.2); }
+    40%  { transform: translateY(0) scale(1); }
+}
 
 #student-reviews .review-item-text {
     font-size: 1.2rem;
@@ -1624,7 +1296,7 @@ body::-webkit-scrollbar {
     text-align: right;
 }
 
-
+/* More To See */
 #student-reviews .review-item-more-to-see {
     height: 100%;
 }
@@ -1647,18 +1319,25 @@ body::-webkit-scrollbar {
 
 
 
+/* ===============================
+    #class-intro 전체 섹션 설정
+================================ */
 #class-intro {
     padding: 4rem 0;
     color: var(--primary-black);
     background-color: var(--white);
 }
 
+/* ===============================
+    컨테이너: 그리드 레이아웃 설정
+================================ */
 #class-intro .container {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr); /* 모바일 기본 1열 */
 }
 
+/* 태블릿 이상: 2열, 여백 및 간격 추가 */
 @media (min-width: 768px) {
     #class-intro .container {
         padding: 0 2rem;
@@ -1667,29 +1346,36 @@ body::-webkit-scrollbar {
     }
 }
 
+/* 데스크탑 이상: 3열 */
 @media (min-width: 1024px) {
     #class-intro .container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* 대형 스크린: 4열 */
 @media (min-width: 1280px) {
     #class-intro .container {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
+/* ===============================
+    개별 클래스 카드 스타일
+================================ */
 #class-intro .class-item {
     padding: 2.8rem;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/1; /* 정사각형 비율 유지 */
     font-size: 1.2rem;
 }
 
+/* 카드 hover 시 색 반전 효과 */
 #class-intro .class-item:hover {
     background-color: var(--foreground);
     color: var(--white);
 }
 
+/* 카드 내부 콘텐츠 컨테이너 */
 #class-intro .class-item-container {
     height: 100%;
     display: flex;
@@ -1698,24 +1384,31 @@ body::-webkit-scrollbar {
     gap: 1rem;
 }
 
+/* 카드 상단: 타이틀과 아이콘 정렬 */
 #class-intro .class-item-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* 타이틀 텍스트 스타일 */
 #class-intro .class-item-title {
     font-size: 2rem;
 }
 
+/* 아이콘 크기 설정 */
 #class-intro .class-item-header .material-icons {
     font-size: 2.4rem;
 }
 
+/* 설명 텍스트 */
 #class-intro .class-item-description {
     font-size: 1.2rem;
 }
 
+/* -------------------------------
+    반응형 - 태블릿 (768px 이상)
+-------------------------------- */
 @media (min-width: 768px) {
     #class-intro .class-item {
         padding: 1.8rem;
@@ -1730,6 +1423,9 @@ body::-webkit-scrollbar {
     }
 }
 
+/* -------------------------------
+    반응형 - 데스크탑 (1280px 이상)
+-------------------------------- */
 @media (min-width: 1280px) {
     #class-intro .class-item {
         padding: 1.6rem;
@@ -1744,10 +1440,14 @@ body::-webkit-scrollbar {
     }
 }
 
+/* ===============================
+    수업 시간표 영역
+================================ */
 #class-intro .class-timetable {
     color: var(--primary-black);
 }
 
+/* 태블릿 이상일 때 여백 조정 */
 @media (min-width: 768px) {
     #class-intro .class-timetable {
         margin: 1rem auto;
@@ -1755,6 +1455,7 @@ body::-webkit-scrollbar {
     }
 }
 
+/* 시간표 컨테이너 박스 스타일 */
 #class-intro .class-timetable-container {
     padding: 4rem 2.8rem;
     display: flex;
@@ -1763,19 +1464,25 @@ body::-webkit-scrollbar {
     background-color: var(--white-gray);
 }
 
+/* 시간표 hover 시 색 반전 */
 #class-intro .class-timetable-container:hover {
     background-color: var(--foreground);
     color: var(--white);
 }
 
+/* 시간표 타이틀 */
 #class-intro .class-timetable-title {
     font-size: 1.4rem;
 }
 
+/* 아이콘 크기 */
 #class-intro .class-timetable-container .material-icons {
     font-size: 1.8rem;
 }
 
+/* ===============================
+    카카오 문의 버튼
+================================ */
 #class-intro .kakao-button-container {
     margin: 4rem auto;
     display: flex;
@@ -1783,8 +1490,9 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
+/* 버튼 기본 스타일 */
 #class-intro .kakao-button {
-    padding: 1.4rem 2.4rem;
+    padding: 2rem 2.4rem;
     height: 2rem;
     border-radius: 3rem;
     display: flex;
@@ -1792,15 +1500,18 @@ body::-webkit-scrollbar {
     gap: 1rem;
 }
 
+/* 아이콘 컨테이너 */
 #class-intro .kakao-button .kakao-icon-container {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
 }
 
+/* 텍스트 기본 색상 */
 #class-intro .kakao-button .btn-text {
     color: var(--white);
 }
 
+/* hover 시 배경 및 텍스트 색상 변경 */
 #class-intro .kakao-button:hover {
     background-color: var(--yellow);
     color: var(--white);
@@ -1817,14 +1528,9 @@ body::-webkit-scrollbar {
 
 
 
-
-
-
-
-
-
-
-
+/* ===============================
+    공지사항 영역 (Notice Section)
+================================ */
 #notice {
     padding: 4rem 0;
     color: var(--primary-black);
@@ -1899,7 +1605,9 @@ body::-webkit-scrollbar {
 }
 
 
-
+/* ===============================
+    자주 묻는 질문 (FAQ Section)
+================================ */
 #faq {
     padding: 4rem 0;
     color: var(--primary-black);
@@ -1915,14 +1623,12 @@ body::-webkit-scrollbar {
     padding: 0 1rem;
 }
 
-/* 아코디언 개별 항목 스타일 */
 .faq-accordion-item {
     background-color: var(--white-gray);
     margin-bottom: 1rem;
     overflow: hidden;
 }
 
-/* 버튼 스타일 */
 .faq-accordion-button {
     padding: 1.6rem;
     display: flex;
@@ -1947,7 +1653,6 @@ body::-webkit-scrollbar {
     transition: transform 0.3s ease;
 }
 
-/* 체크박스를 활용한 아코디언 토글 */
 .faq-accordion-content {
     padding: 0 1.6rem;
     max-height: 0;
@@ -1961,26 +1666,24 @@ input[type="checkbox"] {
     display: none;
 }
 
-/* 체크되었을 때 */
 input[type="checkbox"]:checked + .faq-accordion-button {
     background-color: var(--foreground);
     color: var(--white);
 }
 
-/* 체크되었을 때(아코디언 열림) */
 input[type="checkbox"]:checked + .faq-accordion-button + .faq-accordion-content {
     max-height: 100px;
     padding: 1.6rem;
 }
 
-/* 체크되었을 때 아이콘 회전 */
 input[type="checkbox"]:checked + .faq-accordion-button .icon {
     transform: rotate(90deg);
 }
 
 
-
-
+/* ===============================
+    제휴 문의 영역 (Partnership)
+================================ */
 #partnership {
     padding: 4rem 0;
     color: var(--white);
@@ -1999,16 +1702,13 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 @media (min-width: 768px) {
     #partnership .contents {
         padding: 1.6rem 4rem;
-        /* font-size: 1.2rem; */
     }
 }
-
 
 #partnership .guide-text {
     margin: 1rem 0;
     line-height: 1.8;
 }
-
 
 #partnership .partnership-list {
     margin: 2rem 0;
@@ -2034,8 +1734,9 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 }
 
 
-
-
+/* ===============================
+    인재 채용 영역 (Human Resource)
+================================ */
 #human-resource {
     padding: 4rem 0;
     color: var(--kakao);
@@ -2105,13 +1806,9 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 }
 
 
-
-
-
-
-
-
-
+/* ===============================
+    오시는 길 (Location Section)
+================================ */
 #location {
     padding: 4rem 0;
     color: var(--primary-black);
@@ -2161,7 +1858,6 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     scale: 1.2;
 }
 
-
 #location .location-info {
     padding: 0 1.6rem;
     display: flex;
@@ -2180,7 +1876,6 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     padding-top: 0.2rem;
     font-size: 1.1rem;
 }
-
 
 @media (min-width: 768px) {
     #location .location-info {
@@ -2208,10 +1903,9 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 }
 
 
-
-
-
-/* Footer */
+/* ===============================
+    푸터 영역 (Footer Section)
+================================ */
 #footer {
     color: var(--white);
     background-color: var(--primary-black);
@@ -2223,7 +1917,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 @media (min-width: 768px) {
     #footer .container {
-        padding: 4rem;;
+        padding: 4rem;
     }
 }
 
