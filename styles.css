@@ -75,6 +75,7 @@ body {
     font-family: "Noto Sans KR", sans-serif;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE & Edge */
+    overflow: visible;
 }
 
 body::-webkit-scrollbar {
