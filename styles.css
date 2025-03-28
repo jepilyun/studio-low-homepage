@@ -1472,11 +1472,19 @@ body::-webkit-scrollbar {
 
 #student-reviews .review-item {
     color: var(--foreground);
-    min-width: 384px;
+    min-width: 80vw;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
+@media (min-width: 768px) {
+    #student-reviews .review-item {
+        min-width: 384px;
+    }
+}
+
+
 
 #student-reviews .review-item-text-container {
     position: relative;
