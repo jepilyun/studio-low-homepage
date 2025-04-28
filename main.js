@@ -5,20 +5,20 @@
  * @param {number} delay 타이핑 시작 지연 시간
  * @param {number} speed 타이핑 속도
  */
-const typeText = (element, text, delay, speed = 100) => {
-  let index = 0;
+// const typeText = (element, text, delay, speed = 100) => {
+//   let index = 0;
 
-  setTimeout(() => {
-    const interval = setInterval(() => {
-      element.innerHTML += text[index];
-      index++;
-      if (index === text.length) {
-        clearInterval(interval);
-        element.style.borderRight = "none"; // 커서 효과 제거
-      }
-    }, speed);
-  }, delay);
-}
+//   setTimeout(() => {
+//     const interval = setInterval(() => {
+//       element.innerHTML += text[index];
+//       index++;
+//       if (index === text.length) {
+//         clearInterval(interval);
+//         element.style.borderRight = "none"; // 커서 효과 제거
+//       }
+//     }, speed);
+//   }, delay);
+// }
 
 /**
  * 숫자를 애니메이션으로 변경하는 함수
@@ -57,8 +57,8 @@ const topNavMobileBtnToggle = () => {
   const topNavMobileMenuBtn = document.getElementById("top-nav-mobile-btn-menu");
   const topNavMobileCloseBtn = document.getElementById("top-nav-mobile-btn-close");
 
-  const topNavContainerMobileFolded = document.getElementById("top-nav-mobile-folded");
-  const topNavContainerMobileExpanded = document.getElementById("top-nav-mobile-expanded");
+  const topNavContainerMobileFolded = document.getElementById("top-nav-m-folded");
+  const topNavContainerMobileExpanded = document.getElementById("top-nav-m-expanded");
 
   // 메뉴 버튼 클릭 시 메뉴 확장
   topNavMobileMenuBtn.addEventListener("click", () => {
@@ -75,10 +75,10 @@ const topNavMobileBtnToggle = () => {
 
 // 클릭 시 해당 메뉴 페이지로 이동하고 메뉴 접기
 const clickExpandedMenu = () => {
-  const expandedMenuItems = document.querySelectorAll("#top-nav-mobile-expanded-menus .menu-item");
-  const expandedMenuItemsOutlink = document.querySelectorAll("#top-nav-mobile-expanded-menus .menu-item-outlink");
-  const topNavContainerMobileFolded = document.getElementById("top-nav-mobile-folded");
-  const topNavContainerMobileExpanded = document.getElementById("top-nav-mobile-expanded");
+  const expandedMenuItems = document.querySelectorAll("#top-nav-m-expanded-menus .menu-item");
+  const expandedMenuItemsOutlink = document.querySelectorAll("#top-nav-m-expanded-menus .menu-item-outlink");
+  const topNavContainerMobileFolded = document.getElementById("top-nav-m-folded");
+  const topNavContainerMobileExpanded = document.getElementById("top-nav-m-expanded");
 
   expandedMenuItems.forEach(item => {
     item.addEventListener("click", () => {
