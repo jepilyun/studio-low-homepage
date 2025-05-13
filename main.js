@@ -1,3 +1,4 @@
+
 /**
  * 텍스트 타이핑 효과 함수
  * @param {HTMLElement} element 타이핑 효과를 적용할 HTML 요소
@@ -27,28 +28,28 @@
  * @param end 끝 숫자 ex. 1000
  * @param duration 애니메이션 지속 시간 ex. 1000
  */
-const animateNumber = (targetElement, start, end, duration) => {
-  if (!targetElement) return; // 요소가 없으면 종료
+// const animateNumber = (targetElement, start, end, duration) => {
+//   if (!targetElement) return; // 요소가 없으면 종료
 
-  let startTime = null;
+//   let startTime = null;
 
-  function updateNumber(timestamp) {
-    if (!startTime) startTime = timestamp; // 첫 실행 시점 설정
-    const elapsed = timestamp - startTime;
-    const progress = Math.min(elapsed / duration, 1); // 진행률 0~1로 제한
-    const easedProgress = 1 - Math.pow(1 - progress, 3); // 감속 효과 적용
+//   function updateNumber(timestamp) {
+//     if (!startTime) startTime = timestamp; // 첫 실행 시점 설정
+//     const elapsed = timestamp - startTime;
+//     const progress = Math.min(elapsed / duration, 1); // 진행률 0~1로 제한
+//     const easedProgress = 1 - Math.pow(1 - progress, 3); // 감속 효과 적용
 
-    const current = Math.round(start + (end - start) * easedProgress);
+//     const current = Math.round(start + (end - start) * easedProgress);
 
-    targetElement.textContent = current.toLocaleString(); // 숫자 표시
+//     targetElement.textContent = current.toLocaleString(); // 숫자 표시
 
-    if (progress < 1) {
-      requestAnimationFrame(updateNumber); // 다음 프레임에서 업데이트
-    }
-  }
+//     if (progress < 1) {
+//       requestAnimationFrame(updateNumber); // 다음 프레임에서 업데이트
+//     }
+//   }
 
-  requestAnimationFrame(updateNumber);
-};
+//   requestAnimationFrame(updateNumber);
+// };
 
 /**
  * 탑 내비게이션 모바일 버튼 토글 함수
@@ -408,9 +409,33 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", handleScroll);
 
   // ✅ 탑 배너 01 텍스트 타이핑 효과 실행
-  TopBanner01TextTyping();
+  // TopBanner01TextTyping();
 
   gsap.registerPlugin(ScrollTrigger);
 
   GSAPAnimations();
+
+  // ✅ 키 팩터 로고 애니메이션 실행
+  const logos = document.querySelectorAll("#key-factors .logo-cloud .logo");
+  const usedPositions = [];
+
+  logos.forEach((logo, i) => {
+    // (1) 좌표를 격자 기반으로 나누어서 분산
+    const row = Math.floor(i / 4);
+    const col = i % 4;
+
+    // const top = row * 20 + Math.random() * 10; // 0~90%
+    // const left = col * 20 + Math.random() * 10; // 0~90%
+    const top = Math.random() * 100;
+    const left = Math.random() * 100;
+    console.log(top, left);
+    logo.style.top = `${top}%`;
+    logo.style.left = `${left}%`;
+
+    // (2) 랜덤 애니메이션 타이밍
+    const duration = 15 + Math.random() * 10;
+    const delay = Math.random() * 5;
+    logo.style.animationDuration = `${duration}s`;
+    logo.style.animationDelay = `${delay}s`;
+  });
 });
