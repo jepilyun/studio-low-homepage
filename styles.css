@@ -504,6 +504,7 @@ body::-webkit-scrollbar {
 
 #key-factors {
     padding: 1rem 2rem;
+    overflow: hidden;
 }
 
 #key-factors .container {
@@ -565,35 +566,49 @@ body::-webkit-scrollbar {
 ============================= */
 
 #success-story-cards {
-    padding: 3rem 3rem;
-    /* 
-        Background Pattern
-        https://www.magicpattern.design/tools/css-backgrounds
-    */
-    /* background-color: rgba(233, 233, 233, 0.5);
-    background-image: linear-gradient(to right, #EEEEEE, #EEEEEE 3.5px, #E9E9E9 3.5px, #E9E9E9);
-    background-size: 7px 100%; */
-    /* opacity: 0.5;
-    background-image: linear-gradient(0deg, #e5e5f7 50%, #ffffff 0%);
-    background-size: 10px 10px; */
-    background-color: #ffffff;
-    opacity: 1;
-    background-image:  repeating-linear-gradient(45deg, #e5e5f7 25%, transparent 25%, transparent 75%, #e5e5f7 75%, #e5e5f7), repeating-linear-gradient(45deg, #eeeeee 25%, #ffffff 25%, #ffffff 75%, #eeeeee 75%, #eeeeee);
-    background-position: 0 0, 4px 4px;
-    background-size: 8px 8px;
+    position: relative;
+    padding: 3rem;
+    background-color: transparent;
+    z-index: 0;
+    overflow: hidden;
 }
 
-#success-story-cards {
+#success-story-cards .card-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at center, #e5e5f7, #ffffff),
+        repeating-radial-gradient(circle at left top, #e5e5f7, #e5e5f7, 4px, transparent 8px, transparent 4px);
+    background-blend-mode: multiply;
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    opacity: 0.5;
+    z-index: -1;
+    animation: waveBackground 12s linear infinite;
+}
+
+/* keyframes 정의 */
+@keyframes waveBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* #success-story-cards {
     padding: 4rem 0;
     width: 100vw;
     color: var(--primary-black);
     background-color: var(--red);
     overflow-x: hidden;
-}
+} */
 
 /* Card Container */
 #success-story-cards .card-container {
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
     display: flex;
     gap: 1rem;
     overflow-x: scroll;
@@ -611,7 +626,7 @@ body::-webkit-scrollbar {
     width: 320px;
     height: 488px;
     padding: 1.4rem 2rem;
-    background-color: var(--white);
+    background-color: #ffffff;
     transition: all 0.5s ease;
 }
 
