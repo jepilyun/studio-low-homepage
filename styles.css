@@ -516,31 +516,235 @@ body::-webkit-scrollbar {
 #key-factors .logo-cloud {
     position: relative; /* 기준이 되는 박스 */
     min-width: 100%;
-    height: 480px;
+    height: 600px;
     pointer-events: none;
 }
 
 #key-factors .logo-cloud .logo {
-    width: 100px;
-    /* height: 48px; */
+    max-width: 4.8rem;
+    max-height: 4.8rem;
+    border-radius: 1rem;
+    overflow: hidden;
     position: absolute;
-    font-size: 1.2rem;
-    font-weight: 900;
     color: rgba(0, 0, 0, 0.1);
-    animation: floatAround 20s infinite ease-in-out alternate;
-    opacity: 0.7;
-    white-space: nowrap;
+}
+
+#key-factors .logo-cloud .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 또는 scale-down */
+}
+
+#key-factors .logo-cloud .logo-cloud-item-0 {
+    top: 2.8rem;
+    left: 2rem;
+    animation: ellipticalMotion-0 30s linear infinite;
+    transform-origin: center center; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround {
+@keyframes ellipticalMotion-0 {
     0% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
+        transform: rotate(0deg) translateX(60px) translateY(30px) rotate(0deg);
     }
     100% {
-        transform: translate(20px, -30px) scale(1.1) rotate(5deg);
+        transform: rotate(360deg) translateX(60px) translateY(30px) rotate(-360deg);
     }
 }
+
+#key-factors .logo-cloud .logo-cloud-item-1 {
+    top: 2rem;
+    right: 3.2rem;
+    animation: rotateAround-1 20s linear infinite;
+    transform-origin: 50px 50px; /* 원의 반지름 위치 */
+}
+
+/* 움직이는 애니메이션 */
+@keyframes rotateAround-1 {
+    0% {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-2 {
+    bottom: 4rem;
+    left: 3.2rem;
+    animation: ellipticalMotion-2 40s linear infinite;
+    transform-origin: center center; /* 원의 반지름 위치 */
+}
+
+/* 움직이는 애니메이션 */
+@keyframes ellipticalMotion-2 {
+    0% {
+        transform: rotate(0deg) translateX(40px) translateY(30px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg) translateX(40px) translateY(30px) rotate(360deg);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-3 {
+    bottom: 2.8rem;
+    right: 2rem;
+    animation: floatAround-3 10s infinite ease-in-out alternate;
+}
+
+/* 움직이는 애니메이션 */
+@keyframes floatAround-3 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-4rem, 4rem);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-4 {
+    top: 3rem;
+    left: calc(50% - 2rem);
+    animation: floatAround-4 10s infinite ease-in-out alternate;
+}
+
+/* 움직이는 애니메이션 */
+@keyframes floatAround-4 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(2rem, -3rem);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-5 {
+    bottom: 2rem;
+    right: calc(50% - 3rem);
+    animation: floatAround-5 10s infinite ease-in-out alternate;
+}
+
+/* 움직이는 애니메이션 */
+@keyframes floatAround-5 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-1rem, -4rem);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-6 {
+    top: calc(50% - 2.8rem);
+    left: 2.2rem;
+    animation: floatAround-6 10s infinite ease-in-out alternate;
+}
+
+/* 움직이는 애니메이션 */
+@keyframes floatAround-6 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(3rem, -4rem);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-7 {
+    top: calc(50% - 2.6rem);
+    right: 2rem;
+    animation: floatAround-7 10s infinite ease-in-out alternate;
+}
+
+/* 움직이는 애니메이션 */
+@keyframes floatAround-7 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-2rem, -3rem);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-8 {
+    top: calc(25% - 2.4rem);
+    left: calc(25% - 2.4rem);
+    animation: floatAround-8 10s infinite ease-in-out alternate;
+}
+
+/* 움직이는 애니메이션 */
+@keyframes floatAround-8 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(2rem, 2rem);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-9 {
+    top: calc(25% - 2.4rem);
+    right: calc(25% - 2.4rem);
+    animation: floatAround-9 10s infinite ease-in-out alternate;
+}
+
+/* 움직이는 애니메이션 */
+@keyframes floatAround-9 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-2rem, 2rem);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-10 {
+    top: calc(75% - 2.4rem);
+    left: calc(25% - 2.4rem);
+    animation: floatAround-10 10s infinite ease-in-out alternate;
+}
+
+/* 움직이는 애니메이션 */
+@keyframes floatAround-10 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(2rem, -2rem);
+    }
+}
+
+#key-factors .logo-cloud .logo-cloud-item-11 {
+    top: calc(75% - 2.4rem);
+    right: calc(25% - 2.4rem);
+    animation: floatAround-11 10s infinite ease-in-out alternate;
+}
+
+/* 움직이는 애니메이션 */
+@keyframes floatAround-11 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-2rem, -2rem);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #key-factors .core-values {
     font-size: 1.8rem;
@@ -554,6 +758,7 @@ body::-webkit-scrollbar {
     justify-content: center;
     gap: 1.2rem;
     font-weight: 200;
+    background-color: var(--white);
 }
 
 #key-factors .core-values .core-value-highlight {

@@ -416,26 +416,26 @@ document.addEventListener("DOMContentLoaded", function () {
   GSAPAnimations();
 
   // ✅ 키 팩터 로고 애니메이션 실행
-  const logos = document.querySelectorAll("#key-factors .logo-cloud .logo");
-  const usedPositions = [];
+  // const logos = document.querySelectorAll("#key-factors .logo-cloud .logo");
+  // const usedPositions = [];
 
-  logos.forEach((logo, i) => {
-    // (1) 좌표를 격자 기반으로 나누어서 분산
-    const row = Math.floor(i / 4);
-    const col = i % 4;
+  // logos.forEach((logo, i) => {
+  //   // (1) 좌표를 격자 기반으로 나누어서 분산
+  //   const row = Math.floor(i / 4);
+  //   const col = i % 4;
 
-    // const top = row * 20 + Math.random() * 10; // 0~90%
-    // const left = col * 20 + Math.random() * 10; // 0~90%
-    const top = Math.random() * 100;
-    const left = Math.random() * 100;
-    console.log(top, left);
-    logo.style.top = `${top}%`;
-    logo.style.left = `${left}%`;
+  //   // const top = row * 20 + Math.random() * 10; // 0~90%
+  //   // const left = col * 20 + Math.random() * 10; // 0~90%
+  //   const top = Math.random() * 100;
+  //   const left = Math.random() * 100;
+  //   console.log(top, left);
+  //   logo.style.top = `${top}%`;
+  //   logo.style.left = `${left}%`;
 
-    // (2) 랜덤 애니메이션 타이밍
-    const duration = 15 + Math.random() * 10;
-    const delay = Math.random() * 5;
-    logo.style.animationDuration = `${duration}s`;
-    logo.style.animationDelay = `${delay}s`;
-  });
+  //   // (2) 랜덤 애니메이션 타이밍
+  //   const duration = 15 + Math.random() * 10;
+  //   const delay = Math.random() * 5;
+  //   logo.style.animationDuration = `${duration}s`;
+  //   logo.style.animationDelay = `${delay}s`;
+  // });
 });
