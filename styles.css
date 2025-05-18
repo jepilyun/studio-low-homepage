@@ -323,9 +323,10 @@ body::-webkit-scrollbar {
 ============================= */
 
 #hero-section {
+    /* background-color: #efefef;  */
     padding: 3rem 3rem;
     position: relative;
-    overflow: hidden; /* 배경이 넘치지 않도록 */
+    overflow: hidden;
     z-index: 1;
 }
 
@@ -339,12 +340,11 @@ body::-webkit-scrollbar {
     content: "";
     position: absolute;
     top: -100%;
-    left: -200%;
+    left: -180%;
     width: 300%;
     height: 300%;
-    /* background-color: #ffffff; */
     opacity: 0.5;
-    background-image: linear-gradient(0deg, #e5e5f7 50%, #ffffff 0%);
+    background-image: linear-gradient(0deg, #eeeeee 50%, #ffffff 0%);
     background-size: 4px 4px;
     z-index: -2;
     animation: rotateBgCW 60s linear infinite;
@@ -359,9 +359,8 @@ body::-webkit-scrollbar {
     left: 0%;
     width: 300%;
     height: 300%;
-    /* background-color: #eeeeee; */
     opacity: 0.5;
-    background-image: linear-gradient(0deg, #ffffff 50%, #e5e5f7 0%);
+    background-image: linear-gradient(0deg, #ffffff 50%, #eeeeee 0%);
     background-size: 4px 4px;
     z-index: -3;
     animation: rotateBgCCW 30s linear infinite;
@@ -386,6 +385,50 @@ body::-webkit-scrollbar {
     }
 }
 
+/* 배경을 검은색으로 하고 조명처럼 하얀색 원이 배너를 돌아다니는 애니메이션 */
+/* #hero-section::before {
+    content: "";
+    position: absolute;
+    top: -500%;
+    left: -80%;
+    width: 100%;
+    height: 1100%;
+    background-color: black;
+    opacity: 1;
+    z-index: 1;
+    animation: moveBlackBg 60s linear infinite;
+}
+
+@keyframes moveBlackBg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} */
+
+/* #hero-section::after {
+    content: "";
+    position: absolute;
+    top: -500%;
+    left: 100%;
+    width: 100%;
+    height: 1100%;
+    background-color: black;
+    opacity: 1;
+    z-index: 1;
+    animation: moveBlackBg 60s linear infinite;
+}
+
+@keyframes moveBlackBg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} */
 
 #hero-section .container {
     margin: 0 auto;
@@ -395,7 +438,6 @@ body::-webkit-scrollbar {
     align-items: end;
     justify-content: space-between;
     gap: 2rem;
-
 }
 
 @media (min-width: 768px) {
@@ -536,8 +578,8 @@ body::-webkit-scrollbar {
 }
 
 #key-factors .logo-cloud .logo-cloud-item-0 {
-    top: 2.8rem;
-    left: 2rem;
+    top: 3rem;
+    left: 3rem;
     animation: ellipticalMotion-0 30s linear infinite;
     transform-origin: center center; /* 원의 반지름 위치 */
 }
@@ -545,27 +587,27 @@ body::-webkit-scrollbar {
 /* 움직이는 애니메이션 */
 @keyframes ellipticalMotion-0 {
     0% {
-        transform: rotate(0deg) translateX(60px) translateY(30px) rotate(0deg);
+        transform: rotate(0deg) translateX(2rem) translateY(3rem) rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translateX(60px) translateY(30px) rotate(-360deg);
+        transform: rotate(360deg) translateX(2rem) translateY(3rem) rotate(-360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-1 {
-    top: 2rem;
-    right: 3.2rem;
-    animation: rotateAround-1 20s linear infinite;
+    top: 2.8rem;
+    right: 2.8rem;
+    animation: rotateAround-1 30s linear infinite;
     transform-origin: 50px 50px; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
 @keyframes rotateAround-1 {
     0% {
-        transform: rotate(0deg) translateX(50px) rotate(0deg);
+        transform: rotate(0deg) translateX(2rem) rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+        transform: rotate(360deg) translateX(2rem) rotate(-360deg);
     }
 }
 
@@ -579,171 +621,165 @@ body::-webkit-scrollbar {
 /* 움직이는 애니메이션 */
 @keyframes ellipticalMotion-2 {
     0% {
-        transform: rotate(0deg) translateX(40px) translateY(30px) rotate(0deg);
+        transform: rotate(0deg) translateX(2rem) translateY(3rem) rotate(0deg);
     }
     100% {
-        transform: rotate(-360deg) translateX(40px) translateY(30px) rotate(360deg);
+        transform: rotate(-360deg) translateX(2rem) translateY(3rem) rotate(360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-3 {
-    bottom: 2.8rem;
-    right: 2rem;
-    animation: floatAround-3 10s infinite ease-in-out alternate;
+    bottom: 3rem;
+    right: 3rem;
+    animation: rotateAround-3 30s linear infinite;
+    transform-origin: 50px 50px; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround-3 {
+@keyframes rotateAround-3 {
     0% {
-        transform: translate(0, 0);
+        transform: rotate(0deg) translateX(2rem) rotate(0deg);
     }
     100% {
-        transform: translate(-4rem, 4rem);
+        transform: rotate(-360deg) translateX(2rem) rotate(360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-4 {
     top: 3rem;
     left: calc(50% - 2rem);
-    animation: floatAround-4 10s infinite ease-in-out alternate;
+    animation: ellipticalMotion-4 40s linear infinite;
+    transform-origin: center center; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround-4 {
+@keyframes ellipticalMotion-4 {
     0% {
-        transform: translate(0, 0);
+        transform: rotate(0deg) translateX(2rem) translateY(3rem) rotate(0deg);
     }
     100% {
-        transform: translate(2rem, -3rem);
+        transform: rotate(-360deg) translateX(2rem) translateY(3rem) rotate(360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-5 {
-    bottom: 2rem;
+    bottom: 3rem;
     right: calc(50% - 3rem);
-    animation: floatAround-5 10s infinite ease-in-out alternate;
+    animation: rotateAround-5 30s linear infinite;
+    transform-origin: 50px 50px; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround-5 {
+@keyframes rotateAround-5 {
     0% {
-        transform: translate(0, 0);
+        transform: rotate(0deg) translateX(2rem) rotate(0deg);
     }
     100% {
-        transform: translate(-1rem, -4rem);
+        transform: rotate(360deg) translateX(2rem) rotate(-360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-6 {
-    top: calc(50% - 2.8rem);
-    left: 2.2rem;
-    animation: floatAround-6 10s infinite ease-in-out alternate;
+    top: calc(50% - 2rem);
+    left: 2rem;
+    animation: ellipticalMotion-6 50s linear infinite;
+    transform-origin: center center; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround-6 {
+@keyframes ellipticalMotion-6 {
     0% {
-        transform: translate(0, 0);
+        transform: rotate(0deg) translateX(2rem) translateY(3rem) rotate(0deg);
     }
     100% {
-        transform: translate(3rem, -4rem);
+        transform: rotate(-360deg) translateX(2rem) translateY(3rem) rotate(360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-7 {
-    top: calc(50% - 2.6rem);
+    top: calc(50% - 2.8rem);
     right: 2rem;
-    animation: floatAround-7 10s infinite ease-in-out alternate;
+    animation: rotateAround-7 40s linear infinite;
+    transform-origin: 50px 50px; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround-7 {
+@keyframes rotateAround-7 {
     0% {
-        transform: translate(0, 0);
+        transform: rotate(0deg) translateX(2rem) rotate(0deg);
     }
     100% {
-        transform: translate(-2rem, -3rem);
+        transform: rotate(360deg) translateX(2rem) rotate(-360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-8 {
-    top: calc(25% - 2.4rem);
-    left: calc(25% - 2.4rem);
-    animation: floatAround-8 10s infinite ease-in-out alternate;
+    top: calc(25% - 2rem);
+    left: calc(25% - 2rem);
+    animation: ellipticalMotion-8 40s linear infinite;
+    transform-origin: center center; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround-8 {
+@keyframes ellipticalMotion-8 {
     0% {
-        transform: translate(0, 0);
+        transform: rotate(0deg) translateX(2rem) translateY(2rem) rotate(0deg);
     }
     100% {
-        transform: translate(2rem, 2rem);
+        transform: rotate(360deg) translateX(2rem) translateY(2rem) rotate(-360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-9 {
-    top: calc(25% - 2.4rem);
-    right: calc(25% - 2.4rem);
-    animation: floatAround-9 10s infinite ease-in-out alternate;
+    top: calc(25% - 2rem);
+    right: calc(25% - 2rem);
+    animation: rotateAround-9 30s linear infinite;
+    transform-origin: 50px 50px; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround-9 {
+@keyframes rotateAround-9 {
     0% {
-        transform: translate(0, 0);
+        transform: rotate(0deg) translateX(2rem) rotate(0deg);
     }
     100% {
-        transform: translate(-2rem, 2rem);
+        transform: rotate(360deg) translateX(2rem) rotate(-360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-10 {
-    top: calc(75% - 2.4rem);
-    left: calc(25% - 2.4rem);
-    animation: floatAround-10 10s infinite ease-in-out alternate;
+    top: calc(75% - 2rem);
+    left: calc(25% - 2rem);
+    animation: ellipticalMotion-10 40s linear infinite;
+    transform-origin: center center; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround-10 {
+@keyframes ellipticalMotion-10 {
     0% {
-        transform: translate(0, 0);
+        transform: rotate(0deg) translateX(2rem) translateY(3rem) rotate(0deg);
     }
     100% {
-        transform: translate(2rem, -2rem);
+        transform: rotate(360deg) translateX(2rem) translateY(3rem) rotate(-360deg);
     }
 }
 
 #key-factors .logo-cloud .logo-cloud-item-11 {
     top: calc(75% - 2.4rem);
     right: calc(25% - 2.4rem);
-    animation: floatAround-11 10s infinite ease-in-out alternate;
+    animation: rotateAround-11 30s linear infinite;
+    transform-origin: 50px 50px; /* 원의 반지름 위치 */
 }
 
 /* 움직이는 애니메이션 */
-@keyframes floatAround-11 {
+@keyframes rotateAround-11 {
     0% {
-        transform: translate(0, 0);
+        transform: rotate(0deg) translateX(40px) rotate(0deg);
     }
     100% {
-        transform: translate(-2rem, -2rem);
+        transform: rotate(360deg) translateX(40px) rotate(-360deg);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #key-factors .core-values {
@@ -772,7 +808,7 @@ body::-webkit-scrollbar {
 
 #success-story-cards {
     position: relative;
-    padding: 3rem;
+    padding: 4rem 0;
     background-color: transparent;
     z-index: 0;
     overflow: hidden;
@@ -782,38 +818,17 @@ body::-webkit-scrollbar {
     content: "";
     position: absolute;
     inset: 0;
-    background-image:
-        radial-gradient(circle at center, #e5e5f7, #ffffff),
-        repeating-radial-gradient(circle at left top, #e5e5f7, #e5e5f7, 4px, transparent 8px, transparent 4px);
-    background-blend-mode: multiply;
-    background-size: 200% 200%;
-    background-position: 0% 0%;
+    background-color: #ffffff;
+    opacity: 1;
+    background-image: linear-gradient(to right, #ECECEC, #ECECEC 2px, #ffffff 2px, #ffffff );
+    background-size: 4px 100%;
     opacity: 0.5;
     z-index: -1;
-    animation: waveBackground 12s linear infinite;
 }
-
-/* keyframes 정의 */
-@keyframes waveBackground {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 0% 100%;
-    }
-}
-
-/* #success-story-cards {
-    padding: 4rem 0;
-    width: 100vw;
-    color: var(--primary-black);
-    background-color: var(--red);
-    overflow-x: hidden;
-} */
 
 /* Card Container */
 #success-story-cards .card-container {
-    /* padding: 0 2rem; */
+    padding: 0 6rem;
     display: flex;
     gap: 1rem;
     overflow-x: scroll;
@@ -822,116 +837,109 @@ body::-webkit-scrollbar {
 
 @media (min-width: 768px) {
     #success-story-cards .card-container {
-        gap: 2rem;
+        gap: 2.4rem;
     }
 }
 
 /* Individual Card */
 #success-story-cards .card {
     width: 320px;
-    height: 488px;
-    padding: 1.4rem 2rem;
-    background-color: #ffffff;
+    padding: 2.4rem 2rem;
+    background-color: #F6F6F6;
     transition: all 0.5s ease;
+    border-radius: 1rem;
 }
 
 #success-story-cards .card:hover {
     scale: 1.02;
 }
 
-#success-story-cards .card:hover .card-header-avatar img {
+#success-story-cards .card:hover .card-header-logo img {
     transition: transform 0.3s;
     transform: rotateY(360deg);
 }
 
-/* Card Layout */
 #success-story-cards .card-layout {
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    justify-content: space-between;
+    gap: 0.8rem;
 }
 
-/* Card Header */
 #success-story-cards .card-header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    min-height: 110px;
+    min-height: 90px;
 }
 
-#success-story-cards .card-header-avatar {
-    width: 5rem;
-    min-width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    aspect-ratio: 1/1;
+#success-story-cards .card-header-logo {
+    padding: 0.4rem 0.2rem;
+    width: 7.4rem;
+    min-width: 7.4rem;
+    height: 3.2rem;
     overflow: hidden;
-    perspective: 1000px; /* 3D effect */
+    background-color: #ffffff;
+    border: 4px solid #ececec;
+    border-radius: 8px;
 }
 
-#success-story-cards .card-header-avatar img {
+#success-story-cards .card-header-logo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transform-style: preserve-3d;
 }
 
 #success-story-cards .card-header-info {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.4rem;
 }
 
 #success-story-cards .card-header-info-name {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 #success-story-cards .card-header-info-job {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
-#success-story-cards .card-header-info-profile {
+#success-story-cards .card-bottom {
     display: flex;
-    flex-direction: row;
-    align-items: end;
-    justify-content: end;
+    flex-direction: column;
+    justify-content: space-between;
     gap: 0.8rem;
 }
 
-#success-story-cards .card-header-info-profile-name {
-    font-size: 1.2rem;
-}
-
-#success-story-cards .card-header-info-profile-name .profile-name-suffix {
-    font-size: 1rem;
-}
-
-#success-story-cards .card-header-info-profile-info {
-    padding-bottom: 0.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.7rem;
-    color: var(--dark);
-}
-
-/* Card Content */
 #success-story-cards .card-content {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    height: 248px;
+    /* height: 248px; */
     overflow: hidden;
 }
 
 #success-story-cards .card-content-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.8;
 }
 
 #success-story-cards .card-content-text {
     font-size: 1rem;
+    font-weight: 200;
     line-height: 1.8;
 }
+
+#success-story-cards .card-footer-text {
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    text-decoration-thickness: 0.1rem;
+    text-decoration-color: #000000;
+}
+
 
 /* More to See Button */
 #success-story-cards .more-to-see-container {
@@ -950,6 +958,155 @@ body::-webkit-scrollbar {
 #success-story-cards .more-to-see-container .more-to-see-text {
     font-size: 2rem;
 }
+
+
+/* =============================
+    Section Title Style
+============================= */
+
+#class-intro .section-title {
+    padding: 4rem 0;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+
+/* ===============================
+    #class-intro 전체 섹션 설정
+================================ */
+
+#class-intro {
+    padding: 4rem;
+    color: var(--primary-black);
+    background-color: var(--white);
+}
+
+#class-intro .container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+#class-intro .class-intro-img-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#class-intro .class-intro-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#class-intro .class-title {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+}
+
+#class-intro .class-description {
+    margin-top: 0.4rem;
+    color: #9f9f9f;
+    text-align: center;
+}
+
+#class-intro .class-description p {
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+
+/* ===============================
+    수업 시간표 영역
+================================ */
+/* #class-intro .class-timetable {
+    color: var(--primary-black);
+} */
+
+/* 태블릿 이상일 때 여백 조정 */
+/* @media (min-width: 768px) {
+    #class-intro .class-timetable {
+        margin: 1rem auto;
+        padding: 0 2rem;
+    }
+} */
+
+/* 시간표 컨테이너 박스 스타일 */
+/* #class-intro .class-timetable-container {
+    padding: 4rem 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white-gray);
+} */
+
+/* 시간표 hover 시 색 반전 */
+/* #class-intro .class-timetable-container:hover {
+    background-color: var(--foreground);
+    color: var(--white);
+} */
+
+/* 시간표 타이틀 */
+/* #class-intro .class-timetable-title {
+    font-size: 1.4rem;
+} */
+
+/* 아이콘 크기 */
+/* #class-intro .class-timetable-container .material-icons {
+    font-size: 1.8rem;
+} */
+
+/* ===============================
+    카카오 문의 버튼
+================================ */
+/* #class-intro .kakao-button-container {
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 버튼 기본 스타일 */
+#class-intro .kakao-button {
+    padding: 2rem 2.4rem;
+    height: 2rem;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* 아이콘 컨테이너 */
+#class-intro .kakao-button .kakao-icon-container {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* 텍스트 기본 색상 */
+#class-intro .kakao-button .btn-text {
+    color: var(--white);
+}
+
+/* hover 시 배경 및 텍스트 색상 변경 */
+#class-intro .kakao-button:hover {
+    background-color: var(--yellow);
+    color: var(--white);
+}
+
+#class-intro .kakao-button:hover .kakao-icon-container {
+    color: var(--kakao);
+}
+
+#class-intro .kakao-button:hover .btn-text {
+    color: var(--kakao);
+} */
+
+
 
 /* =============================
     Utility Classes
@@ -1100,13 +1257,8 @@ body::-webkit-scrollbar {
 /* =============================
 Section Title Style
 ============================= */
-/* .section-title {
-    padding: 6rem 0;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-}
 
+/*
 @media (min-width: 768px) {
     .section-title {
         font-size: 3rem;
@@ -1367,212 +1519,6 @@ Section Title Style
 } */
 
 
-
-/* ===============================
-    #class-intro 전체 섹션 설정
-================================ */
-/* #class-intro {
-    padding: 4rem 0;
-    color: var(--primary-black);
-    background-color: var(--white);
-} */
-
-/* ===============================
-    컨테이너: 그리드 레이아웃 설정
-================================ */
-/* #class-intro .container {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-} */
-
-/* 태블릿 이상: 2열, 여백 및 간격 추가 */
-/* @media (min-width: 768px) {
-    #class-intro .container {
-        padding: 0 2rem;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-} */
-
-/* 데스크탑 이상: 3열 */
-/* @media (min-width: 1024px) {
-    #class-intro .container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-} */
-
-/* 대형 스크린: 4열 */
-/* @media (min-width: 1280px) {
-    #class-intro .container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-} */
-
-/* ===============================
-    개별 클래스 카드 스타일
-================================ */
-/* #class-intro .class-item {
-    padding: 2.8rem;
-    aspect-ratio: 1/1; 
-    font-size: 1.2rem;
-} */
-
-/* 카드 hover 시 색 반전 효과 */
-/* #class-intro .class-item:hover {
-    background-color: var(--foreground);
-    color: var(--white);
-} */
-
-/* 카드 내부 콘텐츠 컨테이너 */
-/* #class-intro .class-item-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-} */
-
-/* 카드 상단: 타이틀과 아이콘 정렬 */
-/* #class-intro .class-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
-/* 타이틀 텍스트 스타일 */
-/* #class-intro .class-item-title {
-    font-size: 2rem;
-} */
-
-/* 아이콘 크기 설정 */
-/* #class-intro .class-item-header .material-icons {
-    font-size: 2.4rem;
-} */
-
-/* 설명 텍스트 */
-/* #class-intro .class-item-description {
-    font-size: 1.2rem;
-} */
-
-/* -------------------------------
-    반응형 - 태블릿 (768px 이상)
--------------------------------- */
-/* @media (min-width: 768px) {
-    #class-intro .class-item {
-        padding: 1.8rem;
-    }
-
-    #class-intro .class-item-title {
-        font-size: 1.8rem;
-    }
-    
-    #class-intro .class-item-description {
-        font-size: 1rem;
-    }
-} */
-
-/* -------------------------------
-    반응형 - 데스크탑 (1280px 이상)
--------------------------------- */
-/* @media (min-width: 1280px) {
-    #class-intro .class-item {
-        padding: 1.6rem;
-    }
-    
-    #class-intro .class-item-title {
-        font-size: 1.4rem;
-    }
-    
-    #class-intro .class-item-description {
-        font-size: 0.8rem;
-    }
-} */
-
-/* ===============================
-    수업 시간표 영역
-================================ */
-/* #class-intro .class-timetable {
-    color: var(--primary-black);
-} */
-
-/* 태블릿 이상일 때 여백 조정 */
-/* @media (min-width: 768px) {
-    #class-intro .class-timetable {
-        margin: 1rem auto;
-        padding: 0 2rem;
-    }
-} */
-
-/* 시간표 컨테이너 박스 스타일 */
-/* #class-intro .class-timetable-container {
-    padding: 4rem 2.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--white-gray);
-} */
-
-/* 시간표 hover 시 색 반전 */
-/* #class-intro .class-timetable-container:hover {
-    background-color: var(--foreground);
-    color: var(--white);
-} */
-
-/* 시간표 타이틀 */
-/* #class-intro .class-timetable-title {
-    font-size: 1.4rem;
-} */
-
-/* 아이콘 크기 */
-/* #class-intro .class-timetable-container .material-icons {
-    font-size: 1.8rem;
-} */
-
-/* ===============================
-    카카오 문의 버튼
-================================ */
-/* #class-intro .kakao-button-container {
-    margin: 4rem auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 버튼 기본 스타일 */
-#class-intro .kakao-button {
-    padding: 2rem 2.4rem;
-    height: 2rem;
-    border-radius: 3rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* 아이콘 컨테이너 */
-#class-intro .kakao-button .kakao-icon-container {
-    width: 2rem;
-    height: 2rem;
-}
-
-/* 텍스트 기본 색상 */
-#class-intro .kakao-button .btn-text {
-    color: var(--white);
-}
-
-/* hover 시 배경 및 텍스트 색상 변경 */
-#class-intro .kakao-button:hover {
-    background-color: var(--yellow);
-    color: var(--white);
-}
-
-#class-intro .kakao-button:hover .kakao-icon-container {
-    color: var(--kakao);
-}
-
-#class-intro .kakao-button:hover .btn-text {
-    color: var(--kakao);
-} */
 
 
 
