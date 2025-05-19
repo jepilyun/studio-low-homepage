@@ -1,57 +1,5 @@
 
 /**
- * 텍스트 타이핑 효과 함수
- * @param {HTMLElement} element 타이핑 효과를 적용할 HTML 요소
- * @param {string[]} text 타이핑할 텍스트 배열
- * @param {number} delay 타이핑 시작 지연 시간
- * @param {number} speed 타이핑 속도
- */
-// const typeText = (element, text, delay, speed = 100) => {
-//   let index = 0;
-
-//   setTimeout(() => {
-//     const interval = setInterval(() => {
-//       element.innerHTML += text[index];
-//       index++;
-//       if (index === text.length) {
-//         clearInterval(interval);
-//         element.style.borderRight = "none"; // 커서 효과 제거
-//       }
-//     }, speed);
-//   }, delay);
-// }
-
-/**
- * 숫자를 애니메이션으로 변경하는 함수
- * @param targetElement 숫자를 변경할 요소
- * @param start 시작 숫자 ex. 0
- * @param end 끝 숫자 ex. 1000
- * @param duration 애니메이션 지속 시간 ex. 1000
- */
-// const animateNumber = (targetElement, start, end, duration) => {
-//   if (!targetElement) return; // 요소가 없으면 종료
-
-//   let startTime = null;
-
-//   function updateNumber(timestamp) {
-//     if (!startTime) startTime = timestamp; // 첫 실행 시점 설정
-//     const elapsed = timestamp - startTime;
-//     const progress = Math.min(elapsed / duration, 1); // 진행률 0~1로 제한
-//     const easedProgress = 1 - Math.pow(1 - progress, 3); // 감속 효과 적용
-
-//     const current = Math.round(start + (end - start) * easedProgress);
-
-//     targetElement.textContent = current.toLocaleString(); // 숫자 표시
-
-//     if (progress < 1) {
-//       requestAnimationFrame(updateNumber); // 다음 프레임에서 업데이트
-//     }
-//   }
-
-//   requestAnimationFrame(updateNumber);
-// };
-
-/**
  * 탑 내비게이션 모바일 버튼 토글 함수
  */
 const topNavMobileBtnToggle = () => {
@@ -104,186 +52,9 @@ const clickExpandedMenu = () => {
 }
 
 /*
- * 탑 배너 텍스트 타이핑 효과 함수
- */
-const TopBanner01TextTyping = () => {
-  const adTextMobile = [ "한 명 한 명", "확 실 하 게,", "디 자 이 너", "커 리 어 의 시 작", "소 수 정 예", "프 리 미 엄", "아 카 데 미", "스 튜 디 오 로 우" ];
-
-  const addText1 = document.querySelector("#top-banner-01-mobile .line-01");
-  const addText2 = document.querySelector("#top-banner-01-mobile .line-02");
-  const addText3 = document.querySelector("#top-banner-01-mobile .line-03");
-  const addText4 = document.querySelector("#top-banner-01-mobile .line-04");
-  const addText5 = document.querySelector("#top-banner-01-mobile .line-05");
-  const addText6 = document.querySelector("#top-banner-01-mobile .line-06");
-  const addText7 = document.querySelector("#top-banner-01-mobile .line-07");
-  const addText8 = document.querySelector("#top-banner-01-mobile .line-08");
-  // ✅ 첫 번째 문장 실행 후 두 번째 문장 실행
-  typeText(addText1, adTextMobile[0], 500); // 0.5초 뒤 실행
-  typeText(addText2, adTextMobile[1], 1400); // 2초 뒤 실행
-  typeText(addText3, adTextMobile[2], 2300); // 3초 뒤 실행
-  typeText(addText4, adTextMobile[3], 3200); // 4초 뒤 실행
-  typeText(addText5, adTextMobile[4], 4600); // 5초 뒤 실행
-  typeText(addText6, adTextMobile[5], 5500); // 6초 뒤 실행
-  typeText(addText7, adTextMobile[6], 6400); // 7초 뒤 실행
-  typeText(addText8, adTextMobile[7], 7300); // 8초 뒤 실행
-
-  const adTextWide = [ "한 명 한 명 확실하게,", "디자이너 커리어의 시작", "소수정예 프리미엄 아카데미", "스튜디오 로우" ];
-
-  const addTextW1 = document.querySelector("#top-banner-01-wide .line-01");
-  const addTextW2 = document.querySelector("#top-banner-01-wide .line-02");
-  const addTextW3 = document.querySelector("#top-banner-01-wide .line-03");
-  const addTextW4 = document.querySelector("#top-banner-01-wide .line-04");
-
-  typeText(addTextW1, adTextWide[0], 500);
-  typeText(addTextW2, adTextWide[1], 2000);
-  typeText(addTextW3, adTextWide[2], 3500);
-  typeText(addTextW4, adTextWide[3], 5500);
-}
-
-/*
  * GSAP 애니메이션 함수
  */
 const GSAPAnimations = () => {
-
-  // BG Change
-  gsap.utils.toArray(".bg-color-change").forEach((item) => {
-    let color = item.getAttribute("data-bgcolor");
-    
-    ScrollTrigger.create({
-        trigger: item,
-        start: "top 50%",
-        end: "bottom 50%",
-        markers: false,
-
-        onEnter: () => gsap.to("body", {
-            backgroundColor: color,
-            duration: 1.5,
-        }),
-        onEnterBack: () => gsap.to("body", {
-            backgroundColor: color,
-            duration: 1.5,
-        }),
-    });
-  });
-
-  // Card Review Slider BG Change
-  gsap.utils.toArray(".card-bg-color-change").forEach((item) => {
-    const color = item.getAttribute("data-bgcolor");
-    if (!color) return;
-
-
-    ScrollTrigger.create({
-      trigger: item,
-      scroller: "#success-story-cards .card-container",
-      start: "top top",
-      horizontal: true,
-      onEnter: () => gsap.to("#success-story-cards", {
-        backgroundColor: color,
-        duration: 1.4,
-      }),
-      onEnterBack: () => gsap.to("#success-story-cards", {
-        backgroundColor: color,
-        duration: 1.4,
-      }),
-    });
-  });
-
-  // Top Banner 02
-  const banner02Effect = gsap.timeline({ paused: true });
-
-  banner02Effect
-    .fromTo("#top-banner-02-mobile", 
-      { x: 120, autoAlpha: 0 }, 
-      { x: 0, autoAlpha: 1, duration: 0.5 }
-    )
-    .fromTo("#top-banner-02-wide", 
-      { x: 120, autoAlpha: 0 }, 
-      { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
-    );
-
-  ScrollTrigger.create({
-    trigger: "#top-banner-02",
-    start: "top 30%",
-    end: "bottom 50%",
-    onEnter: () => banner02Effect.play(),
-    onLeave: () => banner02Effect.reverse(),
-    onEnterBack: () => banner02Effect.play(),
-    onLeaveBack: () => banner02Effect.reverse(),
-    markers: false
-  });
-
-  // Top Banner 03
-  const banner03Effect = gsap.timeline({ paused: true });
-
-  banner03Effect
-    .fromTo("#top-banner-03-mobile", 
-      { x: -120, autoAlpha: 0 }, 
-      { x: 0, autoAlpha: 1, duration: 0.5 }
-    )
-    .fromTo("#top-banner-03-wide", 
-      { x: -120, autoAlpha: 0 }, 
-      { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
-    );
-
-  ScrollTrigger.create({
-    trigger: "#top-banner-03",
-    start: "top 50%",
-    end: "bottom 50%",
-    onEnter: () => banner03Effect.play(),
-    onLeave: () => banner03Effect.reverse(),
-    onEnterBack: () => banner03Effect.play(),
-    onLeaveBack: () => banner03Effect.reverse(),
-    markers: false
-  });
-
-  // Top Banner 04
-  const banner04Effect = gsap.timeline({ paused: true });
-
-  banner04Effect
-    .fromTo("#top-banner-04-mobile", 
-      { x: 120, autoAlpha: 0 }, 
-      { x: 0, autoAlpha: 1, duration: 0.5 }
-    )
-    .fromTo("#top-banner-04-wide", 
-      { x: 120, autoAlpha: 0 }, 
-      { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
-    );
-
-  ScrollTrigger.create({
-    trigger: "#top-banner-04",
-    start: "top 30%",
-    end: "bottom 50%",
-    onEnter: () => banner04Effect.play(),
-    onLeave: () => banner04Effect.reverse(),
-    onEnterBack: () => banner04Effect.play(),
-    onLeaveBack: () => banner04Effect.reverse(),
-    markers: false
-  });
-  
-  // Top Banner 05
-  const banner05Effect = gsap.timeline({ paused: true });
-
-  banner05Effect
-    .fromTo("#top-banner-05-mobile", 
-      { x: -120, autoAlpha: 0 }, 
-      { x: 0, autoAlpha: 1, duration: 0.5 }
-    )
-    .fromTo("#top-banner-05-wide", 
-      { x: -120, autoAlpha: 0 }, 
-      { x: 0, autoAlpha: 1, duration: 0.5 }, "<"
-    );
-
-  ScrollTrigger.create({
-    trigger: "#top-banner-05",
-    start: "top 30%",
-    end: "bottom 50%",
-    onEnter: () => banner05Effect.play(),
-    onLeave: () => banner05Effect.reverse(),
-    onEnterBack: () => banner05Effect.play(),
-    onLeaveBack: () => banner05Effect.reverse(),
-    markers: false
-  });
-
   // Company Intro
   const companyIntro = gsap.timeline();
 
@@ -310,41 +81,39 @@ const GSAPAnimations = () => {
   });
 
   // User Review Summary
-  ScrollTrigger.create({
-    trigger: "#student-reviews .summary-container",
-    start: "top bottom",
-    end: "bottom 30%",
-    markers: false,
-    onEnter: () => {
-      document.querySelectorAll("#student-reviews .badge-item-bg-box")
-        .forEach(item => {
-          item.classList.add("badge-item-bg-box-rotate-animation");
-        });
-    },
-    onEnterBack: () => {
-      document.querySelectorAll("#student-reviews .badge-item-bg-box")
-        .forEach(item => {
-          item.classList.add("badge-item-bg-box-rotate-animation");
-        });
-    },
-    onLeave: () => {
-      document.querySelectorAll("#student-reviews .badge-item-bg-box")
-        .forEach(item => {
-          item.classList.remove("badge-item-bg-box-rotate-animation");
-        });
-    },
-    onLeaveBack: () => {
-      document.querySelectorAll("#student-reviews .badge-item-bg-box")
-        .forEach(item => {
-          item.classList.remove("badge-item-bg-box-rotate-animation");
-        });
-    },
-  });
-  
+  // ScrollTrigger.create({
+  //   trigger: "#student-reviews .summary-container",
+  //   start: "top bottom",
+  //   end: "bottom 30%",
+  //   markers: false,
+  //   onEnter: () => {
+  //     document.querySelectorAll("#student-reviews .badge-item-bg-box")
+  //       .forEach(item => {
+  //         item.classList.add("badge-item-bg-box-rotate-animation");
+  //       });
+  //   },
+  //   onEnterBack: () => {
+  //     document.querySelectorAll("#student-reviews .badge-item-bg-box")
+  //       .forEach(item => {
+  //         item.classList.add("badge-item-bg-box-rotate-animation");
+  //       });
+  //   },
+  //   onLeave: () => {
+  //     document.querySelectorAll("#student-reviews .badge-item-bg-box")
+  //       .forEach(item => {
+  //         item.classList.remove("badge-item-bg-box-rotate-animation");
+  //       });
+  //   },
+  //   onLeaveBack: () => {
+  //     document.querySelectorAll("#student-reviews .badge-item-bg-box")
+  //       .forEach(item => {
+  //         item.classList.remove("badge-item-bg-box-rotate-animation");
+  //       });
+  //   },
+  // });
 }
 
 let lastScrollY = window.scrollY;
-
 
 const topNavBarSetClassAfterLoading = () => {
   const topNavBar = document.getElementById("top-nav-bar");
@@ -438,4 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
   //   logo.style.animationDuration = `${duration}s`;
   //   logo.style.animationDelay = `${delay}s`;
   // });
+
+  
 });
