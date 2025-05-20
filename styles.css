@@ -1258,27 +1258,18 @@ body::-webkit-scrollbar {
     공지사항 영역 (Notice Section)
 ================================ */
 
-/* body {
-    margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    background: #f9f9f9;
-    color: #333;
-  } */
-
-  #notice {
+#notice {
     padding: 4rem 1rem;
     max-width: 960px;
     margin: 0 auto;
     background: #fff;
-  }
+}
 
-
-
-  .notice-list {
+.notice-list {
     border-top: 1px solid #e0e0e0;
-  }
+}
 
-  .notice-item {
+.notice-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1287,28 +1278,28 @@ body::-webkit-scrollbar {
     text-decoration: none;
     color: inherit;
     transition: background 0.2s;
-  }
+}
 
-  .notice-item:hover {
+.notice-item:hover {
     background: #f5f5f5;
-  }
+}
 
-  .notice-item-title {
+.notice-item-title {
     font-size: 1rem;
-  }
+}
 
-  .notice-item-date {
+.notice-item-date {
     font-size: 0.9rem;
     color: #999;
     white-space: nowrap;
-  }
+}
 
-  .notice-more {
+.notice-more {
     text-align: right;
     margin-top: 1.5rem;
-  }
+}
 
-  .load-more-button {
+.load-more-button {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
@@ -1316,25 +1307,26 @@ body::-webkit-scrollbar {
     color: #007aff;
     cursor: pointer;
     text-decoration: none;
-  }
+}
 
-  .load-more-button:hover {
+.load-more-button:hover {
     text-decoration: underline;
-  }
+}
 
-  .material-icons.icon {
+.material-icons.icon {
     font-family: "Material Icons";
     font-style: normal;
     font-weight: normal;
     font-size: 1.2rem;
     line-height: 1;
-  }
+}
 
 
 /* ===============================
     자주 묻는 질문 (FAQ Section)
 ================================ */
-/* #faq {
+
+#faq {
     padding: 4rem 0;
     color: var(--primary-black);
     background-color: var(--white);
@@ -1404,16 +1396,15 @@ input[type="checkbox"]:checked + .faq-accordion-button + .faq-accordion-content 
 
 input[type="checkbox"]:checked + .faq-accordion-button .icon {
     transform: rotate(90deg);
-} */
+}
 
 
 /* ===============================
     제휴 문의 영역 (Partnership)
 ================================ */
-/* #partnership {
+
+#partnership {
     padding: 4rem 0;
-    color: var(--white);
-    background-color: var(--orange);
 }
 
 #partnership .container {
@@ -1457,13 +1448,14 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     margin: 2rem 0;
     display: flex;
     gap: 1rem;
-} */
+}
 
 
 /* ===============================
     인재 채용 영역 (Human Resource)
 ================================ */
-/* #human-resource {
+
+#human-resource {
     padding: 4rem 0;
     color: var(--kakao);
     background-color: var(--yellow);
@@ -1529,13 +1521,14 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
         padding-top: 0.6rem;
         font-size: 1.2rem;
     }
-} */
+}
 
 
 /* ===============================
     오시는 길 (Location Section)
 ================================ */
-/* #location {
+
+#location {
     padding: 4rem 0;
     color: var(--primary-black);
     overflow-x: hidden;
@@ -1626,15 +1619,16 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 #location .address:hover, .email:hover {
     text-decoration: underline;
-} */
+}
 
 
 /* ===============================
     푸터 영역 (Footer Section)
 ================================ */
-/* #footer {
+
+#footer {
     color: var(--white);
-    background-color: var(--primary-black);
+    background-color: var(--dark);
 }
 
 #footer .container {
@@ -1724,8 +1718,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     .footer-inner-border {
         border: none;
     }
-} */
-
+}
 
 /* button {
     border: none;

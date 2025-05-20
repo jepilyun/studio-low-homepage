@@ -1,4 +1,3 @@
-
 /**
  * 탑 내비게이션 모바일 버튼 토글 함수
  */
@@ -79,38 +78,6 @@ const GSAPAnimations = () => {
       }, 2000);
     },
   });
-
-  // User Review Summary
-  // ScrollTrigger.create({
-  //   trigger: "#student-reviews .summary-container",
-  //   start: "top bottom",
-  //   end: "bottom 30%",
-  //   markers: false,
-  //   onEnter: () => {
-  //     document.querySelectorAll("#student-reviews .badge-item-bg-box")
-  //       .forEach(item => {
-  //         item.classList.add("badge-item-bg-box-rotate-animation");
-  //       });
-  //   },
-  //   onEnterBack: () => {
-  //     document.querySelectorAll("#student-reviews .badge-item-bg-box")
-  //       .forEach(item => {
-  //         item.classList.add("badge-item-bg-box-rotate-animation");
-  //       });
-  //   },
-  //   onLeave: () => {
-  //     document.querySelectorAll("#student-reviews .badge-item-bg-box")
-  //       .forEach(item => {
-  //         item.classList.remove("badge-item-bg-box-rotate-animation");
-  //       });
-  //   },
-  //   onLeaveBack: () => {
-  //     document.querySelectorAll("#student-reviews .badge-item-bg-box")
-  //       .forEach(item => {
-  //         item.classList.remove("badge-item-bg-box-rotate-animation");
-  //       });
-  //   },
-  // });
 }
 
 let lastScrollY = window.scrollY;
@@ -165,7 +132,6 @@ const handleScroll = () => {
     }
   }
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
   // ✅ 탑 내비게이션 모바일 버튼 이벤트 실행
