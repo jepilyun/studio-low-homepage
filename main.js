@@ -208,5 +208,30 @@ document.addEventListener("DOMContentLoaded", function () {
   //   logo.style.animationDelay = `${delay}s`;
   // });
 
-  
+
+  // Review Masonry
+  const masonry = document.getElementById("masonry-container");
+  const items = Array.from(masonry.querySelectorAll(".masonry-item"));
+
+  // 기존 아이템 제거
+  items.forEach(item => masonry.removeChild(item));
+
+  // 열 개수 설정
+  const columnCount = 4;
+  const columns = [];
+
+  for (let i = 0; i < columnCount; i++) {
+    const col = document.createElement("div");
+    col.className = "column";
+    masonry.appendChild(col);
+    columns.push(col);
+  }
+
+  // 가장 짧은 column에 item 추가
+  items.forEach(item => {
+    const shortestColumn = columns.reduce((a, b) =>
+      a.scrollHeight < b.scrollHeight ? a : b
+    );
+    shortestColumn.appendChild(item);
+  });
 });

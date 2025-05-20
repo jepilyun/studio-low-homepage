@@ -1010,11 +1010,11 @@ body::-webkit-scrollbar {
 }
 
 #class-intro .class-timetable {
-    margin-top: 2.4rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
-    align-items: end;
-    justify-content: end;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -1028,17 +1028,19 @@ body::-webkit-scrollbar {
 
 /* 시간표 컨테이너 박스 스타일 */
 #class-intro .class-timetable-container {
-    /* padding: 4rem 2.8rem; */
+    padding: 1.2rem 2.4rem;
     display: flex;
     gap: 1rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    color: var(--white);
+    background-color: var(--dark);
+    border-radius: 4rem;
 }
 
 /* 시간표 hover 시 색 반전 */
 #class-intro .class-timetable-container:hover {
-    /* background-color: var(--foreground);
-    color: var(--white); */
+    opacity: 0.8;
 }
 
 #class-intro .class-timetable-title {
@@ -1107,99 +1109,149 @@ body::-webkit-scrollbar {
 }
 
 
-/* ===============================
+/*************************************************************************************************
     카카오 문의 버튼
-================================ */
+**************************************************************************************************/
 
 #reservation {
     padding: 4rem 0;
     opacity: 1;
-    background-image: linear-gradient(to right, #ECECEC, #ECECEC 2px, #ffffff 2px, #ffffff );
+    background-image: linear-gradient(to right, var(--gray), var(--gray) 2px, var(--white) 2px, var(--white) );
     background-size: 4px 100%;
 }
 
 #reservation .container {
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
     /* padding: 2rem; */
     /* background-color: var(--white); */
     /* background-color: #E9124C; */
 }
 
 #reservation .button-container {
+    padding: 0.4rem 0.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--white);
+    background-color: var(--dark);
+    border-radius: 0.4rem;
+}
+
+#reservation .arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+}
+
+#reservation .arrow-container .material-symbols-outlined {
+    font-size: 1rem;
 }
 
 
-
-
-/* =============================
+/*************************************************************************************************
     Student Reviews Section
-============================= */
+**************************************************************************************************/
+
 #student-reviews {
     padding: 4rem 2rem;
-    /* background: #fafafa; */
-  }
-  
+}
 
-  
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+#masonry-container {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    align-items: flex-start;
+    max-width: var(--max-width-1280);
     margin: 0 auto;
-  }
-  
-  .review-card {
-    background: white;
-    /* border-radius: 1rem; */
-    padding: 1.5rem;
-    /* box-shadow: 0 4px 12px rgba(0,0,0,0.06); */
+}
+
+#masonry-container .column {
+    width: calc((100% - 2rem) / 4); /* 열 3개, gap 2개 = 2rem */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 0.6rem;
+}
+
+#student-reviews .masonry-item {
+    padding: 1rem;
+    background: white;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
     border: 1px solid var(--gray);
-  }
-  
-  .review-header {
+    break-inside: avoid;
+    line-height: 1.5;
+}
+
+#student-reviews .review-header {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-  }
-  
-  .review-avatar {
-    width: 48px;
-    height: 48px;
+}
+
+#student-reviews .review-avatar-container {
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
+    overflow: hidden;
+}
+
+#student-reviews .review-avatar {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     margin-right: 1rem;
-  }
-  
-  .review-meta .review-name {
-    font-weight: bold;
-  }
-  
-  .review-meta .review-position {
-    font-size: 0.85rem;
-    color: #777;
-  }
-  
-  .review-body {
-    font-size: 0.95rem;
-    margin: 1rem 0;
-    color: #333;
-  }
-  
-  .review-date {
-    font-size: 0.8rem;
-    text-align: right;
-    color: #999;
-  }
-  
+}
 
+#student-reviews .review-name-date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 0.4rem;
+}
+
+#student-reviews .review-name {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#student-reviews .review-date {
+    opacity: 0.5;
+    font-size: 0.8rem;
+}
+
+#student-reviews .review-body {
+    padding: 0.8rem;
+    font-weight: 200;
+    line-height: 1.8;
+}
+
+#student-reviews .review-position {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+#student-reviews .review-position:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    text-decoration-thickness: 0.1rem;
+    text-decoration-color: var(--foreground);
+}
 
 
 /* ===============================
