@@ -183,7 +183,8 @@ document.addEventListener("DOMContentLoaded", function () {
   items.forEach(item => masonry.removeChild(item));
 
   // 열 개수 설정
-  const columnCount = 4;
+  const screenSize = window.innerWidth;
+  const columnCount = screenSize > 1024 ? 4 : screenSize > 768 ? 3 : 1;
   const columns = [];
 
   for (let i = 0; i < columnCount; i++) {

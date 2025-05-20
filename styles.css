@@ -54,6 +54,12 @@ body::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
 
+button {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+}
+
 .scrollbar-hidden {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -306,7 +312,7 @@ body::-webkit-scrollbar {
 **************************************************************************************************/
 
 #slim-top-banner {
-    padding: 3rem;
+    padding: 2rem;
 }
 
 #slim-top-banner .container {
@@ -316,7 +322,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: start;
     gap: 0.4rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 300;
 }
 
@@ -328,6 +334,11 @@ body::-webkit-scrollbar {
     #slim-top-banner {
         padding: 3rem 4rem;
     }
+
+    #slim-top-banner .container {
+        font-size: 1rem;
+        font-weight: 300;
+    }
 }
 
 /*************************************************************************************************
@@ -336,7 +347,7 @@ body::-webkit-scrollbar {
 **************************************************************************************************/
 
 #hero-section {
-    padding: 3rem 3rem;
+    padding: 4rem;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -347,14 +358,14 @@ body::-webkit-scrollbar {
     content: "";
     position: absolute;
     top: -100%;
-    left: -180%;
-    width: 300%;
-    height: 300%;
+    left: -100%;
+    width: 100%;
+    height: 500%;
     opacity: 0.5;
     background-image: linear-gradient(0deg, var(--gray) 50%, var(--white) 0%);
     background-size: 4px 4px;
     z-index: -2;
-    animation: rotateBgCW 60s linear infinite;
+    animation: rotateBgCW 36s linear infinite;
     transform-origin: center;
 }  
 
@@ -363,14 +374,14 @@ body::-webkit-scrollbar {
     content: "";
     position: absolute;
     top: -100%;
-    left: 0%;
-    width: 300%;
-    height: 300%;
+    left: 100%;
+    width: 100%;
+    height: 500%;
     opacity: 0.5;
     background-image: linear-gradient(0deg, var(--white) 50%, var(--gray) 0%);
     background-size: 4px 4px;
     z-index: -3;
-    animation: rotateBgCCW 30s linear infinite;
+    animation: rotateBgCCW 24s linear infinite;
     transform-origin: center;
 }
 
@@ -447,12 +458,6 @@ body::-webkit-scrollbar {
     gap: 2rem;
 }
 
-@media (min-width: 768px) {
-    #hero-section {
-        padding: 3rem 4rem;
-    }
-}
-
 #hero-section .lc {
     display: flex;
     flex-direction: column;
@@ -462,7 +467,8 @@ body::-webkit-scrollbar {
 
 #hero-section .lc .sub-title {
     margin: 1.4rem 0;
-    font-size: 1rem;
+    font-size: 1.4rem;
+    font-weight: 900;
 }
 
 #hero-section .lc ul {
@@ -474,11 +480,12 @@ body::-webkit-scrollbar {
 }
 
 #hero-section .lc ul li {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 200;
 }
 
 #hero-section .lc .success {
-    margin: 1rem 0;
+    margin: 1.8rem 0 0 0;
     padding: 0.4rem 0.8rem;
     display: inline-flex;
     flex-direction: row;
@@ -535,7 +542,27 @@ body::-webkit-scrollbar {
 
 @media (min-width: 768px) {
     #hero-section {
-        padding: 3rem 4rem;
+        padding: 4rem;
+    }
+
+    /* Line Patter Left */
+    #hero-section::before {
+        top: -100%;
+        left: -250%;
+        width: 300%;
+        height: 300%;
+        animation: rotateBgCW 60s linear infinite;
+        transform-origin: center;
+    }  
+
+    /* Line Patter Right */
+    #hero-section::after {
+        top: -100%;
+        left: 0%;
+        width: 300%;
+        height: 300%;
+        animation: rotateBgCCW 30s linear infinite;
+        transform-origin: center;
     }
 
     #hero-section .lc .sub-title {
@@ -549,14 +576,35 @@ body::-webkit-scrollbar {
     #hero-section .lc ul li {
         font-size: 0.9rem;
     }
-
-    #hero-section .lc .success {
-        /* font-size: 0.7rem;
-        padding: 0.2rem 0.4rem; */
-    }
     
     #hero-section .rc {
         display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    #hero-section {
+        padding: 4rem 5rem;
+    }
+
+    /* Line Patter Left */
+    #hero-section::before {
+        top: -100%;
+        left: -200%;
+        width: 300%;
+        height: 300%;
+        animation: rotateBgCW 60s linear infinite;
+        transform-origin: center;
+    }  
+
+    /* Line Patter Right */
+    #hero-section::after {
+        top: -100%;
+        left: 0%;
+        width: 300%;
+        height: 300%;
+        animation: rotateBgCCW 30s linear infinite;
+        transform-origin: center;
     }
 }
 
@@ -566,13 +614,12 @@ body::-webkit-scrollbar {
 **************************************************************************************************/
 
 #key-factors {
-    padding: 1rem 2rem;
     overflow: hidden;
 }
 
 #key-factors .container {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: var(--max-width-1280);
     position: relative;
 }
 
@@ -584,12 +631,13 @@ body::-webkit-scrollbar {
 }
 
 #key-factors .logo-cloud .logo {
-    max-width: 4.8rem;
-    max-height: 4.8rem;
+    max-width: 3.2rem;
+    max-height: 3.2rem;
     border-radius: 1rem;
     overflow: hidden;
     position: absolute;
     color: rgba(0, 0, 0, 0.1);
+    opacity: 0.7;
 }
 
 #key-factors .logo-cloud .logo img {
@@ -792,20 +840,63 @@ body::-webkit-scrollbar {
 }
 
 #key-factors .core-values .core-value-item {
+    margin-top: 1.6rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
 #key-factors .core-values .core-value-highlight {
     font-weight: 900;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
 }
 
+@media (min-width: 768px) {
+    #key-factors {
+        padding: 1rem 2rem;
+    }
+
+    #key-factors .logo-cloud .logo {
+        max-width: 3.6rem;
+        max-height: 3.6rem;
+        opacity: 1;
+    }
+
+    #key-factors .core-values .core-value-item {
+        flex-direction: row;
+    }
+
+    #key-factors .core-values .core-value-item {
+        font-size: 1.8rem;
+    }
+    
+    #key-factors .core-values .core-value-highlight {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #key-factors {
+        padding: 1rem 2rem;
+    }
+
+    #key-factors .logo-cloud .logo {
+        max-width: 4.8rem;
+        max-height: 4.8rem;
+    }
+
+    #key-factors .core-values .core-value-item {
+        font-size: 2rem;
+    }
+    
+    #key-factors .core-values .core-value-highlight {
+        font-size: 2.4rem;
+    }
+}
 
 /*************************************************************************************************
     Success Story Cards Section
@@ -813,14 +904,14 @@ body::-webkit-scrollbar {
 
 #success-story-cards {
     position: relative;
-    padding: 4rem 0;
+    padding: 2rem 0;
     background-color: transparent;
     z-index: 0;
     overflow: hidden;
 }
 
 #success-story-cards .card-container {
-    padding: 0 6rem;
+    padding: 0 2rem;
     display: flex;
     gap: 1rem;
     overflow-x: scroll;
@@ -839,18 +930,12 @@ body::-webkit-scrollbar {
     z-index: -1;
 }
 
-@media (min-width: 768px) {
-    #success-story-cards .card-container {
-        gap: 2.4rem;
-    }
-}
-
 #success-story-cards .card {
-    width: 320px;
-    min-width: 320px;
-    height: 490px;
-    min-height: 490px;
-    padding: 2.4rem 2rem;
+    padding: 2rem 1.6rem;
+    width: 300px;
+    min-width: 300px;
+    height: 400px;
+    min-height: 400px;
     background-color: var(--white);
     transition: all 0.5s ease;
     /* border-radius: 1rem; */
@@ -875,15 +960,15 @@ body::-webkit-scrollbar {
 #success-story-cards .card-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    min-height: 90px;
+    gap: 1.2rem;
+    min-height: 60px;
 }
 
 #success-story-cards .card-header-logo {
-    padding: 0.4rem 0.6rem;
-    width: 7.4rem;
-    min-width: 7.4rem;
-    height: 3.2rem;
+    /* padding: 0.4rem 0.6rem; */
+    width: 7rem;
+    min-width: 7rem;
+    height: 2.8rem;
     overflow: hidden;
     background-color: var(--white);
     /* border: 2px solid var(--gray); */
@@ -900,11 +985,11 @@ body::-webkit-scrollbar {
 #success-story-cards .card-header-info {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.6rem;
 }
 
 #success-story-cards .card-header-info-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 
@@ -928,13 +1013,13 @@ body::-webkit-scrollbar {
 }
 
 #success-story-cards .card-content-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     line-height: 1.8;
 }
 
 #success-story-cards .card-content-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 200;
     line-height: 1.8;
 }
@@ -963,23 +1048,69 @@ body::-webkit-scrollbar {
     font-size: 2rem;
 }
 
+@media (min-width: 768px) {
+    #success-story-cards {
+        padding: 4rem 0;
+    }
+
+    #success-story-cards .card-container {
+        padding: 0 6rem;
+        gap: 2.4rem;
+    }
+
+    #success-story-cards .card {
+        padding: 2.4rem 2rem;
+        width: 320px;
+        min-width: 320px;
+        height: 490px;
+        min-height: 490px;
+    }
+
+    #success-story-cards .card-header {
+        min-height: 90px;
+    }
+    
+    #success-story-cards .card-header-logo {
+        /* padding: 0.4rem 0.6rem; */
+        width: 7.4rem;
+        min-width: 7.4rem;
+        height: 3.2rem;
+        overflow: hidden;
+        background-color: var(--white);
+        /* border: 2px solid var(--gray); */
+        /* border-radius: 8px; */
+    }
+
+    #success-story-cards .card-header-info-name {
+        font-size: 1.2rem;
+    }
+
+    #success-story-cards .card-content-title {
+        font-size: 1rem;
+    }
+
+    #success-story-cards .card-content-text {
+        font-size: 1rem;
+    }
+}
 
 /*************************************************************************************************
     Class Intro Section
 **************************************************************************************************/
 
 #class-intro {
-    padding: 4rem;
+    padding: 4rem 0;
 }
 
 #class-intro .container {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
 }
 
 #class-intro .class-intro-img-container {
+    margin-top: 2.4rem;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -993,19 +1124,19 @@ body::-webkit-scrollbar {
 
 #class-intro .class-title {
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-align: center;
 }
 
 #class-intro .class-description {
-    margin-top: 0.4rem;
+    margin-top: 0.8rem;
     text-align: center;
 }
 
 #class-intro .class-description p {
     margin-top: 0.4rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 200;
 }
 
@@ -1018,15 +1149,6 @@ body::-webkit-scrollbar {
     gap: 1rem;
 }
 
-/* 태블릿 이상일 때 여백 조정 */
-@media (min-width: 768px) {
-    #class-intro .class-timetable {
-        /* margin: 1rem auto;
-        padding: 0 2rem; */
-    }
-}
-
-/* 시간표 컨테이너 박스 스타일 */
 #class-intro .class-timetable-container {
     padding: 1.2rem 2.4rem;
     display: flex;
@@ -1044,13 +1166,77 @@ body::-webkit-scrollbar {
 }
 
 #class-intro .class-timetable-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 #class-intro .class-timetable-container .material-symbols-outlined {
     font-size: 1.4rem;
 }
 
+/* 태블릿 이상일 때 여백 조정 */
+@media (min-width: 768px) {
+    #class-intro {
+        padding: 4rem 2rem;
+    }
+
+    #class-intro .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    #class-intro .class-intro-img-container {
+        margin-top: 1.6rem;
+    }
+
+    #class-intro .class-timetable-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* 태블릿 이상일 때 여백 조정 */
+@media (min-width: 1024px) {
+    #class-intro {
+        padding: 4rem 4rem;
+    }
+
+    #class-intro .container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    #class-intro .class-description {
+        margin-top: 0.8rem;
+        text-align: center;
+    }
+    
+    #class-intro .class-description p {
+        margin-top: 0.4rem;
+        font-size: 0.9rem;
+        font-weight: 200;
+    }
+
+    #class-intro .class-timetable {
+        /* margin: 1rem auto;
+        padding: 0 2rem; */
+    }
+}
+
+/* 태블릿 이상일 때 여백 조정 */
+@media (min-width: 1280px) {
+    #class-intro {
+        padding: 4rem;
+    }
+
+    #class-intro .container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    #class-intro .class-timetable {
+        /* margin: 1rem auto;
+        padding: 0 2rem; */
+    }
+}
 
 /*************************************************************************************************
     Logo Sliding Section
@@ -1169,32 +1355,6 @@ body::-webkit-scrollbar {
     padding: 4rem 2rem;
 }
 
-#masonry-container {
-    display: flex;
-    width: 100%;
-    gap: 1rem;
-    align-items: flex-start;
-    max-width: var(--max-width-1280);
-    margin: 0 auto;
-}
-
-#masonry-container .column {
-    width: calc((100% - 2rem) / 4); /* 열 3개, gap 2개 = 2rem */
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-#student-reviews .masonry-item {
-    padding: 1rem;
-    background: white;
-    margin-bottom: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid var(--gray);
-    break-inside: avoid;
-    line-height: 1.5;
-}
-
 #student-reviews .review-header {
     display: flex;
     align-items: center;
@@ -1251,6 +1411,62 @@ body::-webkit-scrollbar {
     text-underline-offset: 0.4rem;
     text-decoration-thickness: 0.1rem;
     text-decoration-color: var(--foreground);
+}
+
+@media (min-width: 768px) {
+    #masonry-container {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        align-items: flex-start;
+        max-width: var(--max-width-1280);
+        margin: 0 auto;
+    }
+
+    #masonry-container .column {
+        width: calc((100% - 2rem) / 2); /* 열 3개, gap 2개 = 2rem */
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    #student-reviews .masonry-item {
+        padding: 1rem;
+        background: white;
+        margin-bottom: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid var(--gray);
+        break-inside: avoid;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 1024px) {
+    #masonry-container {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        align-items: flex-start;
+        max-width: var(--max-width-1280);
+        margin: 0 auto;
+    }
+
+    #masonry-container .column {
+        width: calc((100% - 2rem) / 4); /* 열 3개, gap 2개 = 2rem */
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    #student-reviews .masonry-item {
+        padding: 1rem;
+        background: white;
+        margin-bottom: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid var(--gray);
+        break-inside: avoid;
+        line-height: 1.5;
+    }
 }
 
 
@@ -1720,8 +1936,3 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     }
 }
 
-/* button {
-    border: none;
-    background-color: transparent;
-    color: inherit;
-} */
