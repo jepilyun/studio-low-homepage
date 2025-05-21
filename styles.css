@@ -450,7 +450,7 @@ button {
 
 #hero-section .container {
     margin: 0 auto;
-    max-width: var(--max-width-1280);
+    max-width: var(--max-width-1440);
     display: flex;
     flex-direction: row;
     align-items: end;
@@ -619,7 +619,7 @@ button {
 
 #key-factors .container {
     margin: 0 auto;
-    max-width: var(--max-width-1280);
+    max-width: var(--max-width-1440);
     position: relative;
 }
 
@@ -1107,6 +1107,7 @@ button {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
+    max-width: var(--max-width-1440);
 }
 
 #class-intro .class-intro-img-container {
@@ -1352,7 +1353,24 @@ button {
 **************************************************************************************************/
 
 #student-reviews {
+    position: relative;
+    overflow: hidden;
+}
+
+#student-reviews {
     padding: 4rem 2rem;
+}
+
+#student-reviews .masonry-item {
+    padding: 1rem;
+    background: white;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--gray);
+}
+
+#student-reviews .item-4, .item-5, .item-6, .item-7, .item-8 {
+    display: none;
 }
 
 #student-reviews .review-header {
@@ -1439,6 +1457,10 @@ button {
         break-inside: avoid;
         line-height: 1.5;
     }
+
+    #student-reviews .item-4, .item-5, .item-6, .item-7, .item-8 {
+        display: block;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -1476,38 +1498,38 @@ button {
 
 #notice {
     padding: 4rem 1rem;
-    max-width: 960px;
+    max-width: var(--max-width-1280);
     margin: 0 auto;
-    background: #fff;
 }
 
 .notice-list {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--gray);
 }
 
 .notice-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eaeaea;
+    padding: 2rem 1rem;
+    border-bottom: 1px solid var(--gray);
     text-decoration: none;
     color: inherit;
     transition: background 0.2s;
 }
 
 .notice-item:hover {
-    background: #f5f5f5;
+    background: var(--dark);
+    color: var(--white);
 }
 
 .notice-item-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .notice-item-date {
     font-size: 0.9rem;
-    color: #999;
     white-space: nowrap;
+    font-weight: 200;
 }
 
 .notice-more {
@@ -1544,12 +1566,11 @@ button {
 
 #faq {
     padding: 4rem 0;
-    color: var(--primary-black);
-    background-color: var(--white);
 }
 
 #faq .container {
     margin: 0 auto;
+    max-width: var(--max-width-1280);
 }
 
 #faq-accordion {
@@ -1558,7 +1579,7 @@ button {
 }
 
 .faq-accordion-item {
-    background-color: var(--white-gray);
+    background-color: var(--gray);
     margin-bottom: 1rem;
     overflow: hidden;
 }
@@ -1568,8 +1589,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--foreground);
-    background-color: var(--white-gray);
+    background-color: var(--gray);
     font-size: 1.2rem;
     text-align: left;
     border: none;
@@ -1578,7 +1598,7 @@ button {
 }
 
 .faq-accordion-button:hover {
-    background-color: var(--foreground);
+    background-color: var(--dark);
     color: var(--white);
 }
 
@@ -1611,7 +1631,7 @@ input[type="checkbox"]:checked + .faq-accordion-button + .faq-accordion-content 
 }
 
 input[type="checkbox"]:checked + .faq-accordion-button .icon {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
 }
 
 
@@ -1621,6 +1641,8 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 #partnership {
     padding: 4rem 0;
+    color: var(--white);
+    background-color: var(--dark);
 }
 
 #partnership .container {
@@ -1674,7 +1696,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 #human-resource {
     padding: 4rem 0;
     color: var(--kakao);
-    background-color: var(--yellow);
+    background-color: var(--gray);
 }
 
 #human-resource .container {
@@ -1727,13 +1749,13 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     line-height: 1.8;
 }
 
-#human-resource .contents .description-text .material-icons {
+#human-resource .contents .description-text .material-symbols-outlined {
     padding-top: 0.4rem;
     font-size: 1rem;
 }
 
 @media (min-width: 768px) {
-    #human-resource .contents .description-text .material-icons {
+    #human-resource .contents .description-text .material-symbols-outlined {
         padding-top: 0.6rem;
         font-size: 1.2rem;
     }
@@ -1746,12 +1768,12 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 #location {
     padding: 4rem 0;
-    color: var(--primary-black);
     overflow-x: hidden;
 }
 
 #location .container {
     margin: 0 auto;
+    font-size: 1.2rem;
 }
 
 #location .contents {
@@ -1760,25 +1782,10 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     gap: 2rem;
 }
 
-@media (min-width: 768px) {
-    #location .contents {
-        padding: 4rem;
-        flex-direction: row;
-        gap: 1rem;
-    }
-}
-
 #location .map-container {
     width: 100%;
     height: 100%;
     overflow: hidden;
-}
-
-@media (min-width: 768px) {
-    #location .map-container {
-        max-width: 60%;
-        border: 1px solid var(--secondary-black);
-    }
 }
 
 #location .map-container img {
@@ -1807,12 +1814,23 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     font-size: 1rem;
 }
 
-#location .location-info-item .material-icons {
+#location .location-info-item .material-symbols-outlined {
     padding-top: 0.2rem;
     font-size: 1.1rem;
 }
 
 @media (min-width: 768px) {
+    #location .contents {
+        padding: 4rem;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    #location .map-container {
+        max-width: 60%;
+        border: 1px solid var(--secondary-black);
+    }
+
     #location .location-info {
         padding: 1.5rem 1.5rem;
     }
@@ -1820,12 +1838,13 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 @media (min-width: 1280px) {
     #location .location-info-item {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+        line-height: 1.8;
     }
 
-    #location .location-info-item .material-icons {
+    #location .location-info-item .material-symbols-outlined{
         padding-top: 0.4rem;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -1844,7 +1863,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 #footer {
     color: var(--white);
-    background-color: var(--dark);
+    background-color: var(--foreground);
 }
 
 #footer .container {
