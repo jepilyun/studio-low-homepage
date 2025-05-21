@@ -134,9 +134,17 @@ const handleScroll = () => {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("menu-btn");
+  const menuItems = document.getElementById("menu-items");
+  
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    menuItems.classList.toggle("show");
+  });
+
   // ✅ 탑 내비게이션 모바일 버튼 이벤트 실행
-  topNavMobileBtnToggle();
-  clickExpandedMenu(); // 메뉴 클릭스 펼쳐진 메뉴 닫히도록
+  // topNavMobileBtnToggle();
+  // clickExpandedMenu(); // 메뉴 클릭스 펼쳐진 메뉴 닫히도록
 
   topNavBarSetClassAfterLoading();
   // ✅ 탑 내비게이션 Class 추가 효과 실행
