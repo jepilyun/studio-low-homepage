@@ -127,29 +127,30 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 1.5rem;
     position: relative;
 }
 
-#top-nav .logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: black;
+#top-nav .logo-container {
+    width: 6rem;
+    overflow: hidden;
 }
 
-/* .top-nav-logo {
-    font-size: 1.5rem;
-    font-weight: 900;
+#top-nav .logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-@media (min-width: 1024px) {
-    .top-nav-logo { 
-        font-size: 2rem; 
-    }
+#top-nav .logo-container .logo-img-simple {
+    display: block;
 }
 
-.top-nav-logo:hover {
+#top-nav .logo-container .logo-img-full {
+    display: none;
+}
+
+/* .top-nav-logo:hover {
     animation: top-nav-logo-hover 1.5s ease;
 }
 
@@ -167,7 +168,6 @@ button {
 } */
 
 
-/* 햄버거 버튼 */
 #top-nav .hamburger {
     position: relative;
     display: flex;
@@ -190,7 +190,6 @@ button {
     transform-origin: center;
 }
 
-/* X 상태 */
 #top-nav .hamburger.active div:nth-child(1) {
     transform: translateY(0.25rem) rotate(45deg);
 }
@@ -199,7 +198,6 @@ button {
     transform: translateY(-0.25rem) rotate(-45deg);
 }
 
-/* 메뉴 항목 */
 #top-nav .menu-items {
     display: none;
     flex-direction: column;
@@ -209,7 +207,6 @@ button {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--white);
     padding: 2rem 1rem;
     transition: max-height 0.3s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -224,12 +221,29 @@ button {
 
 #top-nav .menu-items.show {
     display: flex;
+    background: rgba(255, 255, 255);
 }
 
-/* 데스크탑 */
 @media (min-width: 768px) {
     #top-nav {
         padding: 1rem 2rem;
+    }
+
+    #top-nav .nav-container {
+        padding: 0.4rem 1.5rem;
+    }
+
+    #top-nav .logo-container {
+        width: 10rem;
+        overflow: hidden;
+    }
+
+    #top-nav .logo-container .logo-img-simple {
+        display: none;
+    }
+    
+    #top-nav .logo-container .logo-img-full {
+        display: block;
     }
 
     #top-nav .hamburger {

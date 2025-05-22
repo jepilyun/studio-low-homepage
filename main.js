@@ -1,55 +1,3 @@
-/**
- * 탑 내비게이션 모바일 버튼 토글 함수
- */
-const topNavMobileBtnToggle = () => {
-  const topNavMobileMenuBtn = document.getElementById("top-nav-mobile-btn-menu");
-  const topNavMobileCloseBtn = document.getElementById("top-nav-mobile-btn-close");
-
-  const topNavContainerMobileFolded = document.getElementById("top-nav-m-folded");
-  const topNavContainerMobileExpanded = document.getElementById("top-nav-m-expanded");
-
-  // 메뉴 버튼 클릭 시 메뉴 확장
-  topNavMobileMenuBtn.addEventListener("click", () => {
-    topNavContainerMobileFolded.style.display = "none";
-    topNavContainerMobileExpanded.style.display = "flex";
-  });
-
-  // 닫기 버튼 클릭 시 메뉴 접기
-  topNavMobileCloseBtn.addEventListener("click", () => {
-    topNavContainerMobileFolded.style.display = "flex";
-    topNavContainerMobileExpanded.style.display = "none";
-  });
-};
-
-// 클릭 시 해당 메뉴 페이지로 이동하고 메뉴 접기
-const clickExpandedMenu = () => {
-  const expandedMenuItems = document.querySelectorAll("#top-nav-m-expanded-menus .menu-item");
-  const expandedMenuItemsOutlink = document.querySelectorAll("#top-nav-m-expanded-menus .menu-item-outlink");
-  const topNavContainerMobileFolded = document.getElementById("top-nav-m-folded");
-  const topNavContainerMobileExpanded = document.getElementById("top-nav-m-expanded");
-
-  expandedMenuItems.forEach(item => {
-    item.addEventListener("click", () => {
-      topNavContainerMobileFolded.style.display = "flex";
-      topNavContainerMobileExpanded.style.display = "none";
-      
-      const targetId = item.getAttribute("href"); // 예: "#section"
-      const targetElement = document.querySelector(targetId); // 해당 ID의 요소 찾기
-
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
-
-  expandedMenuItemsOutlink.forEach(item => {
-    item.addEventListener("click", () => {
-      topNavContainerMobileFolded.style.display = "flex";
-      topNavContainerMobileExpanded.style.display = "none"; 
-    });
-  });
-}
-
 /*
  * GSAP 애니메이션 함수
  */
@@ -80,58 +28,6 @@ const GSAPAnimations = () => {
   });
 }
 
-let lastScrollY = window.scrollY;
-
-const topNavBarSetClassAfterLoading = () => {
-  const topNavBar = document.getElementById("top-nav-bar");
-  const companyIntro = document.getElementById("company-intro");
-
-  if (companyIntro && companyIntro.getBoundingClientRect().top < window.innerHeight / 5) {
-    topNavBar.classList.add("fg-black");
-    topNavBar.classList.add("bg-blur");
-    topNavBar.classList.remove("fg-white");
-  }
-
-  if (companyIntro && companyIntro.getBoundingClientRect().top > window.innerHeight / 2) {
-    topNavBar.classList.add("fg-white");
-    topNavBar.classList.remove("fg-black");
-    topNavBar.classList.remove("bg-blur");
-  }
-}
-
-/*
- * 스크롤 이벤트 핸들러
- * 탑 내비게이션 배경 색상 변경 처리
- */
-const handleScroll = () => {
-  const topNavBar = document.getElementById("top-nav-bar");
-
-  const currentScrollY = window.scrollY;
-  const isScrollDown = currentScrollY > lastScrollY;
-  const isScrollUp = currentScrollY < lastScrollY;
-
-  lastScrollY = currentScrollY; // 현재 위치 업데이트
-
-  if (isScrollDown) {
-    const companyIntro = document.getElementById("company-intro");
-
-    if (companyIntro && companyIntro.getBoundingClientRect().top < window.innerHeight / 5) {
-      topNavBar.classList.add("fg-black");
-      topNavBar.classList.add("bg-blur");
-      topNavBar.classList.remove("fg-white");
-    }
-  }
-
-  if (isScrollUp) {
-    const companyIntro = document.getElementById("company-intro");
-
-    if (companyIntro && companyIntro.getBoundingClientRect().top > window.innerHeight / 2) {
-      topNavBar.classList.add("fg-white");
-      topNavBar.classList.remove("fg-black");
-      topNavBar.classList.remove("bg-blur");
-    }
-  }
-}
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menu-btn");
@@ -142,46 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
     menuItems.classList.toggle("show");
   });
 
-  // ✅ 탑 내비게이션 모바일 버튼 이벤트 실행
-  // topNavMobileBtnToggle();
-  // clickExpandedMenu(); // 메뉴 클릭스 펼쳐진 메뉴 닫히도록
-
-  topNavBarSetClassAfterLoading();
-  // ✅ 탑 내비게이션 Class 추가 효과 실행
-  // 스크롤 이벤트 등록
-  window.addEventListener("scroll", handleScroll);
-
-  // ✅ 탑 배너 01 텍스트 타이핑 효과 실행
-  // TopBanner01TextTyping();
-
   gsap.registerPlugin(ScrollTrigger);
 
   GSAPAnimations();
-
-  // ✅ 키 팩터 로고 애니메이션 실행
-  // const logos = document.querySelectorAll("#key-factors .logo-cloud .logo");
-  // const usedPositions = [];
-
-  // logos.forEach((logo, i) => {
-  //   // (1) 좌표를 격자 기반으로 나누어서 분산
-  //   const row = Math.floor(i / 4);
-  //   const col = i % 4;
-
-  //   // const top = row * 20 + Math.random() * 10; // 0~90%
-  //   // const left = col * 20 + Math.random() * 10; // 0~90%
-  //   const top = Math.random() * 100;
-  //   const left = Math.random() * 100;
-  //   console.log(top, left);
-  //   logo.style.top = `${top}%`;
-  //   logo.style.left = `${left}%`;
-
-  //   // (2) 랜덤 애니메이션 타이밍
-  //   const duration = 15 + Math.random() * 10;
-  //   const delay = Math.random() * 5;
-  //   logo.style.animationDuration = `${duration}s`;
-  //   logo.style.animationDelay = `${delay}s`;
-  // });
-
 
   // Review Masonry
   const masonry = document.getElementById("masonry-container");
