@@ -129,6 +129,8 @@ button {
     align-items: center;
     padding: 1.2rem 1.5rem;
     position: relative;
+    max-width: var(--max-width-1440);
+    margin: 0 auto;
 }
 
 #top-nav .logo-container {
@@ -278,7 +280,7 @@ button {
 
 #slim-top-banner .container {
     margin: 0 auto;
-    max-width: var(--max-width-1280);
+    max-width: var(--max-width-1440);
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -1615,6 +1617,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 #partnership .container {
     margin: 0 auto;
+    max-width: var(--max-width-1280);
 }
 
 #partnership .contents {
@@ -1667,6 +1670,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 
 #human-resource .container {
     margin: 0 auto;
+    max-width: var(--max-width-1280);
 }
 
 #human-resource .contents {
@@ -1743,6 +1747,7 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 #location .container {
     margin: 0 auto;
     font-size: 1.2rem;
+    max-width: var(--max-width-1280);
 }
 
 #location .contents {
@@ -1833,10 +1838,15 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
 #footer {
     color: var(--white);
     background-color: var(--foreground);
+
 }
 
 #footer .container {
     padding: 2.4rem;
+    margin: 0 auto;
+    max-width: var(--max-width-1440);
+    opacity: 0.6;
+    font-size: 0.8rem;
 }
 
 @media (min-width: 768px) {
