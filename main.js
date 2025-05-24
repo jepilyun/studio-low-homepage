@@ -188,7 +188,12 @@ const GSAPAnimations = () => {
     opacity: 1,
     y: 0,
     duration: 0.5,
-  });
+  })
+  .to(".core-value-item:nth-child(4)", {
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+  });;
 
   // Company Intro
   // const companyIntro = gsap.timeline();
