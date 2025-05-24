@@ -223,13 +223,13 @@ const GSAPAnimations = () => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // const menuBtn = document.getElementById("menu-btn");
-  // const menuItems = document.getElementById("menu-items");
+  const menuBtn = document.getElementById("menu-btn");
+  const menuItems = document.getElementById("menu-items");
   
-  // menuBtn.addEventListener("click", () => {
-  //   menuBtn.classList.toggle("active");
-  //   menuItems.classList.toggle("show");
-  // });
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    menuItems.classList.toggle("show");
+  });
 
   // gsap.registerPlugin(ScrollTrigger);
 
