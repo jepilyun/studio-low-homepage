@@ -2,30 +2,218 @@
  * GSAP 애니메이션 함수
  */
 const GSAPAnimations = () => {
-  // Company Intro
-  const companyIntro = gsap.timeline();
+  // Logo Cloud Animation
+  gsap.registerPlugin(ScrollTrigger);
 
-  companyIntro
-    .from("#company-intro-msg", { y: 200, duration: 1, opacity: 0, immediateRender: true })
-    .from("#company-intro-counts", { y: 200, duration: 1, opacity: 0, immediateRender: true, scale: 0 })
-
-  ScrollTrigger.create({
-    animation: companyIntro,
-    trigger: "#company-intro-msg",
-    start: "top 70%",
-    toggleActions: "play none play reverse", 
-    markers: false,
-    onEnter: () => {
-      setTimeout(() => {
-        const companyIntroCounts = document.getElementById("company-intro-counts");
-
-        animateNumber(companyIntroCounts.children[0].lastElementChild, 0, 8913, 1200);
-        animateNumber(companyIntroCounts.children[1].lastElementChild, 0, 1253, 1200);
-        animateNumber(companyIntroCounts.children[2].lastElementChild, 0, 4350, 1200);
-        animateNumber(companyIntroCounts.children[3].lastElementChild, 0, 96, 1200);
-      }, 2000);
+  const logoCloud = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#key-factors",
+      start: "top 60%",
+      end: "bottom 40%",
+      toggleActions: "play none play reverse", // 스크롤 위치에 닿으면 한 번 재생
     },
   });
+  
+  // 예시: 중앙 → 좌상단
+  logoCloud.fromTo("#key-factors .logo-cloud-item-0", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(10%)",
+    left: "calc(10%)",
+  }, 0);
+  
+  // 예시: 중앙 → 우상단
+  logoCloud.fromTo("#key-factors .logo-cloud-item-1", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(10%)",
+    left: "calc(50%)",
+  }, 0);
+  
+  logoCloud.fromTo("#key-factors .logo-cloud-item-2", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(10%)",
+    left: "calc(90%)",
+  }, 0);
+
+  logoCloud.fromTo("#key-factors .logo-cloud-item-3", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(50%)",
+    left: "calc(5%)",
+  }, 0);
+
+  logoCloud.fromTo("#key-factors .logo-cloud-item-4", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(20%)",
+    left: "calc(25%)",
+  }, 0);
+
+  logoCloud.fromTo("#key-factors .logo-cloud-item-5", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(50%)",
+    left: "calc(90%)",
+  }, 0);
+
+  logoCloud.fromTo("#key-factors .logo-cloud-item-6", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(90%)",
+    left: "calc(5%)",
+  }, 0);
+
+  logoCloud.fromTo("#key-factors .logo-cloud-item-7", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(90%)",
+    left: "calc(50%)",
+  }, 0);
+
+  logoCloud.fromTo("#key-factors .logo-cloud-item-8", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(90%)",
+    left: "calc(90%)",
+  }, 0);
+
+  logoCloud.fromTo("#key-factors .logo-cloud-item-9", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(25%)",
+    left: "calc(70%)",
+  }, 0);
+
+
+  logoCloud.fromTo("#key-factors .logo-cloud-item-10", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(75%)",
+    left: "calc(70%)",
+  }, 0);
+
+  logoCloud.fromTo("#key-factors .logo-cloud-item-11", {
+    opacity: 0,
+    xPercent: -50,
+    yPercent: -50,
+    top: "50%",
+    left: "50%",
+  }, {
+    opacity: 1,
+    top: "calc(75%)",
+    left: "calc(25%)",
+  }, 0);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#key-factors",
+      start: "top 0",
+      end: "+=1000", // 스크롤 길이 (px)
+      scrub: true,   // 스크롤에 따라 부드럽게 재생
+      pin: true,     // 해당 섹션을 스크롤 도중 고정
+      anticipatePin: 1,
+      markers: false // 디버그용 true로 변경 가능
+    }
+  });
+  
+  // 순차 등장 설정
+  tl.to(".core-value-item:nth-child(1)", {
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+  })
+  .to(".core-value-item:nth-child(2)", {
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+  })
+  .to(".core-value-item:nth-child(3)", {
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+  });
+
+  // Company Intro
+  // const companyIntro = gsap.timeline();
+
+  // companyIntro
+  //   .from("#company-intro-msg", { y: 200, duration: 1, opacity: 0, immediateRender: true })
+  //   .from("#company-intro-counts", { y: 200, duration: 1, opacity: 0, immediateRender: true, scale: 0 })
+
+  // ScrollTrigger.create({
+  //   animation: companyIntro,
+  //   trigger: "#company-intro-msg",
+  //   start: "top 70%",
+  //   toggleActions: "play none play reverse", 
+  //   markers: false,
+  //   onEnter: () => {
+  //     setTimeout(() => {
+  //       const companyIntroCounts = document.getElementById("company-intro-counts");
+
+  //       animateNumber(companyIntroCounts.children[0].lastElementChild, 0, 8913, 1200);
+  //       animateNumber(companyIntroCounts.children[1].lastElementChild, 0, 1253, 1200);
+  //       animateNumber(companyIntroCounts.children[2].lastElementChild, 0, 4350, 1200);
+  //       animateNumber(companyIntroCounts.children[3].lastElementChild, 0, 96, 1200);
+  //     }, 2000);
+  //   },
+  // });
 }
 
 
@@ -40,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // gsap.registerPlugin(ScrollTrigger);
 
-  // GSAPAnimations();
+  GSAPAnimations();
 
   // Slim Top Banner Animation
   const texts = document.querySelectorAll('.slim-top-banner-text');
