@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     index = (index + 1) % texts.length;
   }
 
-  setInterval(showNext, 2000);
+  setInterval(showNext, 1000);
 
   // Review Masonry
   const masonry = document.getElementById("masonry-container");
