@@ -1,5 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "host": "studiolow.co.kr" }],
+      "destination": "https://www.studiolow.co.kr",
+      "permanent": true
+    }
   ]
 }
