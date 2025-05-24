@@ -30,17 +30,30 @@ const GSAPAnimations = () => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.getElementById("menu-btn");
-  const menuItems = document.getElementById("menu-items");
+  // const menuBtn = document.getElementById("menu-btn");
+  // const menuItems = document.getElementById("menu-items");
   
-  menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("active");
-    menuItems.classList.toggle("show");
-  });
+  // menuBtn.addEventListener("click", () => {
+  //   menuBtn.classList.toggle("active");
+  //   menuItems.classList.toggle("show");
+  // });
 
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
-  GSAPAnimations();
+  // GSAPAnimations();
+
+  // Slim Top Banner Animation
+  const texts = document.querySelectorAll('.slim-top-banner-text');
+  let index = 0;
+
+  function showNext() {
+    texts.forEach((el, i) => {
+      el.style.transform = `translateY(-${index * 2}rem)`;
+    });
+    index = (index + 1) % texts.length;
+  }
+
+  setInterval(showNext, 2000);
 
   // Review Masonry
   const masonry = document.getElementById("masonry-container");
