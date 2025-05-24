@@ -221,7 +221,6 @@ const GSAPAnimations = () => {
   // });
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menu-btn");
   const menuItems = document.getElementById("menu-items");
@@ -238,15 +237,35 @@ document.addEventListener("DOMContentLoaded", function () {
   // Slim Top Banner Animation
   const texts = document.querySelectorAll('.slim-top-banner-text');
   let index = 0;
-
+  
   function showNext() {
     texts.forEach((el, i) => {
       el.style.transform = `translateY(-${index * 2}rem)`;
     });
+  
     index = (index + 1) % texts.length;
+  
+    // 다음 롤링까지의 시간 결정
+    const delay = (index === 0 || index === 1 || index === 2) ? 1000 : 2000;
+    setTimeout(showNext, delay);
+  }
+  
+  // 최초 실행
+  setTimeout(showNext, 1000);
+
+
+  // Hero Success Rolling Animation
+  const successRolling = document.querySelectorAll('.success-rolling .success');
+  let successRollingIndex = 0;
+  
+  function showNextSuccess() {
+    successRolling.forEach((el, i) => {
+      el.style.transform = `translateY(-${successRollingIndex * 4.2}rem)`;
+    });
+    successRollingIndex = (successRollingIndex + 1) % successRolling.length;
   }
 
-  setInterval(showNext, 1000);
+  setInterval(showNextSuccess, 1500);
 
   // Review Masonry
   const masonry = document.getElementById("masonry-container");
