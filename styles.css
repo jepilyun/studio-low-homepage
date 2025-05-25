@@ -665,7 +665,7 @@ button {
 
 #key-factors .container {
     margin: 0 auto;
-    padding: 3rem;
+    padding: 3rem 0;
     max-width: var(--max-width-1440);
     position: relative;
 }
