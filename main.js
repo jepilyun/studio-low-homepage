@@ -207,13 +207,15 @@ const GSAPAnimations = () => {
 
   // Success Story Cards Animation
   const container = document.querySelector("#success-story-cards .cards-list");
-  
+
   let autoScrollInterval;
 
   function startAutoScroll() {
+    if (window.innerWidth < 768) return; // 768px 미만에서는 자동 스크롤 안함
     if (autoScrollInterval) return;
+
     autoScrollInterval = setInterval(() => {
-      container.scrollLeft += 1; // 오른쪽으로 자동 스크롤
+      container.scrollLeft += 1;
     }, 20);
   }
 
@@ -222,9 +224,22 @@ const GSAPAnimations = () => {
     autoScrollInterval = null;
   }
 
-  // 마우스 진입 시 멈춤, 벗어나면 재시작
-  container.addEventListener("mouseenter", stopAutoScroll);
-  container.addEventListener("mouseleave", startAutoScroll);
+  // 마우스 진입 시 멈춤, 벗어나면 재시작 (768px 이상일 때만)
+  container.addEventListener("mouseenter", () => {
+    if (window.innerWidth >= 768) stopAutoScroll();
+  });
+  container.addEventListener("mouseleave", () => {
+    if (window.innerWidth >= 768) startAutoScroll();
+  });
+
+  // 창 크기 변경 시 자동 스크롤 ON/OFF 전환
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 768) {
+      stopAutoScroll();
+    } else {
+      startAutoScroll();
+    }
+  });
 
   // 초기 실행
   startAutoScroll();
