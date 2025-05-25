@@ -943,11 +943,14 @@ button {
     background-color: transparent;
     z-index: 0;
     width: 100vw;
+    overflow: hidden;
 }
 
-/* #success-story-cards .card-container {
-    margin: 2.4rem 0;
-} */
+#success-story-cards .container {
+    margin: 0 auto;
+    padding: 3rem 0;
+    position: relative;
+}
 
 #success-story-cards .card-container::-webkit-scrollbar {
     display: none; /* Chrome */
@@ -980,7 +983,6 @@ button {
     min-width: 300px;
     height: 340px;
     min-height: 340px;
-    /* background-color: var(--white); */
     background-color: #e5e5f7;
     background-size: 4px 4px;
     background-image: repeating-linear-gradient(45deg, var(--gray-dark), var(--gray-dark) 0.4px, var(--white) 0, var(--white) 50%);
