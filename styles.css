@@ -220,6 +220,11 @@ button {
     text-decoration: none;
     color: var(--dark);
     font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#top-nav .menu-items .menu-item:hover {
+    scale: 1.1;
 }
 
 #top-nav .seperator {
@@ -317,7 +322,9 @@ button {
 }
 
 #slim-top-banner .container {
+    margin: 0 auto;
     max-width: var(--max-width-1440);
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -508,7 +515,8 @@ button {
 }
 
 #hero-section .lc .success-rolling {
-    height: 4rem;
+    margin: 1.2rem 0 0 0;
+    height: 2rem;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -519,14 +527,15 @@ button {
 }
 
 #hero-section .lc .success-rolling .success {
-    margin: 1.8rem 0 0 0;
+    height: 2rem;
+    min-height: 2rem;
     padding: 0.4rem 0.8rem;
     display: inline-flex;
     flex-direction: row;
     align-items: center;
     justify-content: start;
     gap: 0.4rem;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     background-color: var(--white);
     border-radius: 0.4rem;
     border: 1px solid var(--gray);
@@ -534,7 +543,7 @@ button {
 }
 
 #hero-section .lc .success .company-logo {
-    width: 3rem;
+    height: 1rem;
 }
 
 #hero-section .lc .success .company-logo img {
@@ -662,7 +671,8 @@ button {
 #key-factors .logo-cloud {
     position: relative; /* 기준이 되는 박스 */
     min-width: 100%;
-    height: 600px;
+    height: 100%;
+    min-height: 100vh;
     pointer-events: none;
 }
 
@@ -683,162 +693,6 @@ button {
     width: 100%;
     height: 100%;
     object-fit: contain; /* 또는 scale-down */
-}
-
-#key-factors .logo-cloud .logo-cloud-item-0 {
-    animation: ellipticalMotion-0 30s linear infinite;
-    transform-origin: center center; 
-}
-@keyframes ellipticalMotion-0 {
-    0% {
-        transform: rotate(0deg) translateX(3rem) translateY(3rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(3rem) translateY(3rem) rotate(-360deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-1 {
-    animation: rotateAround-1 20s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes rotateAround-1 {
-    0% {
-        transform: rotate(360deg) translateX(-2rem) translateY(2rem) rotate(-360deg);
-    }
-    100% {
-        transform: rotate(0deg) translateX(-2rem) translateY(2rem) rotate(0deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-2 {
-    animation: ellipticalMotion-2 40s linear infinite;
-    transform-origin: top right; /* 원의 반지름 위치 */
-}
-@keyframes ellipticalMotion-2 {
-    0% {
-        transform: rotate(0deg) translateX(4rem) translateY(-1rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(-360deg) translateX(4rem) translateY(-1rem) rotate(360deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-3 {
-    animation: rotateAround-3 30s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes rotateAround-3 {
-    0% {
-        transform: rotate(0deg) translateX(-3rem) translateY(0rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(-360deg) translateX(-3rem) translateY(0rem) rotate(360deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-4 {
-    animation: ellipticalMotion-4 20s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes ellipticalMotion-4 {
-    0% {
-        transform: rotate(360deg) translateX(-3rem) translateY(1rem) rotate(-360deg);
-    }
-    100% {
-        transform: rotate(0deg) translateX(-3rem) translateY(1rem) rotate(0deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-5 {
-    animation: rotateAround-5 30s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes rotateAround-5 {
-    0% {
-        transform: rotate(0deg) translateX(-4rem) translateY(1rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(-4rem) translateY(1rem) rotate(-360deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-6 {
-    animation: ellipticalMotion-6 20s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes ellipticalMotion-6 {
-    0% {
-        transform: rotate(0deg) translateX(-2rem) translateY(1rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(-360deg) translateX(-2rem) translateY(1rem) rotate(360deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-7 {
-    animation: rotateAround-7 20s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes rotateAround-7 {
-    0% {
-        transform: rotate(0deg) translateX(-4rem) translateY(1rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(-2rem) translateY(-2rem) rotate(-360deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-8 {
-    animation: ellipticalMotion-8 40s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes ellipticalMotion-8 {
-    0% {
-        transform: rotate(0deg) translateX(-3rem) translateY(2rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(-3rem) translateY(2rem) rotate(-360deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-9 {
-    animation: rotateAround-9 30s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes rotateAround-9 {
-    0% {
-        transform: rotate(0deg) translateX(1rem) translateY(1rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(1rem) translateY(1rem) rotate(-360deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-10 {
-    animation: ellipticalMotion-10 40s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes ellipticalMotion-10 {
-    0% {
-        transform: rotate(0deg) translateX(1rem) translateY(1rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(1rem) translateY(1rem) rotate(-360deg);
-    }
-}
-
-#key-factors .logo-cloud .logo-cloud-item-11 {
-    animation: rotateAround-11 30s linear infinite;
-    transform-origin: center center; /* 원의 반지름 위치 */
-}
-@keyframes rotateAround-11 {
-    0% {
-        transform: rotate(0deg) translateX(1rem) translateY(1rem) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(1rem) translateY(1rem) rotate(-360deg);
-    }
 }
 
 
@@ -890,6 +744,162 @@ button {
         max-height: 3.6rem;
     }
 
+    #key-factors .logo-cloud .logo-cloud-item-0 {
+        animation: ellipticalMotion-0 30s linear infinite;
+        transform-origin: center center; 
+    }
+    @keyframes ellipticalMotion-0 {
+        0% {
+            transform: rotate(0deg) translateX(3rem) translateY(3rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(3rem) translateY(3rem) rotate(-360deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-1 {
+        animation: rotateAround-1 20s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes rotateAround-1 {
+        0% {
+            transform: rotate(360deg) translateX(-2rem) translateY(2rem) rotate(-360deg);
+        }
+        100% {
+            transform: rotate(0deg) translateX(-2rem) translateY(2rem) rotate(0deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-2 {
+        animation: ellipticalMotion-2 40s linear infinite;
+        transform-origin: top right; /* 원의 반지름 위치 */
+    }
+    @keyframes ellipticalMotion-2 {
+        0% {
+            transform: rotate(0deg) translateX(4rem) translateY(-1rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(4rem) translateY(-1rem) rotate(360deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-3 {
+        animation: rotateAround-3 30s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes rotateAround-3 {
+        0% {
+            transform: rotate(0deg) translateX(-3rem) translateY(0rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(-3rem) translateY(0rem) rotate(360deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-4 {
+        animation: ellipticalMotion-4 20s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes ellipticalMotion-4 {
+        0% {
+            transform: rotate(360deg) translateX(-3rem) translateY(1rem) rotate(-360deg);
+        }
+        100% {
+            transform: rotate(0deg) translateX(-3rem) translateY(1rem) rotate(0deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-5 {
+        animation: rotateAround-5 30s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes rotateAround-5 {
+        0% {
+            transform: rotate(0deg) translateX(-4rem) translateY(1rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(-4rem) translateY(1rem) rotate(-360deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-6 {
+        animation: ellipticalMotion-6 20s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes ellipticalMotion-6 {
+        0% {
+            transform: rotate(0deg) translateX(-2rem) translateY(1rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(-2rem) translateY(1rem) rotate(360deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-7 {
+        animation: rotateAround-7 20s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes rotateAround-7 {
+        0% {
+            transform: rotate(0deg) translateX(-4rem) translateY(1rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(-2rem) translateY(-2rem) rotate(-360deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-8 {
+        animation: ellipticalMotion-8 40s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes ellipticalMotion-8 {
+        0% {
+            transform: rotate(0deg) translateX(-3rem) translateY(2rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(-3rem) translateY(2rem) rotate(-360deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-9 {
+        animation: rotateAround-9 30s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes rotateAround-9 {
+        0% {
+            transform: rotate(0deg) translateX(1rem) translateY(1rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(1rem) translateY(1rem) rotate(-360deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-10 {
+        animation: ellipticalMotion-10 40s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes ellipticalMotion-10 {
+        0% {
+            transform: rotate(0deg) translateX(1rem) translateY(1rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(1rem) translateY(1rem) rotate(-360deg);
+        }
+    }
+    
+    #key-factors .logo-cloud .logo-cloud-item-11 {
+        animation: rotateAround-11 30s linear infinite;
+        transform-origin: center center; /* 원의 반지름 위치 */
+    }
+    @keyframes rotateAround-11 {
+        0% {
+            transform: rotate(0deg) translateX(1rem) translateY(1rem) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(1rem) translateY(1rem) rotate(-360deg);
+        }
+    }    
+
     #key-factors .core-values .core-value-item {
         flex-direction: row;
     }
@@ -927,22 +937,32 @@ button {
 **************************************************************************************************/
 
 #success-story-cards {
+    margin: 2.4rem 0;
     position: relative;
-    padding: 2.4rem 0;
     background-color: transparent;
     z-index: 0;
-    overflow: hidden;
+    width: 100vw;
 }
 
 #success-story-cards .card-container {
+    margin: 2.4rem 0;
+}
+
+#success-story-cards .card-container::-webkit-scrollbar {
+    display: none; /* Chrome */
+}
+
+#success-story-cards .cards-list {
+    margin: 2.4rem 0;
     padding: 0 2.4rem;
     display: flex;
     gap: 1rem;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
-#success-story-cards .card-container::before {
+/* #success-story-cards .card-container::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -952,7 +972,7 @@ button {
     background-size: 4px 4px;
     background-image: repeating-linear-gradient(45deg, var(--gray-dark), var(--gray-dark) 0.4px, var(--white) 0, var(--white) 50%);
     z-index: -1;
-}
+} */
 
 #success-story-cards .card {
     padding: 2rem 1.6rem;
@@ -960,9 +980,13 @@ button {
     min-width: 300px;
     height: 340px;
     min-height: 340px;
-    background-color: var(--white);
+    /* background-color: var(--white); */
+    background-color: #e5e5f7;
+    background-size: 4px 4px;
+    background-image: repeating-linear-gradient(45deg, var(--gray-dark), var(--gray-dark) 0.4px, var(--white) 0, var(--white) 50%);
+    z-index: -1;
     transition: all 0.5s ease;
-    /* border-radius: 1rem; */
+    border-radius: 1rem;
 }
 
 #success-story-cards .card:hover {
@@ -995,8 +1019,8 @@ button {
     height: 2.8rem;
     overflow: hidden;
     background-color: var(--white);
-    /* border: 2px solid var(--gray); */
-    /* border-radius: 8px; */
+    border: 2px solid var(--gray);
+    border-radius: 8px;
 }
 
 #success-story-cards .card-header-logo img {
@@ -1080,11 +1104,6 @@ button {
         padding: 2.8rem 0;
     }
 
-    #success-story-cards .card-container {
-        padding: 0 4rem;
-        gap: 2.4rem;
-    }
-
     #success-story-cards .card {
         padding: 2rem 2rem;
         width: 300px;
@@ -1104,8 +1123,6 @@ button {
         height: 3rem;
         overflow: hidden;
         background-color: var(--white);
-        border: 2px solid var(--gray);
-        border-radius: 8px;
     }
 
     #success-story-cards .card-header-info-name {
@@ -1302,11 +1319,11 @@ button {
     align-items: center;
     gap: 5rem;
     white-space: nowrap;
-    animation: slide-right 15s linear infinite; /* 기본은 오른쪽으로 흐름 */
+    animation: slide-right 60s linear infinite; /* 기본은 오른쪽으로 흐름 */
 }
 
 #logo-sliding .container-2 {
-    animation: slide-left 15s linear infinite;
+    animation: slide-left 60s linear infinite;
 }
 
 #logo-sliding .logo-container {
@@ -1322,7 +1339,7 @@ button {
 
 @keyframes slide-right {
     0% {
-        transform: translateX(-50%);
+        transform: translateX(-200%);
     }
     100% {
         transform: translateX(0%);
@@ -1334,7 +1351,7 @@ button {
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-200%);
     }
 }
 
@@ -1440,7 +1457,8 @@ button {
 #student-reviews .review-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
+    gap: 0.8rem;
 }
 
 #student-reviews .review-avatar-container {
@@ -1454,7 +1472,6 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin-right: 1rem;
 }
 
 #student-reviews .review-name-date-container {
@@ -1477,6 +1494,7 @@ button {
 
 #student-reviews .review-body {
     padding: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 200;
     line-height: 1.8;
 }

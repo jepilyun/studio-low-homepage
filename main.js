@@ -14,7 +14,7 @@ const GSAPAnimations = () => {
     },
   });
   
-  // 예시: 중앙 → 좌상단
+  // 아모레퍼시픽
   logoCloud.fromTo("#key-factors .logo-cloud-item-0", {
     opacity: 0,
     xPercent: -50,
@@ -27,7 +27,7 @@ const GSAPAnimations = () => {
     left: "calc(10%)",
   }, 0);
   
-  // 예시: 중앙 → 우상단
+  // 데상트
   logoCloud.fromTo("#key-factors .logo-cloud-item-1", {
     opacity: 0,
     xPercent: -50,
@@ -40,6 +40,7 @@ const GSAPAnimations = () => {
     left: "calc(50%)",
   }, 0);
   
+  // 이랜드
   logoCloud.fromTo("#key-factors .logo-cloud-item-2", {
     opacity: 0,
     xPercent: -50,
@@ -49,9 +50,10 @@ const GSAPAnimations = () => {
   }, {
     opacity: 1,
     top: "calc(10%)",
-    left: "calc(90%)",
+    left: "calc(85%)",
   }, 0);
 
+  // 현대백화점
   logoCloud.fromTo("#key-factors .logo-cloud-item-3", {
     opacity: 0,
     xPercent: -50,
@@ -64,6 +66,7 @@ const GSAPAnimations = () => {
     left: "calc(5%)",
   }, 0);
 
+  // 삼성전자
   logoCloud.fromTo("#key-factors .logo-cloud-item-4", {
     opacity: 0,
     xPercent: -50,
@@ -76,6 +79,7 @@ const GSAPAnimations = () => {
     left: "calc(25%)",
   }, 0);
 
+  // JYP
   logoCloud.fromTo("#key-factors .logo-cloud-item-5", {
     opacity: 0,
     xPercent: -50,
@@ -84,10 +88,11 @@ const GSAPAnimations = () => {
     left: "50%",
   }, {
     opacity: 1,
-    top: "calc(50%)",
-    left: "calc(90%)",
+    top: "calc(45%)",
+    left: "calc(85%)",
   }, 0);
 
+  // 카카오뱅크
   logoCloud.fromTo("#key-factors .logo-cloud-item-6", {
     opacity: 0,
     xPercent: -50,
@@ -100,6 +105,7 @@ const GSAPAnimations = () => {
     left: "calc(5%)",
   }, 0);
 
+  // 카카오페이
   logoCloud.fromTo("#key-factors .logo-cloud-item-7", {
     opacity: 0,
     xPercent: -50,
@@ -112,6 +118,7 @@ const GSAPAnimations = () => {
     left: "calc(50%)",
   }, 0);
 
+  // 코오롱
   logoCloud.fromTo("#key-factors .logo-cloud-item-8", {
     opacity: 0,
     xPercent: -50,
@@ -121,9 +128,10 @@ const GSAPAnimations = () => {
   }, {
     opacity: 1,
     top: "calc(90%)",
-    left: "calc(90%)",
+    left: "calc(85%)",
   }, 0);
 
+  // 컬리
   logoCloud.fromTo("#key-factors .logo-cloud-item-9", {
     opacity: 0,
     xPercent: -50,
@@ -136,7 +144,7 @@ const GSAPAnimations = () => {
     left: "calc(70%)",
   }, 0);
 
-
+  // 라인
   logoCloud.fromTo("#key-factors .logo-cloud-item-10", {
     opacity: 0,
     xPercent: -50,
@@ -149,6 +157,7 @@ const GSAPAnimations = () => {
     left: "calc(70%)",
   }, 0);
 
+  // 무신사
   logoCloud.fromTo("#key-factors .logo-cloud-item-11", {
     opacity: 0,
     xPercent: -50,
@@ -195,30 +204,30 @@ const GSAPAnimations = () => {
     duration: 0.5,
   });;
 
-  // Company Intro
-  // const companyIntro = gsap.timeline();
 
-  // companyIntro
-  //   .from("#company-intro-msg", { y: 200, duration: 1, opacity: 0, immediateRender: true })
-  //   .from("#company-intro-counts", { y: 200, duration: 1, opacity: 0, immediateRender: true, scale: 0 })
+  // Success Story Cards Animation
+  const container = document.querySelector("#success-story-cards .cards-list");
+  
+  let autoScrollInterval;
 
-  // ScrollTrigger.create({
-  //   animation: companyIntro,
-  //   trigger: "#company-intro-msg",
-  //   start: "top 70%",
-  //   toggleActions: "play none play reverse", 
-  //   markers: false,
-  //   onEnter: () => {
-  //     setTimeout(() => {
-  //       const companyIntroCounts = document.getElementById("company-intro-counts");
+  function startAutoScroll() {
+    if (autoScrollInterval) return;
+    autoScrollInterval = setInterval(() => {
+      container.scrollLeft += 1; // 오른쪽으로 자동 스크롤
+    }, 20);
+  }
 
-  //       animateNumber(companyIntroCounts.children[0].lastElementChild, 0, 8913, 1200);
-  //       animateNumber(companyIntroCounts.children[1].lastElementChild, 0, 1253, 1200);
-  //       animateNumber(companyIntroCounts.children[2].lastElementChild, 0, 4350, 1200);
-  //       animateNumber(companyIntroCounts.children[3].lastElementChild, 0, 96, 1200);
-  //     }, 2000);
-  //   },
-  // });
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = null;
+  }
+
+  // 마우스 진입 시 멈춤, 벗어나면 재시작
+  container.addEventListener("mouseenter", stopAutoScroll);
+  container.addEventListener("mouseleave", startAutoScroll);
+
+  // 초기 실행
+  startAutoScroll();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -253,14 +262,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // 최초 실행
   setTimeout(showNext, 1000);
 
-
   // Hero Success Rolling Animation
   const successRolling = document.querySelectorAll('.success-rolling .success');
   let successRollingIndex = 0;
   
   function showNextSuccess() {
     successRolling.forEach((el, i) => {
-      el.style.transform = `translateY(-${successRollingIndex * 4.2}rem)`;
+      el.style.transform = `translateY(-${successRollingIndex * 2.2}rem)`;
     });
     successRollingIndex = (successRollingIndex + 1) % successRolling.length;
   }
