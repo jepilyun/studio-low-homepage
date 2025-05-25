@@ -543,12 +543,14 @@ button {
 }
 
 #hero-section .lc .success .company-logo {
-    height: 1rem;
+    max-height: 1rem;
+    width: auto;
 }
 
 #hero-section .lc .success .company-logo img {
     width: 100%;
     height: 100%;
+    aspect-ratio: auto;
     object-fit: contain;
 }
 
