@@ -846,7 +846,7 @@ button {
             transform: rotate(0deg) translateX(-4rem) translateY(1rem) rotate(0deg);
         }
         100% {
-            transform: rotate(360deg) translateX(-2rem) translateY(-2rem) rotate(-360deg);
+            transform: rotate(360deg) translateX(-4rem) translateY(1rem) rotate(-360deg);
         }
     }
     
