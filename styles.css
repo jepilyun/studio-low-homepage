@@ -1319,7 +1319,7 @@ button {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     white-space: nowrap;
     animation: slide-right 60s linear infinite; /* 기본은 오른쪽으로 흐름 */
 }
