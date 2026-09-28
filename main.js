@@ -317,3 +317,16 @@ document.addEventListener("DOMContentLoaded", function () {
     shortestColumn.appendChild(item);
   });
 });
+/*
+ * 카카오톡 상담 클릭 측정 (GA4 kakao_consult 이벤트)
+ */
+document.addEventListener("click", (e) => {
+  const link = e.target.closest('a[href*="pf.kakao.com"]');
+  if (!link || typeof gtag !== "function") return;
+
+  const area = link.closest("section[id], nav[id], footer, header");
+  gtag("event", "kakao_consult", {
+    link_url: link.href,
+    consult_location: area ? (area.id || area.tagName.toLowerCase()) : "unknown",
+  });
+});
