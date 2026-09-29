@@ -101,6 +101,14 @@ button {
     text-align: center;
 }
 
+.section-title-ko {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.6;
+}
+
 @media (min-width: 768px) {
     .section-title {
         margin: 6rem 0 4rem 0;
@@ -499,6 +507,7 @@ button {
     margin: 1.4rem 0;
     font-size: 1.4rem;
     font-weight: 900;
+    word-break: keep-all;
 }
 
 #hero-section .lc ul {
