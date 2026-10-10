@@ -322,11 +322,21 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 document.addEventListener("click", (e) => {
   const link = e.target.closest('a[href*="pf.kakao.com"]');
-  if (!link || typeof gtag !== "function") return;
+  if (!link) return;
 
   const area = link.closest("section[id], nav[id], footer, header");
-  gtag("event", "kakao_consult", {
-    link_url: link.href,
-    consult_location: area ? (area.id || area.tagName.toLowerCase()) : "unknown",
-  });
+  const consultLocation = area ? (area.id || area.tagName.toLowerCase()) : "unknown";
+
+  if (typeof gtag === "function") {
+    gtag("event", "kakao_consult", {
+      link_url: link.href,
+      consult_location: consultLocation,
+    });
+  }
+
+  // Clarity: 상담 클릭 세션만 필터링해 녹화를 볼 수 있도록 태그
+  if (typeof clarity === "function") {
+    clarity("set", "consult_location", consultLocation);
+    clarity("event", "kakao_consult");
+  }
 });
