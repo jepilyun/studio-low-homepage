@@ -2165,3 +2165,13 @@ input[type="checkbox"]:checked + .faq-accordion-button .icon {
     }
 }
 
+
+#copyright .privacy-link {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#copyright .privacy-link:hover {
+    text-decoration: underline;
+}
